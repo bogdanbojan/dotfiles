@@ -8,6 +8,7 @@ discord
 docker
 docker-compose
 efibootmgr
+evtest
 exo
 firefox
 flameshot
@@ -25,6 +26,7 @@ lightdm
 lightdm-gtk-greeter
 linux
 linux-firmware
+mesa-utils
 minikube
 mousepad
 nano
@@ -36,6 +38,7 @@ os-prober
 parole
 pavucontrol
 peek
+popcorntime
 pulseaudio
 ripgrep
 ristretto
@@ -53,6 +56,7 @@ tumbler
 unzip
 vi
 vim
+virtualbox
 wget
 wireless_tools
 wmctrl
