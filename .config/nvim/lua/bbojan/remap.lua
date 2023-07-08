@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("v", "<leader>s", "xnoremap ; y<Esc>:%s/<C-R>\"//g<Left><Left>")
+vim.keymap.set("v", "<leader>s", '"zy<Esc>:%s/<C-R>z//g<Left><Left>')
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = false })
 
 vim.keymap.set("n", "<leader>+", "<C-a>")

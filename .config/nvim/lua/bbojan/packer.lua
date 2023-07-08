@@ -49,6 +49,7 @@ use('vim-scripts/ReplaceWithRegister')
 use('Olical/conjure')
 use('wlangstroth/vim-racket')
 use('gpanders/nvim-parinfer') 
+use('rhysd/git-messenger.vim')
 
 use {
   'VonHeikemen/lsp-zero.nvim',
