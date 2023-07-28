@@ -4,8 +4,13 @@ alacritty
 base
 base-devel
 blueman
+brave-bin
+clang
+cmake
+cpio
 discord
 docker
+docker-buildx
 docker-compose
 efibootmgr
 evtest
@@ -17,6 +22,7 @@ git
 grub
 gvfs
 htop
+imwheel
 intel-ucode
 iwd
 kubectl
@@ -27,6 +33,7 @@ lightdm-gtk-greeter
 linux
 linux-firmware
 mesa-utils
+mingw-w64-gcc
 minikube
 mousepad
 nano
@@ -51,9 +58,11 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 tmux
+tree
 ttf-fira-code
 tumbler
 unzip
+uuid
 vi
 vim
 virtualbox
@@ -109,5 +118,6 @@ xorg-server
 xorg-xinit
 xorg-xwininfo
 yay
+zig
 zram-generator
 zsh
