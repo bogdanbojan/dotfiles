@@ -41,6 +41,8 @@ neovim-nightly-bin
 network-manager-applet
 networkmanager
 npm
+nvidia
+nvidia-prime
 os-prober
 parole
 pavucontrol
