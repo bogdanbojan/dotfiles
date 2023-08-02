@@ -8,6 +8,7 @@ signal-desktop -- &
 spotify-launcher &
 slack &
 discord &
+brave &
 
 sleep 10
 
