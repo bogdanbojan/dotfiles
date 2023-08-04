@@ -5,7 +5,18 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'golangci_lint_ls',
-  'gopls'
+  'gopls',
+  'docker_compose_language_service',
+  'dockerls',
+  'helm_ls',
+  'lua_ls',
+  'sqlls',
+  'vimls',
+  'terraform_lsp',
+  'html',
+  'bashls',
+  'yamlls',
+  'jsonls'
 })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
