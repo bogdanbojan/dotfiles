@@ -12,7 +12,7 @@ lsp.ensure_installed({
   'lua_ls',
   'sqlls',
   'vimls',
-  'terraform_lsp',
+  'terraformls',
   'html',
   'bashls',
   'yamlls',
