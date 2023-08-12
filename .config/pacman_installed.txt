@@ -1,8 +1,10 @@
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
 alacritty
+anki
 base
 base-devel
+bind
 blueman
 brave-bin
 clang
@@ -51,10 +53,12 @@ popcorntime
 pulseaudio
 ripgrep
 ristretto
+ruby
 signal-desktop
 slack-desktop
 smartmontools
 spotify-launcher
+strawberry
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -121,5 +125,6 @@ xorg-xinit
 xorg-xwininfo
 yay
 zig
+zip
 zram-generator
 zsh
