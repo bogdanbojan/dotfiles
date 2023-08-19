@@ -13,14 +13,14 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
--- use({
---     'rose-pine/neovim',
---     as = 'rose-pine',
---     config = function()
---         require("rose-pine").setup()
---         vim.cmd('colorscheme rose-pine')
---     end
--- })
+use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+        require("rose-pine").setup()
+        vim.cmd('colorscheme rose-pine')
+    end
+})
 
 -- use({'mcchrish/zenbones.nvim',
 --      as = 'zenbones',
@@ -29,13 +29,13 @@ use {
 --         vim.cmd('colorscheme tokyobones')
 --      end
 -- })
- 
-use({'cocopon/iceberg.vim',
-     as = 'iceberg',
-     config = function()
-        vim.cmd('colorscheme iceberg')
-     end
-})
+
+-- use({'cocopon/iceberg.vim',
+--      as = 'iceberg',
+--      config = function()
+--         vim.cmd('colorscheme iceberg')
+--      end
+-- })
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
@@ -50,6 +50,7 @@ use('Olical/conjure')
 use('wlangstroth/vim-racket')
 use('gpanders/nvim-parinfer') 
 use('rhysd/git-messenger.vim')
+use('mfussenegger/nvim-dap')
 
 use {
   'VonHeikemen/lsp-zero.nvim',

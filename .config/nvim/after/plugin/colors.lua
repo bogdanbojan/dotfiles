@@ -1,9 +1,11 @@
 function ColorMyPencils(color)
-	-- color = color or "rose-pine"
+	color = color or "rose-pine"
 	-- color = color or "tokyobones"
-	color = color or "iceberg"
+
+	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
     vim.o.termguicolors = true
+
     -- vim.g.tokyobones_italic_comments = false
 	-- vim.cmd('set background=dark')
 

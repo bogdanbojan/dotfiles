@@ -26,6 +26,9 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end
 })
 
+
+lsp.nvim_workspace()
+
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
     settings = {
