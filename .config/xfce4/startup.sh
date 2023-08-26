@@ -4,7 +4,6 @@
 # https://askubuntu.com/questions/959871/desktop-environment-that-enables-split-screen-shortcut
 
 alacritty &
-signal-desktop -- &
 spotify-launcher &
 slack &
 discord &
