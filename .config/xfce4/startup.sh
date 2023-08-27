@@ -6,6 +6,8 @@
 alacritty &
 spotify &
 slack &
+strawberry &
+anki &
 discord &
 brave &
 
