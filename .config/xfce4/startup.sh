@@ -8,7 +8,6 @@ spotify &
 slack &
 strawberry &
 anki &
-discord &
 brave &
 
 sleep 10
@@ -18,4 +17,4 @@ wmctrl -r "Alacritty" -t 1 & wmctrl -r "Alacritty" -e 0,0,-1,1920,2100 &
 wmctrl -r "Anki" -t 2 & wmctrl -r "Anki" -e 0,0,-1,1920,2100 &
 wmctrl -r "Strawberry" -t 2 & wmctrl -r "Strawberry" -e 0,1920,-1,1920,2100 &
 wmctrl -r "Slack" -t 0 &  wmctrl -r "Slack" -e 0,0,-1,1920,2100 &
-wmctrl -r "Discord" -t 0 & wmctrl -r "Discord" -e 0,1920,-1,1920,2100 &
+wmctrl -r "Spotify" -t 0 & wmctrl -r "Discord" -e 0,1920,-1,1920,2100 &
