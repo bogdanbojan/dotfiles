@@ -1,8 +1,9 @@
 function ColorMyPencils(color)
-	color = color or "rose-pine"
+	-- color = color or "rose-pine"
 	-- color = color or "tokyobones"
+	color = color or "nord"
+	-- color = color or "nightfox"
 
-	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
     vim.o.termguicolors = true
 

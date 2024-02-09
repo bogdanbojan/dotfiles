@@ -5,6 +5,17 @@ if not (dap_ok) then
 end
 require('dap').set_log_level('INFO')
 
+
+local function get_arguments()
+  return coroutine.create(function(dap_run_co)
+    local args = {}
+    vim.ui.input({ prompt = "Args: " }, function(input)
+      args = vim.split(input or "", " ")
+      coroutine.resume(dap_run_co, args)
+    end)
+  end)
+end
+
 dap.configurations = {
     go = {
       {
@@ -12,6 +23,20 @@ dap.configurations = {
         name = "Debug",
         request = "launch",
         program = "${file}",
+      },
+      {
+        type = "go",
+        name = "Debug with args",
+        request = "launch",
+        program = "${file}",
+        args = get_arguments,
+      },
+      {
+        type = "go",
+        name = "Debug with args --quiet config-file-validator",
+        request = "launch",
+        program = "${file}",
+        args = {"--quiet", "./test/fixtures/subdir"},
       },
       {
         type = "go",

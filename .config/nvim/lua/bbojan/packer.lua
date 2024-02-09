@@ -13,14 +13,38 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
+-- use({
+--     'rose-pine/neovim',
+--     as = 'rose-pine',
+--     config = function()
+--         require("rose-pine").setup()
+--         vim.cmd('colorscheme rose-pine')
+--     end
+-- })
+
 use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
+    'nordtheme/vim',
+    as = 'nord',
     config = function()
-        require("rose-pine").setup()
-        vim.cmd('colorscheme rose-pine')
+        vim.cmd('colorscheme nord')
     end
 })
+
+-- use({
+--     'AlexvZyl/nordic.nvim',
+--     as = 'nordic',
+--     config = function()
+--         vim.cmd('colorscheme nordic')
+--     end
+-- })
+
+-- use({
+--     'EdenEast/nightfox.nvim',
+--     as = 'nightfox',
+--     config = function()
+--         vim.cmd('colorscheme nightfox')
+--     end
+-- })
 
 -- use({'mcchrish/zenbones.nvim',
 --      as = 'zenbones',
