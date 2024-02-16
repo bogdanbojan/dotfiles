@@ -70,6 +70,14 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
+    -- For helm charts. Poor lsp is confused.
+    if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+          vim.diagnostic.disable(bufnr)
+          vim.defer_fn(function()
+            vim.diagnostic.reset(nil, bufnr)
+          end, 1000)
+        end
+
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
@@ -108,3 +116,4 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+

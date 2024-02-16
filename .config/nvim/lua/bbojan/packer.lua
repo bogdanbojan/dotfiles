@@ -30,6 +30,14 @@ use({
     end
 })
 
+-- use ({
+--     "catppuccin/nvim",
+--     as = "catppuccin",
+--     config = function()
+--         vim.cmd('colorscheme catppuccin')
+--     end
+-- })
+
 -- use({
 --     'AlexvZyl/nordic.nvim',
 --     as = 'nordic',
@@ -74,9 +82,11 @@ use('Olical/conjure')
 use('wlangstroth/vim-racket')
 use('gpanders/nvim-parinfer')
 use('rhysd/git-messenger.vim')
-use('leoluz/nvim-dap-go', require('dap-go').setup())
 use('mfussenegger/nvim-dap')
+-- use('leoluz/nvim-dap-go', require('dap-go').setup())
+use('leoluz/nvim-dap-go')
 use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+use('towolf/vim-helm')
 
 use {
   'VonHeikemen/lsp-zero.nvim',
