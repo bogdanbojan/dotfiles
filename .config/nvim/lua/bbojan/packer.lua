@@ -13,22 +13,30 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
+use({
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    config = function()
+        require("rose-pine").setup()
+        vim.cmd('colorscheme rose-pine')
+    end
+})
+
 -- use({
---     'rose-pine/neovim',
---     as = 'rose-pine',
+--     'nordtheme/vim',
+--     as = 'nord',
 --     config = function()
---         require("rose-pine").setup()
---         vim.cmd('colorscheme rose-pine')
+--         vim.cmd('colorscheme nord')
 --     end
 -- })
 
-use({
-    'nordtheme/vim',
-    as = 'nord',
-    config = function()
-        vim.cmd('colorscheme nord')
-    end
-})
+-- use ({
+--     "catppuccin/nvim",
+--     as = "catppuccin",
+--     config = function()
+--         vim.cmd('colorscheme catppuccin')
+--     end
+-- })
 
 -- use({
 --     'AlexvZyl/nordic.nvim',
@@ -50,7 +58,7 @@ use({
 --      as = 'zenbones',
 --      requires = "rktjmp/lush.nvim",
 --      config = function()
---         vim.cmd('colorscheme tokyobones')
+--         vim.cmd('colorscheme neobones')
 --      end
 -- })
 
@@ -70,13 +78,26 @@ use('christoomey/vim-tmux-navigator')
 use('szw/vim-maximizer')
 use('tpope/vim-surround')
 use('vim-scripts/ReplaceWithRegister')
-use('Olical/conjure')
 use('wlangstroth/vim-racket')
 use('gpanders/nvim-parinfer')
 use('rhysd/git-messenger.vim')
-use('leoluz/nvim-dap-go', require('dap-go').setup())
 use('mfussenegger/nvim-dap')
+-- use('leoluz/nvim-dap-go', require('dap-go').setup())
+use('leoluz/nvim-dap-go')
 use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+use('towolf/vim-helm')
+use {
+  'pwntester/octo.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    -- OR 'ibhagwan/fzf-lua',
+    'nvim-tree/nvim-web-devicons',
+  },
+  config = function ()
+    require"octo".setup()
+  end
+}
 
 use {
   'VonHeikemen/lsp-zero.nvim',
