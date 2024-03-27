@@ -18,17 +18,17 @@ use {
 --     as = 'rose-pine',
 --     config = function()
 --         require("rose-pine").setup()
---         vim.cmd('colorscheme rose-pine')
+--         vim.cmd('colorscheme rose-pine-main')
 --     end
 -- })
 
-use({
-    'nordtheme/vim',
-    as = 'nord',
-    config = function()
-        vim.cmd('colorscheme nord')
-    end
-})
+-- use({
+--     'nordtheme/vim',
+--     as = 'nord',
+--     config = function()
+--         vim.cmd('colorscheme nord')
+--     end
+-- })
 
 -- use ({
 --     "catppuccin/nvim",
@@ -61,13 +61,19 @@ use({
 --         vim.cmd('colorscheme tokyobones')
 --      end
 -- })
+use('itchyny/lightline.vim')
 
--- use({'cocopon/iceberg.vim',
---      as = 'iceberg',
---      config = function()
---         vim.cmd('colorscheme iceberg')
---      end
--- })
+use({'cocopon/iceberg.vim',
+     as = 'iceberg',
+     config = function()
+        vim.cmd('colorscheme iceberg')
+        vim.g.lightline = {
+            colorscheme = 'iceberg'
+        }
+     end
+})
+
+-- use('vim-airline/vim-airline')
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
@@ -83,10 +89,23 @@ use('wlangstroth/vim-racket')
 use('gpanders/nvim-parinfer')
 use('rhysd/git-messenger.vim')
 use('mfussenegger/nvim-dap')
--- use('leoluz/nvim-dap-go', require('dap-go').setup())
-use('leoluz/nvim-dap-go')
-use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+use('leoluz/nvim-dap-go', require('dap-go').setup())
+-- use 'rcarriga/nvim-notify'
+-- use('leoluz/nvim-dap-go')
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 use('towolf/vim-helm')
+
+use {
+  'pwntester/octo.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'nvim-tree/nvim-web-devicons',
+  },
+  config = function ()
+    require"octo".setup()
+  end
+}
 
 use {
   'VonHeikemen/lsp-zero.nvim',

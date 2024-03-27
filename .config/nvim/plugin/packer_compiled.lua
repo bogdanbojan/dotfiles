@@ -129,6 +129,17 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  iceberg = {
+    config = { "\27LJ\2\2j\0\0\2\0\6\0\t6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\3\0005\1\5\0=\1\4\0K\0\1\0\1\0\1\16colorscheme\ficeberg\14lightline\6g\24colorscheme iceberg\bcmd\bvim\0" },
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/iceberg",
+    url = "https://github.com/cocopon/iceberg.vim"
+  },
+  ["lightline.vim"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/lightline.vim",
+    url = "https://github.com/itchyny/lightline.vim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -150,12 +161,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  nord = {
-    config = { "\27LJ\2\0024\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0\21colorscheme nord\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nord",
-    url = "https://github.com/nordtheme/vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -182,6 +187,11 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-nio"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
+  },
   ["nvim-parinfer"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nvim-parinfer",
@@ -191,6 +201,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["octo.nvim"] = {
+    config = { "\27LJ\2\0022\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0" },
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/octo.nvim",
+    url = "https://github.com/pwntester/octo.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -254,10 +275,14 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\2=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: nord
-time([[Config for nord]], true)
-try_loadstring("\27LJ\2\0024\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0\21colorscheme nord\bcmd\bvim\0", "config", "nord")
-time([[Config for nord]], false)
+-- Config for: iceberg
+time([[Config for iceberg]], true)
+try_loadstring("\27LJ\2\2j\0\0\2\0\6\0\t6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\3\0005\1\5\0=\1\4\0K\0\1\0\1\0\1\16colorscheme\ficeberg\14lightline\6g\24colorscheme iceberg\bcmd\bvim\0", "config", "iceberg")
+time([[Config for iceberg]], false)
+-- Config for: octo.nvim
+time([[Config for octo.nvim]], true)
+try_loadstring("\27LJ\2\0022\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
+time([[Config for octo.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
