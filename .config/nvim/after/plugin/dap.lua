@@ -54,10 +54,10 @@ dap.configurations = {
       },
       {
         type = "go",
-        name = "Attach (127.0.0.1:9080)",
+        name = "Attach (127.0.0.1:8080)",
         mode = "remote",
         request = "attach",
-        port = "9080"
+        port = "8080"
       },
     }
 }
