@@ -72,11 +72,11 @@ lsp.on_attach(function(client, bufnr)
 
     -- For helm charts. Poor lsp is confused.
     if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-          vim.diagnostic.disable(bufnr)
-          vim.defer_fn(function()
+        vim.diagnostic.disable(bufnr)
+        vim.defer_fn(function()
             vim.diagnostic.reset(nil, bufnr)
-          end, 1000)
-        end
+        end, 1000)
+    end
 
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -102,7 +102,8 @@ if not configs.golangcilsp then
             cmd = { 'golangci-lint-langserver' },
             root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
             init_options = {
-                command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json",
+                command = { "golangci-lint", "run", "--allow-parallel-runners", "--enable-all", "--disable", "lll",
+                    "--out-format", "json",
                     "--issues-exit-code=1" },
             }
         },
@@ -117,4 +118,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-

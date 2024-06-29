@@ -55,6 +55,14 @@ vim.keymap.set("n", "<leader>``", function()
     vim.cmd("set nolist")
 end)
 
+vim.keymap.set("n", "<leader>dw", function()
+    vim.diagnostic.config({virtual_text=false})
+end)
+
+vim.keymap.set("n", "<leader>ew", function()
+    vim.diagnostic.config({virtual_text=true})
+end)
+
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)

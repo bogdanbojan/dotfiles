@@ -15,15 +15,32 @@ return require('packer').startup(function(use)
 
     use('itchyny/lightline.vim')
 
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         require("rose-pine").setup()
+    --         vim.cmd('colorscheme rose-pine-moon')
+    --         vim.g.lightline = {
+    --             colorscheme = 'rosepine',
+    --             component = {
+    --                 filename = '%F'
+    --             }
+    --         }
+    --     end
+    -- })
 
     use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        'maxmx03/solarized.nvim',
+        as = 'solarized',
         config = function()
-            require("rose-pine").setup()
-            vim.cmd('colorscheme rose-pine-moon')
+            require("solarized").setup({
+                palette = 'solarized'
+            }
+            )
+            vim.cmd('colorscheme solarized')
             vim.g.lightline = {
-                colorscheme = 'rosepine',
+                colorscheme = 'solarized',
                 component = {
                     filename = '%F'
                 }
@@ -61,11 +78,18 @@ return require('packer').startup(function(use)
     --     end
     -- })
 
-    -- use ({
+    -- use({
     --     "catppuccin/nvim",
-    --     as = "catppuccin",
+    --     as = "catppuccin-latte",
     --     config = function()
-    --         vim.cmd('colorscheme catppuccin')
+    --         require("catppuccin-latte").setup()
+    --         vim.cmd('colorscheme catppuccin-latte')
+    --         vim.g.lightline = {
+    --             colorscheme = 'catppuccin_latte',
+    --             component = {
+    --                 filename = '%F'
+    --             }
+    --         }
     --     end
     -- })
 
@@ -107,7 +131,6 @@ return require('packer').startup(function(use)
     -- })
 
     -- use('vim-airline/vim-airline')
-
 
     -- use('fatih/vim-go')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -361,6 +384,28 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },             -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
+    }
+
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {
+                fast_wrap = {
+                    map = '<M-e>',
+                    chars = { '{', '[', '(', '"', "'" },
+                    pattern = [=[[%'%"%>%]%)%}%,]]=],
+                    end_key = '$',
+                    before_key = 'h',
+                    after_key = 'l',
+                    cursor_pos_before = true,
+                    keys = 'qwertyuiopzxcvbnmasdfghjkl',
+                    manual_position = true,
+                    highlight = 'Search',
+                    highlight_grey = 'Comment'
+                },
+            }
+        end
     }
 
     -- install without yarn or npm
