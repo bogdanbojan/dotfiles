@@ -15,14 +15,46 @@ return require('packer').startup(function(use)
 
     use('itchyny/lightline.vim')
 
+    --  use({
+    --      'rose-pine/neovim',
+    --      as = 'rose-pine',
+    --      config = function()
+    --          require("rose-pine").setup()
+    --          vim.cmd('colorscheme rose-pine-moon')
+    --          vim.g.lightline = {
+    --              colorscheme = 'rosepine',
+    --              component = {
+    --                  filename = '%F'
+    --              }
+    --          }
+    --      end
+    --  })
+    --
+
     -- use({
-    --     'rose-pine/neovim',
-    --     as = 'rose-pine',
+    --     'rebelot/kanagawa.nvim',
+    --     as = 'kanagawa',
     --     config = function()
-    --         require("rose-pine").setup()
-    --         vim.cmd('colorscheme rose-pine-moon')
+    --         require("kanagawa").setup()
+    --         vim.cmd('colorscheme kanagawa-wave')
     --         vim.g.lightline = {
-    --             colorscheme = 'rosepine',
+    --             colorscheme = 'kanagawa',
+    --             component = {
+    --                 filename = '%F'
+    --             }
+    --         }
+    --     end
+    -- })
+
+
+    -- use({
+    --     'ellisonleao/gruvbox.nvim',
+    --     as = 'gruvbox',
+    --     config = function()
+    --         require("gruvbox").setup()
+    --         vim.cmd('colorscheme gruvbox')
+    --         vim.g.lightline = {
+    --             colorscheme = 'gruvbox',
     --             component = {
     --                 filename = '%F'
     --             }
@@ -31,14 +63,12 @@ return require('packer').startup(function(use)
     -- })
 
     use({
-        'maxmx03/solarized.nvim',
+        'ishan9299/nvim-solarized-lua',
         as = 'solarized',
         config = function()
-            require("solarized").setup({
-                palette = 'solarized'
-            }
-            )
+            -- require("solarized").setup()
             vim.cmd('colorscheme solarized')
+            vim.cmd('set background=dark')
             vim.g.lightline = {
                 colorscheme = 'solarized',
                 component = {
@@ -48,8 +78,8 @@ return require('packer').startup(function(use)
         end
     })
 
-    --   use({
-    --       'sainnhe/everforest',
+    -- --   use({
+    -- --       'sainnhe/everforest',
     --       as = 'everforest',
     --       config = function()
     --           vim.g.everforest_background = 'soft'
@@ -78,20 +108,22 @@ return require('packer').startup(function(use)
     --     end
     -- })
 
-    -- use({
-    --     "catppuccin/nvim",
-    --     as = "catppuccin-latte",
-    --     config = function()
-    --         require("catppuccin-latte").setup()
-    --         vim.cmd('colorscheme catppuccin-latte')
-    --         vim.g.lightline = {
-    --             colorscheme = 'catppuccin_latte',
-    --             component = {
-    --                 filename = '%F'
+    --     use({
+    --         "catppuccin/nvim",
+    --         as = "catppuccin",
+    --         config = function()
+    --             require("catppuccin").setup({
+    --                 flavour = "mocha",
+    --             })
+    --             -- vim.cmd('colorscheme catppuccin-mocha')
+    --             vim.g.lightline = {
+    --                 colorscheme = 'catppuccin',
+    --                 component = {
+    --                     filename = '%F'
+    --                 }
     --             }
-    --         }
-    --     end
-    -- })
+    --         end
+    --     })
 
     -- use({
     --     'AlexvZyl/nordic.nvim',

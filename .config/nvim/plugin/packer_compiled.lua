@@ -231,10 +231,10 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   solarized = {
-    config = { "\27LJ\2\2Ô\1\0\0\3\0\f\0\0176\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\0016\0\4\0009\0\5\0'\1\6\0B\0\2\0016\0\4\0009\0\a\0005\1\t\0005\2\n\0=\2\v\1=\1\b\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\14solarized\14lightline\6g\26colorscheme solarized\bcmd\bvim\1\0\1\fpalette\14solarized\nsetup\14solarized\frequire\0" },
+    config = { "\27LJ\2\2³\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\4\0005\1\6\0005\2\a\0=\2\b\1=\1\5\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\14solarized\14lightline\6g\24set background=dark\26colorscheme solarized\bcmd\bvim\0" },
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/solarized",
-    url = "https://github.com/maxmx03/solarized.nvim"
+    url = "https://github.com/ishan9299/nvim-solarized-lua"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -289,7 +289,7 @@ try_loadstring("\27LJ\2\2õ<\0\0\5\0Õ\1\0—\0026\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1
 time([[Config for octo.nvim]], false)
 -- Config for: solarized
 time([[Config for solarized]], true)
-try_loadstring("\27LJ\2\2Ô\1\0\0\3\0\f\0\0176\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\0016\0\4\0009\0\5\0'\1\6\0B\0\2\0016\0\4\0009\0\a\0005\1\t\0005\2\n\0=\2\v\1=\1\b\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\14solarized\14lightline\6g\26colorscheme solarized\bcmd\bvim\1\0\1\fpalette\14solarized\nsetup\14solarized\frequire\0", "config", "solarized")
+try_loadstring("\27LJ\2\2³\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\4\0005\1\6\0005\2\a\0=\2\b\1=\1\5\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\14solarized\14lightline\6g\24set background=dark\26colorscheme solarized\bcmd\bvim\0", "config", "solarized")
 time([[Config for solarized]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
