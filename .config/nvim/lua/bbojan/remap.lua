@@ -40,13 +40,14 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v")
 vim.keymap.set("n", "<leader>sh", "<C-w>s")
 vim.keymap.set("n", "<leader>se", "<C-w>=")
 vim.keymap.set("n", "<leader>sx", ":close<CR>")
+vim.keymap.set("n", "<leader>swd", ":tcd %:p:h<CR>")
 
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>")
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>")
 
-vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>")
 
 vim.keymap.set("n", "<leader>`", function()
     vim.cmd("set listchars+=tab:!·,space:·,trail:· | set list")

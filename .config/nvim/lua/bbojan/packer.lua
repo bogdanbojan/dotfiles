@@ -15,21 +15,20 @@ return require('packer').startup(function(use)
 
     use('itchyny/lightline.vim')
 
-    --  use({
-    --      'rose-pine/neovim',
-    --      as = 'rose-pine',
-    --      config = function()
-    --          require("rose-pine").setup()
-    --          vim.cmd('colorscheme rose-pine-moon')
-    --          vim.g.lightline = {
-    --              colorscheme = 'rosepine',
-    --              component = {
-    --                  filename = '%F'
-    --              }
-    --          }
-    --      end
-    --  })
-    --
+    -- use({
+    --     'rose-pine/neovim',
+    --     as = 'rose-pine',
+    --     config = function()
+    --         require("rose-pine").setup()
+    --         vim.cmd('colorscheme rose-pine-moon')
+    --         vim.g.lightline = {
+    --             colorscheme = 'rosepine',
+    --             component = {
+    --                 filename = '%F'
+    --             }
+    --         }
+    --     end
+    -- })
 
     -- use({
     --     'rebelot/kanagawa.nvim',
@@ -77,7 +76,7 @@ return require('packer').startup(function(use)
             }
         end
     })
-
+    --
     -- --   use({
     -- --       'sainnhe/everforest',
     --       as = 'everforest',
