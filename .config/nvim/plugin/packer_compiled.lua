@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-nvim-lua"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
@@ -103,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   cmp_luasnip = {
     loaded = true,
@@ -123,6 +133,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/git-messenger.vim",
     url = "https://github.com/rhysd/git-messenger.vim"
+  },
+  ["gruvbox-material"] = {
+    config = { "\27LJ\2\2ù\1\0\0\3\0\b\0\v6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\3\0005\1\5\0005\2\6\0=\2\a\1=\1\4\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\21gruvbox_material\14lightline\6g!colorscheme gruvbox-material\bcmd\bvim\0" },
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   harpoon = {
     loaded = true,
@@ -230,16 +246,16 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  solarized = {
-    config = { "\27LJ\2\2≥\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\4\0005\1\6\0005\2\a\0=\2\b\1=\1\5\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\14solarized\14lightline\6g\24set background=dark\26colorscheme solarized\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/solarized",
-    url = "https://github.com/ishan9299/nvim-solarized-lua"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    config = { "\27LJ\2\2C\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0" },
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   undotree = {
     loaded = true,
@@ -275,6 +291,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
@@ -287,10 +308,14 @@ time([[Setup for markdown-preview.nvim]], false)
 time([[Config for octo.nvim]], true)
 try_loadstring("\27LJ\2\2ı<\0\0\5\0’\1\0ó\0026\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0005\2\4\0=\2\5\0014\2\0\0=\2\6\0015\2\a\0005\3\t\0005\4\b\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0=\4\16\3=\3\17\2=\2\18\0014\2\0\0=\2\19\0015\2\20\0=\2\21\0015\2\23\0005\3\22\0=\3\24\2=\2\25\0015\2\27\0005\3\26\0=\3\24\2=\2\28\0015\2\29\0=\2\30\0015\2\31\0=\2 \0015\2P\0005\3\"\0005\4!\0=\4#\0035\4$\0=\4%\0035\4&\0=\4'\0035\4(\0=\4)\0035\4*\0=\4\n\0035\4+\0=\4\f\0035\4,\0=\4-\0035\4.\0=\4/\0035\0040\0=\0041\0035\0042\0=\0043\0035\0044\0=\0045\0035\0046\0=\0047\0035\0048\0=\0049\0035\4:\0=\4;\0035\4<\0=\4=\0035\4>\0=\4?\0035\4@\0=\4A\0035\4B\0=\4C\0035\4D\0=\4E\0035\4F\0=\4G\0035\4H\0=\4I\0035\4J\0=\4K\0035\4L\0=\4M\0035\4N\0=\4O\3=\3Q\0025\3S\0005\4R\0=\4\14\0035\4T\0=\4\16\0035\4U\0=\4V\0035\4W\0=\4X\0035\4Y\0=\4Z\0035\4[\0=\4\\\0035\4]\0=\4^\0035\4_\0=\4`\0035\4a\0=\4b\0035\4c\0=\4#\0035\4d\0=\4%\0035\4e\0=\4'\0035\4f\0=\4)\0035\4g\0=\4\n\0035\4h\0=\4\f\0035\4i\0=\4j\0035\4k\0=\4-\0035\4l\0=\4/\0035\4m\0=\0041\0035\4n\0=\0043\0035\4o\0=\0045\0035\4p\0=\0047\0035\4q\0=\0049\0035\4r\0=\4;\0035\4s\0=\4=\0035\4t\0=\4?\0035\4u\0=\4A\0035\4v\0=\4C\0035\4w\0=\4E\0035\4x\0=\4G\0035\4y\0=\4I\0035\4z\0=\4K\0035\4{\0=\4M\0035\4|\0=\4O\0035\4}\0=\4~\0035\4\127\0=\4Ä\3=\3Å\0025\3É\0005\4Ç\0=\0047\0035\4Ñ\0=\0049\0035\4Ö\0=\4Ü\0035\4á\0=\4;\0035\4à\0=\4=\0035\4â\0=\4?\0035\4ä\0=\4ã\0035\4å\0=\4ç\0035\4é\0=\4è\0035\4ê\0=\4ë\0035\4í\0=\4ì\0035\4î\0=\4A\0035\4ï\0=\4C\0035\4ñ\0=\4E\0035\4ó\0=\4G\0035\4ò\0=\4I\0035\4ô\0=\4K\0035\4ö\0=\4M\0035\4õ\0=\4O\3=\3ú\0025\3û\0005\4ù\0=\4ü\0035\4†\0=\4°\0035\4¢\0=\4£\0035\4§\0=\4ì\3=\3•\0025\3ß\0005\4¶\0=\4®\0035\4©\0=\4™\0035\4´\0=\4¨\0035\4≠\0=\4Æ\0035\4Ø\0=\4∞\0035\4±\0=\4≤\0035\4≥\0=\4¥\0035\4µ\0=\4∂\0035\4∑\0=\4ã\0035\4∏\0=\4ç\0035\4π\0=\4è\0035\4∫\0=\4ë\0035\4ª\0=\4ì\0035\4º\0=\4Ω\0035\4æ\0=\4j\3=\3ø\0025\3¡\0005\4¿\0=\4®\0035\4¬\0=\4™\0035\4√\0=\4ƒ\0035\4≈\0=\4∆\0035\4«\0=\4»\0035\4…\0=\4 \0035\4À\0=\4∞\0035\4Ã\0=\4≤\0035\4Õ\0=\4ã\0035\4Œ\0=\4ç\0035\4œ\0=\4è\0035\4–\0=\4ë\0035\4—\0=\4ì\0035\4“\0=\4Ω\3=\3\30\2=\2\17\0015\2”\0=\2‘\1B\0\2\1K\0\1\0\27suppress_missing_scope\1\0\1\16projects_v2\2\1\0\2\tdesc\31toggle viewer viewed state\blhs\20<leader><space>\1\0\2\tdesc\21close review tab\blhs\n<C-c>\1\0\2\tdesc\30move to last changed file\blhs\a]Q\1\0\2\tdesc\31move to first changed file\blhs\a[Q\1\0\2\tdesc\30move to next changed file\blhs\a[q\1\0\2\tdesc\"move to previous changed file\blhs\a]q\1\0\2\tdesc\"hide/show changed files panel\blhs\14<leader>b\1\0\2\tdesc%move focus to changed file panel\blhs\14<leader>e\18refresh_files\1\0\2\tdesc refresh changed files panel\blhs\6R\17select_entry\1\0\2\tdesc%show selected changed file diffs\blhs\t<cr>\15prev_entry\1\0\2\tdesc\"move to previous changed file\blhs\6k\15next_entry\1\0\2\tdesc\30move to next changed file\blhs\6j\1\0\2\tdesc\19discard review\blhs\15<leader>vd\1\0\0\1\0\2\tdesc\18submit review\blhs\15<leader>vs\16review_diff\1\0\2\tdesc\15go to file\blhs\agf\18toggle_viewed\1\0\2\tdesc\31toggle viewer viewed state\blhs\20<leader><space>\1\0\2\tdesc\21close review tab\blhs\n<C-c>\1\0\2\tdesc\30move to last changed file\blhs\a]Q\1\0\2\tdesc\31move to first changed file\blhs\a[Q\1\0\2\tdesc\30move to next changed file\blhs\a[q\1\0\2\tdesc\"move to previous changed file\blhs\a]q\16prev_thread\1\0\2\tdesc\28move to previous thread\blhs\a[t\16next_thread\1\0\2\tdesc\24move to next thread\blhs\a]t\17toggle_files\1\0\2\tdesc\"hide/show changed files panel\blhs\14<leader>b\16focus_files\1\0\2\tdesc%move focus to changed file panel\blhs\14<leader>e\26add_review_suggestion\1\0\2\tdesc add a new review suggestion\blhs\14<space>sa\23add_review_comment\1\0\2\tdesc\29add a new review comment\blhs\14<space>ca\19discard_review\1\0\2\tdesc\19discard review\blhs\15<leader>vd\18submit_review\1\0\0\1\0\2\tdesc\18submit review\blhs\15<leader>vs\15submit_win\1\0\2\tdesc\21close review tab\blhs\n<C-c>\20request_changes\1\0\2\tdesc\27request changes review\blhs\n<C-r>\19comment_review\1\0\2\tdesc\19comment review\blhs\n<C-m>\19approve_review\1\0\0\1\0\2\tdesc\19approve review\blhs\n<C-a>\18review_thread\1\0\2\tdesc\29add/remove üòï reaction\blhs\14<space>rc\1\0\2\tdesc\29add/remove üòÑ reaction\blhs\14<space>rl\1\0\2\tdesc\29add/remove üöÄ reaction\blhs\14<space>rr\1\0\2\tdesc\29add/remove üëé reaction\blhs\14<space>r-\1\0\2\tdesc\29add/remove üëç reaction\blhs\14<space>r+\1\0\2\tdesc\29add/remove üëÄ reaction\blhs\14<space>re\1\0\2\tdesc\31add/remove ‚ù§Ô∏è reaction\blhs\14<space>rh\1\0\2\tdesc\29add/remove üéâ reaction\blhs\14<space>rp\21close_review_tab\1\0\2\tdesc\21close review tab\blhs\n<C-c>\22select_last_entry\1\0\2\tdesc\30move to last changed file\blhs\a]Q\23select_first_entry\1\0\2\tdesc\31move to first changed file\blhs\a[Q\22select_prev_entry\1\0\2\tdesc\30move to next changed file\blhs\a[q\22select_next_entry\1\0\2\tdesc\"move to previous changed file\blhs\a]q\1\0\2\tdesc\27go to previous comment\blhs\a[c\1\0\2\tdesc\23go to next comment\blhs\a]c\1\0\2\tdesc\19delete comment\blhs\14<space>cd\19add_suggestion\1\0\2\tdesc\19add suggestion\blhs\14<space>sa\1\0\2\tdesc\16add comment\blhs\14<space>ca\1\0\0\1\0\2\tdesc#navigate to a local repo issue\blhs\14<space>gi\17pull_request\18review_resume\1\0\2\tdesc/resume a pending review for the current PR\blhs\14<space>vr\17review_start\1\0\2\tdesc&start a review for the current PR\blhs\14<space>vs\1\0\2\tdesc\29add/remove üòï reaction\blhs\14<space>rc\1\0\2\tdesc\29add/remove üòÑ reaction\blhs\14<space>rl\1\0\2\tdesc\29add/remove üöÄ reaction\blhs\14<space>rr\1\0\2\tdesc\29add/remove üëé reaction\blhs\14<space>r-\1\0\2\tdesc\29add/remove üëç reaction\blhs\14<space>r+\1\0\2\tdesc\29add/remove üëÄ reaction\blhs\14<space>re\1\0\2\tdesc\31add/remove ‚ù§Ô∏è reaction\blhs\14<space>rh\1\0\2\tdesc\29add/remove üéâ reaction\blhs\14<space>rp\1\0\2\tdesc\27go to previous comment\blhs\a[c\1\0\2\tdesc\23go to next comment\blhs\a]c\1\0\2\tdesc\19delete comment\blhs\14<space>cd\1\0\2\tdesc\16add comment\blhs\14<space>ca\1\0\2\tdesc#navigate to a local repo issue\blhs\14<space>gi\1\0\2\tdesc\17remove label\blhs\14<space>ld\1\0\2\tdesc\14add label\blhs\14<space>la\1\0\2\tdesc\17create label\blhs\14<space>lc\1\0\2\tdesc\20remove assignee\blhs\14<space>ad\1\0\2\tdesc\17add assignee\blhs\14<space>aa\14goto_file\1\0\2\tdesc\15go to file\blhs\agf\1\0\2\tdesc!copy url to system clipboard\blhs\n<C-y>\1\0\2\tdesc\23open PR in browser\blhs\n<C-b>\1\0\2\tdesc\14reload PR\blhs\n<C-r>\1\0\2\tdesc\"list open issues on same repo\blhs\14<space>il\1\0\2\tdesc\14reopen PR\blhs\14<space>io\1\0\2\tdesc\rclose PR\blhs\14<space>ic\20remove_reviewer\1\0\2\tdesc\28remove reviewer request\blhs\14<space>vd\17add_reviewer\1\0\2\tdesc\17add reviewer\blhs\14<space>va\17show_pr_diff\1\0\2\tdesc\17show PR diff\blhs\14<space>pd\23list_changed_files\1\0\2\tdesc\26list PR changed files\blhs\14<space>pf\17list_commits\1\0\2\tdesc\20list PR commits\blhs\14<space>pc\24rebase_and_merge_pr\1\0\2\tdesc\24rebase and merge PR\blhs\15<space>prm\24squash_and_merge_pr\1\0\2\tdesc\24squash and merge PR\blhs\15<space>psm\1\0\2\tdesc\20merge commit PR\blhs\14<space>pm\1\0\0\1\0\2\tdesc\16checkout PR\blhs\14<space>po\nissue\1\0\0\19react_confused\1\0\2\tdesc\29add/remove üòï reaction\blhs\14<space>rc\16react_laugh\1\0\2\tdesc\29add/remove üòÑ reaction\blhs\14<space>rl\17react_rocket\1\0\2\tdesc\29add/remove üöÄ reaction\blhs\14<space>rr\22react_thumbs_down\1\0\2\tdesc\29add/remove üëé reaction\blhs\14<space>r-\20react_thumbs_up\1\0\2\tdesc\29add/remove üëç reaction\blhs\14<space>r+\15react_eyes\1\0\2\tdesc\29add/remove üëÄ reaction\blhs\14<space>re\16react_heart\1\0\2\tdesc\31add/remove ‚ù§Ô∏è reaction\blhs\14<space>rh\17react_hooray\1\0\2\tdesc\29add/remove üéâ reaction\blhs\14<space>rp\17prev_comment\1\0\2\tdesc\27go to previous comment\blhs\a[c\17next_comment\1\0\2\tdesc\23go to next comment\blhs\a]c\19delete_comment\1\0\2\tdesc\19delete comment\blhs\14<space>cd\16add_comment\1\0\2\tdesc\16add comment\blhs\14<space>ca\15goto_issue\1\0\2\tdesc#navigate to a local repo issue\blhs\14<space>gi\17remove_label\1\0\2\tdesc\17remove label\blhs\14<space>ld\14add_label\1\0\2\tdesc\14add label\blhs\14<space>la\17create_label\1\0\2\tdesc\17create label\blhs\14<space>lc\20remove_assignee\1\0\2\tdesc\20remove assignee\blhs\14<space>ad\17add_assignee\1\0\2\tdesc\17add assignee\blhs\14<space>aa\1\0\2\tdesc!copy url to system clipboard\blhs\n<C-y>\1\0\2\tdesc\26open issue in browser\blhs\n<C-b>\vreload\1\0\2\tdesc\17reload issue\blhs\n<C-r>\16list_issues\1\0\2\tdesc\"list open issues on same repo\blhs\14<space>il\17reopen_issue\1\0\2\tdesc\17reopen issue\blhs\14<space>io\16close_issue\1\0\0\1\0\2\tdesc\16close issue\blhs\14<space>ic\vcolors\1\0\f\tblue\f#58A6FF\rdark_red\f#da3633\tgrey\f#2A354C\vyellow\f#d3c846\ngreen\f#acf2bd\16dark_yellow\f#735c0f\nblack\f#000000\14dark_blue\f#0366d6\bred\f#fdb8c0\15dark_green\f#238636\vpurple\f#6f42c1\nwhite\f#ffffff\15file_panel\1\0\2\14use_icons\2\tsize\3\n\18pull_requests\1\0\1#always_select_remote_on_create\1\1\0\2\14direction\tDESC\nfield\15CREATED_AT\vissues\rorder_by\1\0\0\1\0\2\14direction\tDESC\nfield\15CREATED_AT\aui\1\0\2\19use_signcolumn\1\19use_signstatus\2\vgh_env\18picker_config\rmappings\rmerge_pr\1\0\2\tdesc\23merge pull request\blhs\n<C-r>\16checkout_pr\1\0\2\tdesc\26checkout pull request\blhs\n<C-o>\rcopy_url\1\0\2\tdesc!copy url to system clipboard\blhs\n<C-y>\20open_in_browser\1\0\0\1\0\2\tdesc\26open issue in browser\blhs\n<C-b>\1\0\1\15use_emojis\1\16ssh_aliases\19default_remote\1\3\0\0\rupstream\vorigin\1\0\19\19enable_builtin\1\17comment_icon\b‚ñé\vgh_cmd\agh\20timeline_marker\tÔë† \ftimeout\3à'\26left_bubble_delimiter\bÓÇ∂\30reaction_viewer_hint_icon\tÔëÑ \26snippet_context_lines\3\4\18outdated_icon\nÛ∞Öí \18resolved_icon\tÔÄå \14user_icon\tÔäΩ \20github_hostname\5\25default_merge_method\vcommit\29mappings_disable_default\1\27right_bubble_delimiter\bÓÇ¥\vpicker\14telescope\20timeline_indent\0062\27default_to_projects_v2\1\17use_local_fs\1\nsetup\tocto\frequire\0", "config", "octo.nvim")
 time([[Config for octo.nvim]], false)
--- Config for: solarized
-time([[Config for solarized]], true)
-try_loadstring("\27LJ\2\2≥\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\4\0005\1\6\0005\2\a\0=\2\b\1=\1\5\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\14solarized\14lightline\6g\24set background=dark\26colorscheme solarized\bcmd\bvim\0", "config", "solarized")
-time([[Config for solarized]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\2C\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: gruvbox-material
+time([[Config for gruvbox-material]], true)
+try_loadstring("\27LJ\2\2ù\1\0\0\3\0\b\0\v6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\3\0005\1\5\0005\2\6\0=\2\a\1=\1\4\0K\0\1\0\14component\1\0\1\rfilename\a%F\1\0\1\16colorscheme\21gruvbox_material\14lightline\6g!colorscheme gruvbox-material\bcmd\bvim\0", "config", "gruvbox-material")
+time([[Config for gruvbox-material]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
