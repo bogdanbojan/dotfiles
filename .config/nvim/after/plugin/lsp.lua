@@ -14,18 +14,22 @@ lsp.ensure_installed({
     'vimls',
     'terraformls',
     'html',
-    'bashls',
     'yamlls',
     'jedi_language_server',
+    'taplo',
+    'rust_analyzer',
+    'bashls',
+    'jsonls',
+    'ltex',
     'bufls',
 })
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = '*.go',
-    callback = function()
-        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
-    end
-})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--     pattern = '*.go',
+--     callback = function()
+--         vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+--     end
+-- })
 
 
 lsp.nvim_workspace()
@@ -70,13 +74,14 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
+    -- TODO: Activate it again later.
     -- For helm charts. Poor lsp is confused.
-    if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-        vim.diagnostic.disable(bufnr)
-        vim.defer_fn(function()
-            vim.diagnostic.reset(nil, bufnr)
-        end, 1000)
-    end
+    -- if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+    --     vim.diagnostic.enable(false, bufnr)
+    --     vim.defer_fn(function()
+    --         vim.diagnostic.reset(nil, bufnr)
+    --     end, 1000)
+    -- end
 
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -84,8 +89,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "<leader>vre", function() vim.diagnostic.setqflist() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
@@ -93,25 +98,25 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- golangci-lint-langserver
-local lspconfig = require 'lspconfig'
-local configs = require 'lspconfig/configs'
-
-if not configs.golangcilsp then
-    configs.golangcilsp = {
-        default_config = {
-            cmd = { 'golangci-lint-langserver' },
-            root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
-            init_options = {
-                command = { "golangci-lint", "run", "--allow-parallel-runners", "--enable-all", "--disable", "lll",
-                    "--out-format", "json",
-                    "--issues-exit-code=1" },
-            }
-        },
-    }
-end
-lspconfig.golangci_lint_ls.setup {
-    filetypes = { 'go', 'gomod' }
-}
+-- local lspconfig = require 'lspconfig'
+-- local configs = require 'lspconfig/configs'
+-- 
+-- if not configs.golangcilsp then
+--     configs.golangcilsp = {
+--         default_config = {
+--             cmd = { 'golangci-lint-langserver' },
+--             root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+--             init_options = {
+--                 command = { "golangci-lint", "run", "--allow-parallel-runners", "--enable-all", "--disable", "lll",
+--                     "--out-format", "json",
+--                     "--issues-exit-code=1" },
+--             }
+--         },
+--     }
+-- end
+-- lspconfig.golangci_lint_ls.setup {
+--     filetypes = { 'go', 'gomod' }
+-- }
 
 lsp.setup()
 

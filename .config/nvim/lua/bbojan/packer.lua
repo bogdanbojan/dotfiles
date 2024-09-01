@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
     --     as = 'gruvbox',
     --     config = function()
     --         require("gruvbox").setup()
-    --         vim.cmd('colorscheme gruvbox')
+    --         vim.cnightfoxmd('colorscheme gruvbox')
     --         vim.g.lightline = {
     --             colorscheme = 'gruvbox',
     --             component = {
@@ -61,21 +61,23 @@ return require('packer').startup(function(use)
     --     end
     -- })
 
-    use({
-        'ishan9299/nvim-solarized-lua',
-        as = 'solarized',
-        config = function()
-            -- require("solarized").setup()
-            vim.cmd('colorscheme solarized')
-            vim.cmd('set background=dark')
-            vim.g.lightline = {
-                colorscheme = 'solarized',
-                component = {
-                    filename = '%F'
-                }
-            }
-        end
-    })
+    -- use({
+    --     'ishan9299/nvim-solarized-lua',
+    --     as = 'solarized',
+    --     config = function()
+    --         -- require("solarized").setup()
+    --         vim.cmd('colorscheme solarized')
+    --         vim.cmd('set background=dark')
+    --         vim.g.lightline = {
+    --             colorscheme = 'solarized',
+    --             -- background = 'light',
+    --             component = {
+    --                 filename = '%F'
+    --             }
+    --         }
+    --     end
+    -- })
+
     --
     -- --   use({
     -- --       'sainnhe/everforest',
@@ -130,15 +132,40 @@ return require('packer').startup(function(use)
     --     config = function()
     --         vim.cmd('colorscheme nordic')
     --     end
-    -- })
+    -- })https://user-images.githubusercontent.com/2746374/160268126-cd417690-3660-4a04-9040-183c35f127f7.png
 
     -- use({
     --     'EdenEast/nightfox.nvim',
     --     as = 'nightfox',
     --     config = function()
-    --         vim.cmd('colorscheme nightfox')
+    --         vim.cmd('colorscheme terafox')
+    --         local palette = require('nightfox.util.lightline').generate('terafox')
+    --         vim.g['lightline#colorscheme#terafox#palette'] = vim.fn['lightline#colorscheme#fill'](palette)
+    --         vim.g.lightline = {
+    --             colorscheme = 'terafox',
+    --             component = {
+    --                 filename = '%F'
+    --             }
+    --         }
     --     end
     -- })
+
+
+    -- The lua port does not have a proper lightline configuration.
+    -- use('shinchu/lightline-gruvbox.vim')
+    use({
+        'sainnhe/gruvbox-material',
+        as = 'gruvbox-material',
+        config = function()
+            vim.cmd('colorscheme gruvbox-material')
+            vim.g.lightline = {
+                colorscheme = 'gruvbox_material',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end
+    })
 
     -- use({'mcchrish/zenbones.nvim',
     --      as = 'zenbones',
@@ -148,9 +175,10 @@ return require('packer').startup(function(use)
     --      end
     -- })
 
-    -- use({'cocopon/iceberg.vim',
-    --      as = 'iceberg',
-    --      config = function()
+    -- use({
+    --     'cocopon/iceberg.vim',
+    --     as = 'iceberg',
+    --     config = function()
     --         vim.cmd('colorscheme iceberg')
     --         vim.g.lightline = {
     --             colorscheme = 'iceberg',
@@ -158,7 +186,7 @@ return require('packer').startup(function(use)
     --                 filename = '%F'
     --             }
     --         }
-    --      end
+    --     end
     -- })
 
     -- use('vim-airline/vim-airline')
@@ -183,6 +211,9 @@ return require('packer').startup(function(use)
     -- use('leoluz/nvim-dap-go')
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
     use('towolf/vim-helm')
+
+    -- Conflicts with the rust-analyzer.
+    -- use('mrcjkb/rustaceanvim')
 
     use {
         'pwntester/octo.nvim',
@@ -411,6 +442,10 @@ return require('packer').startup(function(use)
             { 'saadparwaiz1/cmp_luasnip' }, -- Optional
             { 'hrsh7th/cmp-nvim-lua' },     -- Optional
 
+            { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+            { 'hrsh7th/cmp-vsnip' },
+            { 'hrsh7th/vim-vsnip' },
+
             -- Snippets
             { 'L3MON4D3/LuaSnip' },             -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
@@ -438,6 +473,18 @@ return require('packer').startup(function(use)
             }
         end
     }
+
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
 
     -- install without yarn or npm
     -- use({
