@@ -1,6 +1,6 @@
---  This file can be loaded by calling `lua require('plugins')` from your init.vim
+--  This file can be loaded by calling `lua require('plugins')` from your init.vim.
 
--- Only required if you have packer configured as `opt`
+-- Only required if you have packer configured as `opt`.
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
     })
     ---------------------------------------------------------------------------
 
-    -- use('fatih/vim-go')
+    use('fatih/vim-go')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')
@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
     use('rhysd/git-messenger.vim')
     use('towolf/vim-helm')
 
-    -- TODO: Re-enable it after you fix the problem.
+    -- TODO: Fix the 'cannot request project v2, missing scope 'read:project'.
     -- use {
     --     'pwntester/octo.nvim',
     --     requires = {
@@ -76,6 +76,16 @@ return require('packer').startup(function(use)
     --         'nvim-telescope/telescope.nvim',
     --         'nvim-tree/nvim-web-devicons',
     --     },
+    --     config = function()
+    --         require("octo").setup({
+    --             {
+    --                 suppress_missing_scope = {
+    --                     projects_v2 = true,
+    --                 },
+    --                 default_to_projects_v2 = true,
+    --             }
+    --         })
+    --     end
     -- }
 
     use {
@@ -127,6 +137,7 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- TODO: Configure this more in the future.
     use({
         "folke/trouble.nvim",
         config = function()

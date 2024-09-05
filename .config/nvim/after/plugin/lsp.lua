@@ -3,7 +3,6 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
     'golangci_lint_ls',
     'gopls',
     'docker_compose_language_service',
@@ -24,12 +23,13 @@ lsp.ensure_installed({
     'bufls',
 })
 
--- vim.api.nvim_create_autocmd('BufWritePre', {
---     pattern = '*.go',
---     callback = function()
---         vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
---     end
--- })
+-- Import libraries on write for Go.
+vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = '*.go',
+    callback = function()
+        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    end
+})
 
 
 lsp.nvim_workspace()
@@ -74,14 +74,10 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    -- TODO: Activate it again later.
-    -- For helm charts. Poor lsp is confused.
-    -- if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-    --     vim.diagnostic.enable(false, bufnr)
-    --     vim.defer_fn(function()
-    --         vim.diagnostic.reset(nil, bufnr)
-    --     end, 1000)
-    -- end
+    -- Helm charts get confused and lots of YAML errors appear without this.
+    if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+        vim.diagnostic.enable(false)
+    end
 
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -100,7 +96,7 @@ end)
 -- golangci-lint-langserver
 -- local lspconfig = require 'lspconfig'
 -- local configs = require 'lspconfig/configs'
--- 
+--
 -- if not configs.golangcilsp then
 --     configs.golangcilsp = {
 --         default_config = {
