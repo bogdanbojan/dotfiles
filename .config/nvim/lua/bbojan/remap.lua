@@ -1,3 +1,4 @@
+-- TODO: Implement a sorting shortcut for visual mode selection.
 local options = { noremap = true }
 
 vim.g.mapleader = " "
