@@ -94,6 +94,8 @@ function Switch_theme(theme_name)
         theme.nvim()
         -- Lightline was not being updated.
         vim.cmd('call lightline#enable()')
+        -- Background of the hovers was the same with the highlight in visual mode.
+        vim.cmd('highlight! link NormalFloat Normal')
         switch_kitty_theme(theme.kitty)
     else
     end
