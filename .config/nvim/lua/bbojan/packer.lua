@@ -60,13 +60,13 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use('christoomey/vim-tmux-navigator')
     use('szw/vim-maximizer')
-    use('tpope/vim-surround')
     use('vim-scripts/ReplaceWithRegister')
     use('Olical/conjure')
     use('wlangstroth/vim-racket')
     use('gpanders/nvim-parinfer')
     use('rhysd/git-messenger.vim')
     use('towolf/vim-helm')
+    use('machakann/vim-sandwich')
 
     use {
         'pwntester/octo.nvim',

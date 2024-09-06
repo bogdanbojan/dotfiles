@@ -280,10 +280,10 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-racket",
     url = "https://github.com/wlangstroth/vim-racket"
   },
-  ["vim-surround"] = {
+  ["vim-sandwich"] = {
     loaded = true,
-    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-sandwich",
+    url = "https://github.com/machakann/vim-sandwich"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,
