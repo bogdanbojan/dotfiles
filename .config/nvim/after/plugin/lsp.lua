@@ -23,6 +23,41 @@ lsp.ensure_installed({
     'bufls',
 })
 
+lsp.configure('rust_analyzer', {
+    settings = {
+        ['rust-analyzer'] = {
+            cargo = {
+                allFeatures = true,
+                loadOutDirsFromCheck = true
+            },
+            checkOnSave = {
+                command = "check",
+                extraArgs = { "--target-dir", "/tmp/rust-analyzer-check" }
+            },
+            diagnostics = {
+                enable = true,
+                experimental = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+
+            -- Automatic imports.
+            assist = {
+                importGranularity = "module",
+                importPrefix = "by_self",
+            },
+            completion = {
+                autoimport = {
+                    enable = true
+                }
+            },
+        }
+    }
+})
+
 -- Import libraries on write for Go.
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = '*.go',
