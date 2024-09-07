@@ -15,10 +15,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -43,6 +43,12 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>")
 -- Set working dir in current window.
 vim.keymap.set("n", "<leader>swd", ":tcd %:p:h<CR>")
 
+-- Because screen sharing and pointing to relative numbers is annoying.
+-- Set relative number
+vim.api.nvim_set_keymap('n', '<leader>rn', ':set relativenumber<CR>', { noremap = true, silent = true })
+-- Set absolute number
+vim.api.nvim_set_keymap('n', '<leader>an', ':set norelativenumber<CR>', { noremap = true, silent = true })
+
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>")
@@ -58,11 +64,11 @@ vim.keymap.set("n", "<leader>``", function()
 end)
 
 vim.keymap.set("n", "<leader>dw", function()
-    vim.diagnostic.config({virtual_text=false})
+    vim.diagnostic.config({ virtual_text = false })
 end)
 
 vim.keymap.set("n", "<leader>ew", function()
-    vim.diagnostic.config({virtual_text=true})
+    vim.diagnostic.config({ virtual_text = true })
 end)
 
 vim.keymap.set("n", "<leader><leader>", function()
