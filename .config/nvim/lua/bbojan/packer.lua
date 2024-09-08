@@ -66,7 +66,29 @@ return require('packer').startup(function(use)
     use('gpanders/nvim-parinfer')
     use('rhysd/git-messenger.vim')
     use('towolf/vim-helm')
-    use('machakann/vim-sandwich')
+    -- TODO: Move the configuration in after/plugin.
+    use {
+        'machakann/vim-sandwich',
+        config = function()
+            -- Disable default keymappings because they conflict with leap.
+            vim.g.sandwich_no_default_key_mappings = 1
+            vim.g.operator_sandwich_no_default_key_mappings = 1
+
+            vim.api.nvim_set_keymap('n', '<leader>sa', '<Plug>(sandwich-add)', { noremap = true })
+            vim.api.nvim_set_keymap('x', '<leader>sa', '<Plug>(sandwich-add)', { noremap = true })
+            vim.api.nvim_set_keymap('n', '<leader>sd', '<Plug>(sandwich-delete)', { noremap = true })
+            vim.api.nvim_set_keymap('x', '<leader>sd', '<Plug>(sandwich-delete)', { noremap = true })
+            vim.api.nvim_set_keymap('n', '<leader>sr', '<Plug>(sandwich-replace)', { noremap = true })
+            vim.api.nvim_set_keymap('x', '<leader>sr', '<Plug>(sandwich-replace)', { noremap = true })
+        end
+    }
+
+    use {
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').create_default_mappings()
+        end,
+    }
 
     use {
         'pwntester/octo.nvim',
