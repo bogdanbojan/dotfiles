@@ -12,6 +12,21 @@ local themes = {
         kitty = "gruvbox-material-medium"
     },
 
+    ["everforest"] = {
+        nvim = function()
+            vim.g.everforest_background = 'medium'
+            vim.cmd('colorscheme everforest')
+            -- Needs custom theme to work.
+            vim.g.lightline = {
+                colorscheme = 'everforest',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "everforest-medium"
+    },
+
     ["solarized"] = {
         nvim = function()
             vim.cmd('colorscheme solarized')
@@ -101,4 +116,4 @@ function Switch_theme(theme_name)
     end
 end
 
-Switch_theme('gruvbox-material')
+Switch_theme('solarized')
