@@ -6,7 +6,7 @@ k9s:
   readOnly: false
   noExitOnCtrlC: false
   ui:
-    skin: kanagawa-wave
+    skin: gruvbox-material-dark-hard
     enableMouse: false
     headless: false
     logoless: false
