@@ -18,19 +18,6 @@ return require('packer').startup(function(use)
 
     use('itchyny/lightline.vim')
 
-    -- use({
-    --     'nvim-lualine/lualine.nvim',
-    --     as       = 'lualine',
-    --     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-    --     config   = function()
-    --         require('lualine').setup({
-    --             -- options = { theme = 'everforest' },
-    --             options = { theme = 'rosepine' },
-    --             sections = { lualine_c = { { 'filename', path = 3 } } }
-    --         })
-    --     end
-    -- })
-
     ---------------------------------------------------------------------------
     -- Various themes.
 
@@ -38,18 +25,43 @@ return require('packer').startup(function(use)
         'sainnhe/gruvbox-material',
         as = 'gruvbox-material',
     })
+
+    use({
+        'morhetz/gruvbox',
+        as = 'gruvbox',
+    })
+
     use({
         'rose-pine/neovim',
         as = 'rose-pine-moon',
     })
+
     use({
         'cocopon/iceberg.vim',
         as = 'iceberg',
     })
+
     use({
         'ishan9299/nvim-solarized-lua',
         as = 'solarized',
     })
+
+    use({
+        'sainnhe/everforest',
+        as = 'everforest',
+    })
+
+    use({
+        'zenbones-theme/zenbones.nvim',
+        as = 'zenbones',
+        requires = { 'rktjmp/lush.nvim' },
+    })
+
+    use({
+        'rebelot/kanagawa.nvim',
+        as = 'kanagawa',
+    })
+
     ---------------------------------------------------------------------------
 
     use('fatih/vim-go')
@@ -90,6 +102,18 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- use {
+    --     'Exafunction/codeium.vim',
+    --     config = function()
+    --         vim.keymap.set('i', '<C-l>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    --         vim.keymap.set('i', '<C-f>', function() return vim.fn['codeium#CycleCompletions'](1) end,
+    --             { expr = true, silent = true })
+    --         vim.keymap.set('i', '<C-b>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
+    --             { expr = true, silent = true })
+    --         vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+    --     end
+    -- }
+
     use {
         'pwntester/octo.nvim',
         requires = {
@@ -101,7 +125,8 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        -- TODO: Check what version to use - maybe switch to 4.
+        branch = 'v4.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },             -- Required

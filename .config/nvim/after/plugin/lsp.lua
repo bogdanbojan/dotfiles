@@ -1,114 +1,6 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require('lsp-zero')
 
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-    'golangci_lint_ls',
-    'gopls',
-    'docker_compose_language_service',
-    'dockerls',
-    'helm_ls',
-    'lua_ls',
-    'sqlls',
-    'vimls',
-    'terraformls',
-    'html',
-    'yamlls',
-    'jedi_language_server',
-    'taplo',
-    'rust_analyzer',
-    'bashls',
-    'jsonls',
-    'ltex',
-    'bufls',
-})
-
-lsp.configure('rust_analyzer', {
-    settings = {
-        ['rust-analyzer'] = {
-            cargo = {
-                allFeatures = true,
-                loadOutDirsFromCheck = true
-            },
-            checkOnSave = {
-                command = "check",
-                extraArgs = { "--target-dir", "/tmp/rust-analyzer-check" }
-            },
-            diagnostics = {
-                enable = true,
-                experimental = {
-                    enable = true,
-                },
-            },
-            procMacro = {
-                enable = true
-            },
-
-            -- Automatic imports.
-            assist = {
-                importGranularity = "module",
-                importPrefix = "by_self",
-            },
-            completion = {
-                autoimport = {
-                    enable = true
-                }
-            },
-        }
-    }
-})
-
--- Import libraries on write for Go.
-vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = '*.go',
-    callback = function()
-        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
-    end
-})
-
-lsp.nvim_workspace()
-
--- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
-})
-
-lsp.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     -- Helm charts get confused and lots of YAML errors appear without this.
@@ -116,6 +8,7 @@ lsp.on_attach(function(client, bufnr)
         vim.diagnostic.enable(false)
     end
 
+    -- Your existing keybindings
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
@@ -135,8 +28,123 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
+-- Configure mason
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'golangci_lint_ls',
+        'gopls',
+        'docker_compose_language_service',
+        'dockerls',
+        'helm_ls',
+        'lua_ls',
+        'sqlls',
+        'vimls',
+        'terraformls',
+        'html',
+        'yamlls',
+        'jedi_language_server',
+        'taplo',
+        'rust_analyzer',
+        'bashls',
+        'jsonls',
+        'ltex',
+    },
+    handlers = {
+        lsp_zero.default_setup,
+        -- Specific LSP configurations
+        rust_analyzer = function()
+            require('lspconfig').rust_analyzer.setup({
+                settings = {
+                    ['rust-analyzer'] = {
+                        cargo = {
+                            allFeatures = true,
+                            loadOutDirsFromCheck = true
+                        },
+                        checkOnSave = {
+                            command = "check",
+                            extraArgs = { "--target-dir", "/tmp/rust-analyzer-check" }
+                        },
+                        diagnostics = {
+                            enable = true,
+                            experimental = {
+                                enable = true,
+                            },
+                        },
+                        procMacro = {
+                            enable = true
+                        },
+                        assist = {
+                            importGranularity = "module",
+                            importPrefix = "by_self",
+                        },
+                        completion = {
+                            autoimport = {
+                                enable = true
+                            }
+                        },
+                    }
+                }
+            })
+        end,
+        lua_ls = function()
+            require('lspconfig').lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { 'vim' }
+                        }
+                    }
+                }
+            })
+        end,
+    }
+})
 
+-- Import libraries on write for Go (keeping your existing autocommand)
+vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = '*.go',
+    callback = function()
+        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    end
+})
+
+-- Configure completion
+local cmp = require('cmp')
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+cmp.setup({
+    sources = {
+        {name = 'path'},
+        {name = 'nvim_lsp'},
+        {name = 'nvim_lua'},
+        {name = 'luasnip', keyword_length = 2},
+        {name = 'buffer', keyword_length = 3},
+        {name = 'vsnip'},
+        {name = 'nvim_lsp_signature_help'},
+    },
+    formatting = lsp_zero.cmp_format(),
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    })
+})
+
+-- Configure diagnostics
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = 'E',
+            [vim.diagnostic.severity.WARN] = 'W',
+            [vim.diagnostic.severity.HINT] = 'H',
+            [vim.diagnostic.severity.INFO] = 'I'
+        }
+    }
 })
