@@ -1,6 +1,39 @@
 local themes = {
-    ["gruvbox-material"] = {
+    ["gruvbox-material-dark"] = {
         nvim = function()
+            vim.g.gruvbox_material_enable_italic = 1
+            vim.g.gruvbox_material_menu_selection_background = "orange"
+            vim.g.gruvbox_material_background = "hard" -- Default: medium.
+            vim.g.gruvbox_material_foreground = "mix"
+            vim.o.background = "dark"
+
+            -- Use an autocmd to apply the color override after the colorscheme loads
+            -- Have orange highlights. 
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                pattern = "gruvbox-material",
+                callback = function()
+                    vim.api.nvim_set_hl(0, "Visual", { bg = "#e78a4e", fg = "#504945" })
+                end
+            })
+
+            vim.cmd('colorscheme gruvbox-material')
+            vim.g.lightline = {
+                colorscheme = 'gruvbox_material_dark_hard',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "gruvbox-material-dark-hard",
+        tmux = "gruvbox-material-dark-hard"
+    },
+
+    ["gruvbox-material-light"] = {
+        nvim = function()
+            vim.g.gruvbox_material_background = "medium" -- Default: medium.
+            vim.g.gruvbox_material_foreground = "mix"
+            vim.o.background = "light"
+
             vim.cmd('colorscheme gruvbox-material')
             vim.g.lightline = {
                 colorscheme = 'gruvbox_material',
@@ -9,8 +42,10 @@ local themes = {
                 }
             }
         end,
-        kitty = "gruvbox-material-medium"
+        kitty = "gruvbox-material-light-medium",
+        tmux = "gruvbox-material-light-medium"
     },
+
 
     ["everforest"] = {
         nvim = function()
@@ -64,9 +99,69 @@ local themes = {
                 }
             }
         end,
-        kitty = "iceberg"
+        kitty = "iceberg",
+        tmux = "iceberg_minimal"
+    },
+
+    ["kanagawa"] = {
+        nvim = function()
+            vim.cmd('colorscheme kanagawa-wave')
+            vim.g.lightline = {
+                colorscheme = 'kanagawa',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "kanagawa",
+        tmux = "kanagawa-wave",
+    },
+
+    ["zenbones"] = {
+        nvim = function()
+            vim.cmd('colorscheme zenbones')
+            vim.g.lightline = {
+                colorscheme = 'zenbones',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "zenbones",
     },
 }
+
+-- Function to switch TMux theme
+local function switch_tmux_theme(theme_name)
+    local tmux_config_path = os.getenv("HOME") .. "/.tmux.conf"
+
+    -- Read the current tmux.conf
+    local file = io.open(tmux_config_path, "r")
+    if not file then
+        print("Could not open TMux config file")
+        return
+    end
+    local content = file:read("*all")
+    file:close()
+
+    -- Create the new theme line
+    local new_theme_line = string.format('source-file ~/.tmux/%s.conf', theme_name)
+
+    -- Replace the existing theme line
+    local new_content = content:gsub('source%-file %~/%.[%w/-]+%.conf', new_theme_line)
+
+    -- Write the updated content back to tmux.conf
+    file = io.open(tmux_config_path, "w")
+    if not file then
+        print("Could not write to TMux config file")
+        return
+    end
+    file:write(new_content)
+    file:close()
+
+    -- Reload TMux configuration
+    os.execute("tmux source-file ~/.tmux.conf")
+end
 
 -- Function to switch Kitty theme
 local function switch_kitty_theme(theme_name)
@@ -112,8 +207,16 @@ function Switch_theme(theme_name)
         -- Background of the hovers was the same with the highlight in visual mode.
         vim.cmd('highlight! link NormalFloat Normal')
         switch_kitty_theme(theme.kitty)
+        if theme.tmux then
+            switch_tmux_theme(theme.tmux)
+        end
     else
     end
 end
 
-Switch_theme('solarized')
+-- TODO Add color changes to:
+--      - firefox
+--      - k9s
+--      - *obsidian
+--      - *system
+Switch_theme('gruvbox-material-dark')
