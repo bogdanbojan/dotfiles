@@ -2,13 +2,12 @@ local themes = {
     ["gruvbox-material-dark"] = {
         nvim = function()
             vim.g.gruvbox_material_enable_italic = 1
-            vim.g.gruvbox_material_menu_selection_background = "orange"
             vim.g.gruvbox_material_background = "hard" -- Default: medium.
-            vim.g.gruvbox_material_foreground = "mix"
+            vim.g.gruvbox_material_foreground = "material"
             vim.o.background = "dark"
 
             -- Use an autocmd to apply the color override after the colorscheme loads
-            -- Have orange highlights. 
+            -- Have orange highlights.
             vim.api.nvim_create_autocmd("ColorScheme", {
                 pattern = "gruvbox-material",
                 callback = function()
@@ -204,8 +203,15 @@ function Switch_theme(theme_name)
         theme.nvim()
         -- Lightline was not being updated.
         vim.cmd('call lightline#enable()')
+
         -- Background of the hovers was the same with the highlight in visual mode.
+        -- Link NormalFloat to Normal, so it inherits the default background and foreground colors
         vim.cmd('highlight! link NormalFloat Normal')
+        -- Link Pmenu to Normal to inherit the main background color
+        vim.cmd('highlight! link Pmenu Normal')
+        -- Link PmenuSel to Visual for selected items to inherit selection highlight color
+        vim.cmd('highlight! link PmenuSel Visual')
+
         switch_kitty_theme(theme.kitty)
         if theme.tmux then
             switch_tmux_theme(theme.tmux)
