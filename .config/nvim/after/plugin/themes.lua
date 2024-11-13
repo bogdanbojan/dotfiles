@@ -211,6 +211,8 @@ function Switch_theme(theme_name)
         vim.cmd('highlight! link Pmenu Normal')
         -- Link PmenuSel to Visual for selected items to inherit selection highlight color
         vim.cmd('highlight! link PmenuSel Visual')
+        -- Weird issue where autocomplete suggestions had their parameters highlighted.
+        vim.cmd('highlight! link SnippetTabstop Normal')
 
         switch_kitty_theme(theme.kitty)
         if theme.tmux then
