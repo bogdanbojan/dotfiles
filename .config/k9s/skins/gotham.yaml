@@ -1,0 +1,88 @@
+k9s:
+  body:
+    fgColor: &fg "#d3ebe9"  # Matches Base 7 for text
+    bgColor: &bg "#0c1014"  # Matches Base 0 as the primary background
+    logoColor: "#33859E"    # Matches Cyan for subtle branding
+  prompt:
+    fgColor: "#d3ebe9"      # Matches Base 7
+    bgColor: "#0c1014"      # Matches Base 0
+    suggestColor: "#2aa889" # Matches Green for suggestions
+  info:
+    fgColor: "#99d1ce"      # Matches Base 6 for informational text
+    sectionColor: "#edb443" # Matches Yellow for sections
+  dialog:
+    fgColor: "#d3ebe9"      # Matches Base 7
+    bgColor: "#0c1014"      # Matches Base 0
+    buttonFgColor: "#d3ebe9"        # Matches Base 7
+    buttonBgColor: "#245361"        # Matches Base 4
+    buttonFocusFgColor: "#0c1014"   # Matches Base 0
+    buttonFocusBgColor: "#2aa889"   # Matches Green for focused buttons
+    labelFgColor: "#c23127"         # Matches Red for warnings/errors
+    fieldFgColor: "#d3ebe9"         # Matches Base 7 for input fields
+  frame:
+    border:
+      fgColor: "#99d1ce"    # Matches Base 6 for borders
+      focusColor: "#2aa889" # Matches Green for focused borders
+    menu:
+      fgColor: "#d3ebe9"    # Matches Base 7 for text in menus
+      keyColor: "#33859E"   # Matches Cyan for key hints
+      numKeyColor: "#33859E" # Matches Cyan for numerical keys
+    crumbs:
+      fgColor: "#0c1014"    # Matches Base 0 for inactive crumbs
+      bgColor: "#245361"    # Matches Base 4 for crumb background
+      activeColor: "#2aa889" # Matches Green for active crumb
+    status:
+      newColor: "#2aa889"   # Matches Green for new resources
+      modifyColor: "#edb443" # Matches Yellow for modified
+      addColor: "#99d1ce"   # Matches Base 6 for additions
+      errorColor: "#c23127" # Matches Red for errors
+      highlightcolor: "#33859E" # Matches Cyan for highlights
+      killColor: "#c23127"  # Matches Red for termination
+      completedColor: "#888ca6" # Matches Magenta for completion
+    title:
+      fgColor: "#d3ebe9"    # Matches Base 7
+      bgColor: "#0c1014"    # Matches Base 0
+      highlightColor: "#33859E" # Matches Cyan for title highlights
+      counterColor: "#99d1ce"   # Matches Base 6 for counters
+      filterColor: "#2aa889"    # Matches Green for filters
+  views:
+    charts:
+      bgColor: "#0c1014"    # Matches Base 0
+      defaultDialColors:
+        - "#c23127" # Matches Red
+        - "#2aa889" # Matches Green
+        - "#edb443" # Matches Yellow
+        - "#99d1ce" # Matches Base 6
+        - "#888ca6" # Matches Magenta
+      defaultChartColors:
+        - "#c23127" # Matches Red
+        - "#2aa889" # Matches Green
+        - "#edb443" # Matches Yellow
+        - "#99d1ce" # Matches Base 6
+        - "#888ca6" # Matches Magenta
+    table:
+      fgColor: "#d3ebe9"    # Matches Base 7
+      bgColor: "#0c1014"    # Matches Base 0
+      cursorFgColor: "#0c1014" # Matches Base 0
+      cursorBgColor: "#599cab" # Matches Base 5 for the cursor
+      header:
+        fgColor: "#99d1ce"  # Matches Base 6 for table headers
+        bgColor: "#0c1014"  # Matches Base 0
+        sorterColor: "#2aa889" # Matches Green
+    xray:
+      fgColor: "#d3ebe9"    # Matches Base 7
+      bgColor: "#0c1014"    # Matches Base 0
+      cursorColor: "#599cab" # Matches Base 5
+      graphicColor: "#2aa889" # Matches Green for graphics
+      showIcons: false
+    yaml:
+      keyColor: "#33859E"   # Matches Cyan for YAML keys
+      colonColor: "#599cab" # Matches Base 5 for colons
+      valueColor: "#d3ebe9" # Matches Base 7 for values
+    logs:
+      fgColor: "#d3ebe9"    # Matches Base 7
+      bgColor: "#0c1014"    # Matches Base 0
+      indicator:
+        fgColor: "#2aa889"  # Matches Green
+        bgColor: "#0c1014"  # Matches Base 0
+
