@@ -75,9 +75,9 @@ local themes = {
         kitty = "solarized-dark"
     },
 
-    ["rose-pine-moon"] = {
+    ["rose-pine"] = {
         nvim = function()
-            vim.cmd('colorscheme rose-pine-moon')
+            vim.cmd('colorscheme rose-pine')
             vim.g.lightline = {
                 colorscheme = 'rosepine',
                 component = {
@@ -85,7 +85,7 @@ local themes = {
                 }
             }
         end,
-        kitty = "rose-pine-moon"
+        kitty = "rose-pine-main"
     },
 
     ["iceberg"] = {
@@ -114,6 +114,35 @@ local themes = {
         end,
         kitty = "kanagawa",
         tmux = "kanagawa-wave",
+    },
+
+    ["kanagawa-paper"] = {
+        nvim = function()
+            vim.cmd('colorscheme kanagawa-paper')
+            vim.g.lightline = {
+                colorscheme = 'kanagawa',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "kanagawa",
+        tmux = "kanagawa-wave",
+    },
+
+    ["neogotham"] = {
+        nvim = function()
+            -- vim.g.gotham_oldgotham = true
+            vim.cmd('colorscheme neogotham')
+            vim.g.lightline = {
+                colorscheme = 'gotham',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "gotham",
+        tmux = "gotham",
     },
 
     ["zenbones"] = {
@@ -227,4 +256,4 @@ end
 --      - k9s
 --      - *obsidian
 --      - *system
-Switch_theme('gruvbox-material-dark')
+Switch_theme('neogotham')
