@@ -1,0 +1,7 @@
+{
+  "name": "Gotham",
+  "author": "Bogdan Bojan",
+  "version": "1.0.0",
+  "description": "A gotham-inspired theme for Obsidian (vim theme: whatyouhide/vim-gotham)",
+  "cssFile": "theme.css"
+}

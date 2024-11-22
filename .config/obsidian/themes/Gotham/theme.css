@@ -1,0 +1,518 @@
+:root {
+    --base0-x:         12, 16, 20; /* #0c1014 */
+    --base0:           rgb(var(--base0-x));
+    --base1-x:         17, 21, 28; /* #11151c */
+    --base1:           rgb(var(--base1-x));
+    --base2-x:         9, 31, 46; /* #091f2e */
+    --base2:           rgb(var(--base2-x));
+    --base3-x:         10, 55, 73; /* #0a3749 */
+    --base3:           rgb(var(--base3-x));
+    --base4-x:         30, 100, 121; /* #1e6479 */
+    --base4:           rgb(var(--base4-x));
+    --base5-x:         89, 156, 171; /* #599cab */
+    --base5:           rgb(var(--base5-x));
+    --base6-x:         153, 209, 206; /* #99d1ce */
+    --base6:           rgb(var(--base6-x));
+    --base7-x:         211, 235, 233; /* #d3ebe9 */
+    --base7:           rgb(var(--base7-x));
+
+    --red-x:           194, 49, 39; /* #c23127 */
+    --red:             rgb(var(--red-x));
+    --orange-x:        210, 105, 55; /* #d26937 */
+    --orange:          rgb(var(--orange-x));
+    --yellow-x:        237, 180, 67; /* #edb443 */
+    --yellow:          rgb(var(--yellow-x));
+    --magenta-x:       136, 140, 166; /* #888ca6 */
+    --magenta:         rgb(var(--magenta-x));
+    --violet-x:        78, 81, 102; /* #4e5166 */
+    --violet:          rgb(var(--violet-x));
+    --blue-x:          25, 84, 102; /* #195466 */
+    --blue:            rgb(var(--blue-x));
+    /*--cyan-x:          51, 133, 158; /* #33859e this is the culprit */
+    --cyan-x:          153, 209, 206;  /* #33859e this is the culprit */
+    --cyan:            rgb(var(--cyan-x));
+    --green-x:         42, 168, 137; /* #2aa889 */
+    --green:           rgb(var(--green-x));
+
+    --accent-h: 12; /* --red #c23127 */
+    --accent-s: 107%;
+    --accent-l: 32%;
+
+    --link-decoration:                none;
+    --link-decoration-hover:          none;
+    --link-external-decoration:       none;
+    --link-external-decoration-hover: none;
+
+    --tag-decoration:                 none;
+    --tag-decoration-hover:           underline;
+    --tag-padding-x:                  .5em;
+    --tag-padding-y:                  .2em;
+    --tag-radius:                     .5em;
+
+    --tab-font-weight:                600;
+    --bold-weight:                    600;
+
+    --checkbox-radius:                0;
+
+    /* --list-indent:                    2em; */
+
+    --embed-border-left: 6px double var(--interactive-accent);
+}
+
+body {
+    --accent-h: 12; /* --red #c23127 */
+    --accent-s: 107%;
+    --accent-l: 32%;
+
+    --link-decoration:                none;
+    --link-decoration-hover:          none;
+    --link-external-decoration:       none;
+    --link-external-decoration-hover: none;
+
+    --tag-decoration:                 none;
+    --tag-decoration-hover:           underline;
+    --tag-padding-x:                  .5em;
+    --tag-padding-y:                  .2em;
+    --tag-radius:                     .5em;
+
+    --tab-font-weight:                600;
+    --bold-weight:                    600;
+
+    --checkbox-radius:                0;
+
+    /* --list-indent:                    2em; */
+
+    --embed-border-left: 6px double var(--interactive-accent);
+}
+
+.theme-dark {
+    --color-red-rgb:                 var(--cyan-x);
+    --color-red:                     var(--cyan);
+    --color-purple-rgb:              var(--magenta-x);
+    --color-purple:                  var(--magenta);
+    --color-green-rgb:               var(--green-x);
+    --color-green:                   var(--green);
+    --color-cyan-rgb:                var(--cyan-x);
+    --color-cyan:                    var(--cyan);
+    --color-blue-rgb:                var(--blue-x);
+    --color-blue:                    var(--blue);
+    --color-yellow-rgb:              var(--green-x);
+    --color-yellow:                  var(--green);
+    --color-orange-rgb:              var(--orange-x);
+    --color-orange:                  var(--orange);
+    --color-pink-rgb:                var(--violet-x);
+    --color-pink:                    var(--violet);
+
+    --background-primary:            var(--base0);
+    --background-primary-alt:        var(--base0);
+    --background-secondary:          var(--base1);
+    --background-secondary-alt:      var(--base2);
+    --background-modifier-border:    var(--base2);
+
+    --cursor-line-background:        rgba(var(--base2-x), 0.0);
+
+    --text-normal:                   var(--base6);
+    --text-faint:                    var(--base5);
+    --text-muted:                    var(--base4);
+
+    --link-url:                      var(--green);
+
+    --h1-color:                      var(--cyan);
+    --h2-color:                      var(--green);
+    --h3-color:                      var(--green);
+    --h4-color:                      var(--cyan);
+    --h5-color:                      var(--blue);
+    --h6-color:                      var(--magenta);
+
+    --text-highlight-bg:             var(--green);
+    --text-highlight-fg:             var(--base0);
+
+    --text-accent:                   var(--orange);
+    --text-accent-hover:             var(--cyan);
+
+    --tag-color:                     var(--cyan);
+    --tag-background:                var(--base2);
+    --tag-background-hover:          var(--base1);
+
+    --titlebar-text-color-focused:   var(--cyan);
+
+    --inline-title-color:            var(--green);
+
+    --bold-color:                    var(--green);
+    --italic-color:                  var(--green);
+
+    --checkbox-color:                var(--base5);
+    --checkbox-color-hover:          var(--base5);
+    --checkbox-border-color:         var(--base5);
+    --checkbox-border-color-hover:   var(--base5);
+    --checklist-done-color:          rgba(var(--base4-x), 0.5);
+
+    --table-header-background:       rgba(var(--base0-x), 0.2);
+    --table-header-background-hover: var(--base2);
+    --table-row-even-background:     rgba(var(--base2-x), 0.2);
+    --table-row-odd-background:      rgba(var(--base2-x), 0.4);
+    --table-row-background-hover:    var(--base2);
+
+    --text-selection:                rgba(var(--cyan-x), 0.6);
+    --flashing-background:           rgba(var(--cyan-x), 0.3);
+
+    --code-normal:                   var(--cyan);
+    --code-background:               var(--base1);
+
+    --mermaid-note:                  var(--blue);
+    --mermaid-actor:                 var(--base2);
+    --mermaid-loopline:              var(--blue);
+    --mermaid-exclude:               var(--base4);
+    --mermaid-seqnum:                var(--base0);
+
+    --icon-color-hover:              var(--cyan);
+    --icon-color-focused:            var(--cyan);
+
+    --nav-item-color-hover:          var(--cyan);
+    --nav-item-color-active:         var(--cyan);
+    --nav-file-tag:                  rgba(var(--green-x), 0.9);
+
+    --graph-line:                    var(--base2);
+    --graph-node:                    var(--base5);
+    --graph-node-tag:                var(--cyan);
+    --graph-node-attachment:         var(--green);
+
+    --calendar-hover:                var(--cyan);
+    --calendar-background-hover:     var(--base1);
+    --calendar-week:                 var(--orange);
+    --calendar-today:                var(--orange);
+
+    --dataview-key:                  var(--text-faint);
+    --dataview-key-background:       rgba(var(--cyan-x), 0.5);
+    --dataview-value:                var(--text-faint);
+    --dataview-value-background:     rgba(var(--green-x), 0.3);
+
+    --tab-text-color-focused-active:         var(--green);
+    --tab-text-color-focused-active-current: var(--cyan);
+}
+
+.theme-light {
+    --color-red-rgb:                 var(--cyan-x);
+    --color-red:                     var(--cyan);
+    --color-purple-rgb:              var(--magenta-x);
+    --color-purple:                  var(--magenta);
+    --color-green-rgb:               var(--green-x);
+    --color-green:                   var(--green);
+    --color-cyan-rgb:                var(--cyan-x);
+    --color-cyan:                    var(--cyan);
+    --color-blue-rgb:                var(--blue-x);
+    --color-blue:                    var(--blue);
+    --color-yellow-rgb:              var(--green-x);
+    --color-yellow:                  var(--green);
+    --color-orange-rgb:              var(--orange-x);
+    --color-orange:                  var(--orange);
+    --color-pink-rgb:                var(--violet-x);
+    --color-pink:                    var(--violet);
+
+    --background-primary:            var(--base7);
+    --background-primary-alt:        var(--base7);
+    --background-secondary:          var(--base6);
+    --background-secondary-alt:      var(--base6);
+    --background-modifier-border:    var(--base5);
+
+    --cursor-line-background:        rgba(var(--base6-x), 0.5);
+
+    --text-normal:                   var(--base0);
+    --text-faint:                    var(--base3);
+    --text-muted:                    var(--base2);
+
+    --link-url:                      var(--green);
+
+    --h1-color:                      var(--cyan);
+    --h2-color:                      var(--green);
+    --h3-color:                      var(--green);
+    --h4-color:                      var(--cyan);
+    --h5-color:                      var(--blue);
+    --h6-color:                      var(--magenta);
+
+    --text-highlight-bg:             var(--green);
+    --text-highlight-fg:             var(--base0);
+
+    --text-accent:                   var(--orange);
+    --text-accent-hover:             var(--cyan);
+
+    --tag-color:                     var(--cyan);
+    --tag-background:                var(--base6);
+    --tag-background-hover:          rgba(var(--base6-x), 0.6);
+
+    --titlebar-text-color-focused:   var(--cyan);
+
+    --inline-title-color:            var(--green);
+
+    --bold-color:                    var(--green);
+    --italic-color:                  var(--green);
+
+    --checkbox-color:                var(--base5);
+    --checkbox-color-hover:          var(--base5);
+    --checkbox-border-color:         var(--base5);
+    --checkbox-border-color-hover:   var(--base5);
+    --checklist-done-color:          rgba(var(--base2-x), 0.4);
+
+    --table-header-background:       rgba(var(--base5-x), 0.4);
+    --table-header-background-hover: var(--base5);
+    --table-row-even-background:     rgba(var(--base6-x), 0.2);
+    --table-row-odd-background:      rgba(var(--base6-x), 0.7);
+    --table-row-background-hover:    var(--base5);
+
+    --text-selection:                rgba(var(--cyan-x), 0.6);
+    --flashing-background:           rgba(var(--cyan-x), 0.3);
+
+    --code-normal:                   var(--cyan);
+    --code-background:               var(--base6);
+
+    --mermaid-note:                  var(--cyan);
+    --mermaid-actor:                 var(--base5);
+    --mermaid-loopline:              var(--blue);
+    --mermaid-exclude:               var(--base5);
+    --mermaid-seqnum:                var(--base7);
+
+    --icon-color-hover:              var(--cyan);
+    --icon-color-focused:            var(--cyan);
+
+    --nav-item-color-hover:          var(--cyan);
+    --nav-item-color-active:         var(--blue);
+    --nav-file-tag:                  rgba(var(--blue-x), 0.9);
+
+    --graph-line:                    var(--base6);
+    --graph-node:                    var(--base4);
+    --graph-node-tag:                var(--cyan);
+    --graph-node-attachment:         var(--green);
+
+    --calendar-hover:                var(--cyan);
+    --calendar-background-hover:     var(--base6);
+    --calendar-week:                 var(--cyan);
+    --calendar-today:                var(--cyan);
+
+    --dataview-key:                  var(--text-faint);
+    --dataview-key-background:       rgba(var(--cyan-x), 0.3);
+    --dataview-value:                var(--text-faint);
+    --dataview-value-background:     rgba(var(--green-x), 0.2);
+
+    --tab-text-color-focused-active:         var(--green);
+    --tab-text-color-focused-active-current: var(--cyan);
+}
+
+table {
+    border: 1px solid var(--background-secondary) !important;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 2px solid var(--background-modifier-border) !important;
+}
+
+th {
+    font-weight: 600 !important;
+    border: 1px solid var(--background-secondary) !important;
+}
+
+td {
+    border-left: 1px solid var(--background-secondary) !important;
+    border-right: 1px solid var(--background-secondary) !important;
+    border-bottom: 1px solid var(--background-secondary) !important;
+}
+
+.markdown-rendered tbody tr:nth-child(even) {
+    background-color: var(--table-row-even-background) !important;
+}
+
+.markdown-rendered tbody tr:nth-child(odd) {
+    background-color: var(--table-row-odd-background) !important;
+}
+
+.markdown-rendered tbody tr:nth-child(even):hover,
+.markdown-rendered tbody tr:nth-child(odd):hover {
+    background-color: var(--table-row-background-hover) !important;
+}
+
+.markdown-rendered mark {
+    background-color: var(--text-highlight-bg);
+    color: var(--text-highlight-fg);
+}
+
+.markdown-rendered mark a {
+    color: var(--cyan) !important;
+    font-weight: 600;
+}
+
+.search-result-file-matched-text {
+    color: var(--text-highlight-fg) !important;
+}
+
+.cm-hashtag-begin:hover, .cm-hashtag-end:hover {
+    color: var(--text-accent);
+    /* background-color: var(--tag-background-hover); */
+    text-decoration: underline;
+}
+
+input[type=checkbox] {
+    border: 1px solid var(--checkbox-color);
+}
+
+input[type=checkbox]:checked {
+    background-color: var(--checkbox-color);
+    box-shadow: inset 0 0 0 2px var(--background-primary);
+}
+
+input[type=checkbox]:checked:after {
+    display: none;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    line-height: var(--line-height-tight) !important;
+}
+
+.cm-url {
+    color: var(--link-url) !important;
+}
+
+.cm-url:hover {
+    color: var(--text-accent-color) !important;
+}
+
+/* Keep highlight/marks the same between viewer and editor. */
+.cm-highlight {
+    color: var(--text-highlight-fg) !important;
+}
+
+/* Keep inline code the same between viewer and editor. */
+.cm-inline-code {
+    border-radius: var(--radius-s);
+    font-size: var(--code-size);
+    padding: 0.1em 0.25em;
+}
+
+.cm-line .cm-strong {
+    color: var(--bold-color) !important;
+}
+
+/*
+ * Keep list bullet padding the same between viewer and editor.
+ * This is annoying with the cursor in the editor as there is a gap.
+ */
+/*
+.cm-formatting-list {
+    padding-right: 4px !important;
+}
+*/
+
+/*
+ * Keep sub-list indenting the same between viewer and editor.
+ * This assumes --list-indent is default at 2em.
+ */
+/*
+.cm-indent {
+    text-indent: 1em !important;
+}
+*/
+
+.mermaid .note {
+    fill: var(--mermaid-note) !important;
+}
+
+.mermaid .actor {
+    fill: var(--mermaid-actor) !important;
+}
+
+.mermaid .loopLine {
+    stroke: var(--mermaid-loopline) !important;
+}
+
+.mermaid .loopText>tspan,
+.mermaid .entityLabel {
+    fill: var(--cyan) !important;
+}
+
+.mermaid .exclude-range {
+    fill: var(--mermaid-exclude) !important;
+}
+
+.mermaid .sequenceNumber {
+    fill: var(--mermaid-seqnum) !important;
+}
+
+.calendar .week-num {
+    color: var(--calendar-week) !important;
+}
+
+.calendar .today {
+    color: var(--calendar-today) !important;
+}
+
+.calendar .week-num:hover,
+.calendar .day:hover {
+    color: var(--calendar-hover) !important;
+    background-color: var(--calendar-background-hover) !important;
+}
+
+.markdown-embed-title {
+    color: var(--green);
+    font-weight: 600 !important;
+}
+
+.cm-active {
+    background-color: var(--cursor-line-background) !important;
+}
+
+.nav-file-tag {
+    color: var(--nav-file-tag) !important;
+}
+
+.is-flashing {
+    background-color: var(--flashing-background) !important;
+}
+
+.dataview.inline-field-key {
+    border-top-left-radius: var(--radius-s);
+    border-bottom-left-radius: var(--radius-s);
+    padding-left: 4px;
+    font-family: var(--font-monospace);
+    font-size: var(--font-smaller);
+    color: var(--dataview-key) !important;
+    background-color: var(--dataview-key-background) !important;
+}
+
+.dataview.inline-field-value {
+    border-top-right-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+    padding-right: 4px;
+    font-family: var(--font-monospace);
+    font-size: var(--font-smaller);
+    color: var(--dataview-value) !important;
+    background-color: var(--dataview-value-background) !important;
+}
+
+.suggestion-highlight {
+    color: var(--cyan);
+}
+
+body {
+    --callout-border-width: 1px;
+    --callout-border-opacity: 0.4;
+    /* Order as defined in app.css */
+    --callout-default: var(--blue-x);
+    --callout-note: var(--blue-x);
+    --callout-summary: var(--cyan-x);
+    --callout-info: var(--blue-x);
+    --callout-todo: var(--blue-x);
+    --callout-important: var(--cyan-x);
+    --callout-tip: var(--cyan-x);
+    --callout-success: var(--green-x);
+    --callout-question: var(--yellow-x);
+    --callout-warning: var(--orange-x);
+    --callout-fail: var(--cyan-x);
+    --callout-error: var(--cyan-x);
+    --callout-bug: var(--cyan-x);
+    --callout-example: var(--magenta-x);
+    --callout-quote: var(--base4-x);
+}
+
+.callout {
+    background-color: rgba(var(--callout-color), 0.2);
+}
