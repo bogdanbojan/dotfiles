@@ -132,7 +132,6 @@ local themes = {
 
     ["neogotham"] = {
         nvim = function()
-            -- vim.g.gotham_oldgotham = true
             vim.cmd('colorscheme neogotham')
             vim.g.lightline = {
                 colorscheme = 'gotham',
@@ -140,6 +139,16 @@ local themes = {
                     filename = '%F'
                 }
             }
+
+            vim.api.nvim_set_hl(0, '@constant', { fg = '#edb443' })                        -- Magenta for other constants.
+            vim.api.nvim_set_hl(0, '@constant.builtin', { fg = '#d26937', italic = true }) -- Makes nil italic
+            vim.api.nvim_set_hl(0, '@function.builtin', { link = '@function' })            -- Make append same as other functions.
+            vim.api.nvim_set_hl(0, '@number', { fg = '#888ca6' })                          -- Change number color.
+            vim.api.nvim_set_hl(0, '@type', { fg = '#d26937', italic = true })             -- Make types italic.
+
+            vim.api.nvim_set_hl(0, '@module', { fg = '#99d1ce' })
+            vim.api.nvim_set_hl(0, '@keyword', { fg = '#33859E' })
+            vim.api.nvim_set_hl(0, '@string.escape', { fg = '#4d618e' })
         end,
         kitty = "gotham",
         tmux = "gotham",
