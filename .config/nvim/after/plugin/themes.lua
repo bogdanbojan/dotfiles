@@ -265,4 +265,4 @@ end
 --      - k9s
 --      - *obsidian
 --      - *system
-Switch_theme('neogotham')
+Switch_theme('gruvbox-material-dark')
