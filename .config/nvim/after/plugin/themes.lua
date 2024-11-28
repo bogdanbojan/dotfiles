@@ -157,6 +157,8 @@ local themes = {
     ["zenbones"] = {
         nvim = function()
             vim.cmd('colorscheme zenbones')
+            -- vim.o.background = "dark"
+            vim.o.background = "dark"
             vim.g.lightline = {
                 colorscheme = 'zenbones',
                 component = {
@@ -164,7 +166,21 @@ local themes = {
                 }
             }
         end,
-        kitty = "zenbones",
+        kitty = "zenbones-dark",
+        tmux = "zenbones-dark",
+    },
+
+    ["vacme"] = {
+        nvim = function()
+            vim.cmd('colorscheme vacme')
+            vim.g.lightline = {
+                colorscheme = 'acme',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        -- kitty = "zenbones",
     },
 }
 
@@ -265,4 +281,4 @@ end
 --      - k9s
 --      - *obsidian
 --      - *system
-Switch_theme('gruvbox-material-dark')
+Switch_theme('zenbones')
