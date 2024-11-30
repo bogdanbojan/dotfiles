@@ -157,7 +157,6 @@ local themes = {
     ["zenbones"] = {
         nvim = function()
             vim.cmd('colorscheme zenbones')
-            -- vim.o.background = "dark"
             vim.o.background = "dark"
             vim.g.lightline = {
                 colorscheme = 'zenbones',
@@ -170,11 +169,39 @@ local themes = {
         tmux = "zenbones-dark",
     },
 
-    ["vacme"] = {
+    ["zenbones-light"] = {
         nvim = function()
-            vim.cmd('colorscheme vacme')
+            vim.cmd('colorscheme zenbones')
+            vim.o.background = "light"
             vim.g.lightline = {
-                colorscheme = 'acme',
+                colorscheme = 'zenbones',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "zenbones-light",
+        tmux = "zenbones-light",
+    },
+
+    ["acme-colors"] = {
+        nvim = function()
+            vim.cmd('colorscheme acme-colors')
+            vim.g.lightline = {
+                colorscheme = 'acme-colors',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        -- kitty = "zenbones",
+    },
+
+    ["yui"] = {
+        nvim = function()
+            vim.cmd('colorscheme yui')
+            vim.g.lightline = {
+                colorscheme = 'yui',
                 component = {
                     filename = '%F'
                 }
@@ -281,4 +308,4 @@ end
 --      - k9s
 --      - *obsidian
 --      - *system
-Switch_theme('zenbones')
+Switch_theme('zenbones-light')

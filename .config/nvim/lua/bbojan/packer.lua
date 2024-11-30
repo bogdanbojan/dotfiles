@@ -72,6 +72,17 @@ return require('packer').startup(function(use)
         as = 'neogotham',
     })
 
+    use({
+        'plan9-for-vimspace/acme-colors',
+        as = 'acme-colors',
+    })
+
+    use({
+        'cideM/yui',
+        as = 'yui',
+    })
+
+
     ---------------------------------------------------------------------------
 
     use('fatih/vim-go')
