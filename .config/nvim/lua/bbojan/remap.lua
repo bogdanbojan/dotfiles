@@ -63,12 +63,20 @@ vim.keymap.set("n", "<leader>``", function()
     vim.cmd("set nolist")
 end)
 
+-- Disable and enable warnings.
 vim.keymap.set("n", "<leader>dw", function()
     vim.diagnostic.config({ virtual_text = false })
 end)
-
 vim.keymap.set("n", "<leader>ew", function()
     vim.diagnostic.config({ virtual_text = true })
+end)
+
+vim.keymap.set("n", "<leader>sof", function()
+    vim.cmd("syntax off")
+end)
+
+vim.keymap.set("n", "<leader>son", function()
+    vim.cmd("syntax on")
 end)
 
 vim.keymap.set("n", "<leader><leader>", function()

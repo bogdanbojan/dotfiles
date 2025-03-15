@@ -26,9 +26,29 @@ return require('packer').startup(function(use)
         as = 'gruvbox-material',
     })
 
+    -- use({
+    --     'ellisonleao/gruvbox.nvim',
+    --     as = 'gruvbox',
+    -- })
+
+    -- use({
+    --     'luisiacc/gruvbox-baby',
+    --     as = 'gruvbox',
+    -- })
+
     use({
         'morhetz/gruvbox',
         as = 'gruvbox',
+    })
+
+    use({
+        'savq/melange-nvim',
+        as = 'melange',
+    })
+
+    use({
+        'vague2k/vague.nvim',
+        as = 'vague',
     })
 
     use({
@@ -73,13 +93,44 @@ return require('packer').startup(function(use)
     })
 
     use({
-        'plan9-for-vimspace/acme-colors',
-        as = 'acme-colors',
+        'raphael-proust/vacme',
+        as = 'vacme',
+    })
+
+    -- use({
+    --     'cideM/yui',
+    --     as = 'yui',
+    --
+
+    use({
+        'https://gitlab.com/__tpb/acme.nvim',
+        as = 'acme',
     })
 
     use({
-        'cideM/yui',
-        as = 'yui',
+        'AlexvZyl/nordic.nvim',
+        as = 'nordic',
+    })
+
+
+    use({
+        'p00f/alabaster.nvim',
+        as = 'alabaster',
+    })
+
+    use({
+        'aditya-azad/candle-grey',
+        as = 'candle',
+    })
+
+    use({
+        'https://gitlab.com/snakedye/chocolate.git',
+        as = 'chocolate',
+    })
+
+    use({
+        'axgfn/parchment',
+        as = 'parchment',
     })
 
 
@@ -155,8 +206,8 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },     -- Required
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },         -- Required
+            { 'hrsh7th/cmp-nvim-lsp' },     -- Required
             { 'hrsh7th/cmp-buffer' },       -- Optional
             { 'hrsh7th/cmp-path' },         -- Optional
             { 'saadparwaiz1/cmp_luasnip' }, -- Optional
@@ -167,7 +218,7 @@ return require('packer').startup(function(use)
             { 'hrsh7th/vim-vsnip' },
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },             -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
     }

@@ -84,6 +84,26 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
     url = "https://github.com/vim-scripts/ReplaceWithRegister"
   },
+  acme = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/acme",
+    url = "https://gitlab.com/__tpb/acme.nvim"
+  },
+  alabaster = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/alabaster",
+    url = "https://github.com/p00f/alabaster.nvim"
+  },
+  candle = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/candle",
+    url = "https://github.com/aditya-azad/candle-grey"
+  },
+  chocolate = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/chocolate",
+    url = "https://gitlab.com/snakedye/chocolate"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -124,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/conjure",
     url = "https://github.com/Olical/conjure"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -133,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/git-messenger.vim",
     url = "https://github.com/rhysd/git-messenger.vim"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["gruvbox-material"] = {
     loaded = true,
@@ -149,6 +179,22 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/iceberg",
     url = "https://github.com/cocopon/iceberg.vim"
   },
+  kanagawa = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/kanagawa",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
+  ["kanagawa-paper"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/kanagawa-paper",
+    url = "https://github.com/sho-87/kanagawa-paper.nvim"
+  },
+  ["leap.nvim"] = {
+    config = { "\27LJ\2\2D\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\28create_default_mappings\tleap\frequire\0" },
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lightline.vim"] = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/lightline.vim",
@@ -158,6 +204,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
@@ -175,6 +226,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  melange = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/melange",
+    url = "https://github.com/savq/melange-nvim"
+  },
+  neogotham = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/neogotham",
+    url = "https://github.com/shmerl/neogotham"
+  },
+  nordic = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/nordic",
+    url = "https://github.com/AlexvZyl/nordic.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\2¦\2\0\0\4\0\b\0\v6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\6\0005\2\3\0005\3\4\0=\3\5\2=\2\a\1B\0\2\1K\0\1\0\14fast_wrap\1\0\0\nchars\1\6\0\0\6{\6[\6(\6\"\6'\1\0\n\14after_key\6l\bmap\n<M-e>\14highlight\vSearch\fpattern\21[%'%\"%>%]%)%}%,]\fend_key\6$\22cursor_pos_before\2\19highlight_grey\fComment\15before_key\6h\20manual_position\2\tkeys\31qwertyuiopzxcvbnmasdfghjkl\nsetup\19nvim-autopairs\frequire\0" },
@@ -219,6 +285,11 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  parchment = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/parchment",
+    url = "https://github.com/axgfn/parchment"
+  },
   playground = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/playground",
@@ -229,9 +300,9 @@ _G.packer_plugins = {
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["rose-pine-moon"] = {
+  ["rose-pine"] = {
     loaded = true,
-    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/rose-pine-moon",
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
   solarized = {
@@ -254,6 +325,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  vacme = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vacme",
+    url = "https://github.com/raphael-proust/vacme"
+  },
+  vague = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vague",
+    url = "https://github.com/vague2k/vague.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -281,6 +362,7 @@ _G.packer_plugins = {
     url = "https://github.com/wlangstroth/vim-racket"
   },
   ["vim-sandwich"] = {
+    config = { "\27LJ\2\2ƒ\4\0\0\5\0\20\00096\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\a\0'\3\b\0005\4\t\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\n\0'\2\a\0'\3\b\0005\4\v\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\f\0'\3\r\0005\4\14\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\n\0'\2\f\0'\3\r\0005\4\15\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\16\0'\3\17\0005\4\18\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\n\0'\2\16\0'\3\17\0005\4\19\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\1\0\1\fnoremap\2\29<Plug>(sandwich-replace)\15<leader>sr\1\0\1\fnoremap\2\1\0\1\fnoremap\2\28<Plug>(sandwich-delete)\15<leader>sd\1\0\1\fnoremap\2\6x\1\0\1\fnoremap\2\25<Plug>(sandwich-add)\15<leader>sa\6n\20nvim_set_keymap\bapi.operator_sandwich_no_default_key_mappings%sandwich_no_default_key_mappings\6g\bvim\0" },
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-sandwich",
     url = "https://github.com/machakann/vim-sandwich"
@@ -294,6 +376,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  zenbones = {
+    loaded = true,
+    path = "/home/bbojan/.local/share/nvim/site/pack/packer/start/zenbones",
+    url = "https://github.com/zenbones-theme/zenbones.nvim"
   }
 }
 
@@ -302,10 +389,18 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\2=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
+-- Config for: vim-sandwich
+time([[Config for vim-sandwich]], true)
+try_loadstring("\27LJ\2\2ƒ\4\0\0\5\0\20\00096\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\a\0'\3\b\0005\4\t\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\n\0'\2\a\0'\3\b\0005\4\v\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\f\0'\3\r\0005\4\14\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\n\0'\2\f\0'\3\r\0005\4\15\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\16\0'\3\17\0005\4\18\0B\0\5\0016\0\0\0009\0\4\0009\0\5\0'\1\n\0'\2\16\0'\3\17\0005\4\19\0B\0\5\1K\0\1\0\1\0\1\fnoremap\2\1\0\1\fnoremap\2\29<Plug>(sandwich-replace)\15<leader>sr\1\0\1\fnoremap\2\1\0\1\fnoremap\2\28<Plug>(sandwich-delete)\15<leader>sd\1\0\1\fnoremap\2\6x\1\0\1\fnoremap\2\25<Plug>(sandwich-add)\15<leader>sa\6n\20nvim_set_keymap\bapi.operator_sandwich_no_default_key_mappings%sandwich_no_default_key_mappings\6g\bvim\0", "config", "vim-sandwich")
+time([[Config for vim-sandwich]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\2C\0\0\2\0\4\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: leap.nvim
+time([[Config for leap.nvim]], true)
+try_loadstring("\27LJ\2\2D\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\28create_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+time([[Config for leap.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

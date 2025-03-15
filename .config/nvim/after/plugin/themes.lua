@@ -45,6 +45,34 @@ local themes = {
         tmux = "gruvbox-material-light-medium"
     },
 
+    ["gruvbox-light"] = {
+        nvim = function()
+            vim.o.background = "light"
+            vim.cmd('colorscheme gruvbox')
+            vim.g.lightline = {
+                colorscheme = 'gruvbox',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "gruvbox-light"
+    },
+
+    ["gruvbox-dark"] = {
+        nvim = function()
+            vim.o.background = "dark"
+            vim.cmd('colorscheme gruvbox')
+            vim.g.lightline = {
+                colorscheme = 'gruvbox',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "gruvbox-dark"
+    },
+
 
     ["everforest"] = {
         nvim = function()
@@ -75,6 +103,21 @@ local themes = {
         kitty = "solarized-dark"
     },
 
+    -- TODO Implement this.
+    ["nordic"] = {
+        nvim = function()
+            vim.cmd('colorscheme nordic')
+            vim.cmd('set background=dark')
+            vim.g.lightline = {
+                colorscheme = 'nordic',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "nordic"
+    },
+
     ["rose-pine"] = {
         nvim = function()
             vim.cmd('colorscheme rose-pine')
@@ -85,7 +128,23 @@ local themes = {
                 }
             }
         end,
-        kitty = "rose-pine-main"
+        kitty = "rose-pine-main",
+        tmux = "rose-pine",
+    },
+
+    ["rose-pine-dawn"] = {
+        nvim = function()
+            vim.o.background = "light"
+            vim.cmd('colorscheme rose-pine')
+            vim.g.lightline = {
+                colorscheme = 'rose-pine-dawn',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "rose-pine-dawn",
+        -- tmux = "rose-pine-dawn",
     },
 
     ["iceberg"] = {
@@ -120,14 +179,14 @@ local themes = {
         nvim = function()
             vim.cmd('colorscheme kanagawa-paper')
             vim.g.lightline = {
-                colorscheme = 'kanagawa',
+                colorscheme = 'kanagawa_paper',
                 component = {
                     filename = '%F'
                 }
             }
         end,
-        kitty = "kanagawa",
-        tmux = "kanagawa-wave",
+        kitty = "kanagawa-paper",
+        tmux = "kanagawa-paper",
     },
 
     ["neogotham"] = {
@@ -169,6 +228,23 @@ local themes = {
         tmux = "zenbones-dark",
     },
 
+    ["zenburned"] = {
+        nvim = function()
+            vim.cmd('colorscheme zenburned')
+            vim.o.background = "dark"
+            vim.g.lightline = {
+                colorscheme = 'zenburned',
+                component = {
+                    filename = '%F'
+                }
+            }
+            vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#746956' })
+        end,
+        kitty = "zenburned",
+        tmux = "zenburned",
+    },
+
+
     ["zenbones-light"] = {
         nvim = function()
             vim.cmd('colorscheme zenbones')
@@ -184,19 +260,6 @@ local themes = {
         tmux = "zenbones-light",
     },
 
-    ["acme-colors"] = {
-        nvim = function()
-            vim.cmd('colorscheme acme-colors')
-            vim.g.lightline = {
-                colorscheme = 'acme-colors',
-                component = {
-                    filename = '%F'
-                }
-            }
-        end,
-        -- kitty = "zenbones",
-    },
-
     ["yui"] = {
         nvim = function()
             vim.cmd('colorscheme yui')
@@ -208,6 +271,70 @@ local themes = {
             }
         end,
         -- kitty = "zenbones",
+    },
+
+    ["alabaster"] = {
+        nvim = function()
+            vim.cmd('colorscheme alabaster')
+            vim.g.lightline = {
+                colorscheme = 'alabaster',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "alabaster",
+        tmux = "alabaster",
+    },
+
+    ["candle"] = {
+        nvim = function()
+            vim.cmd('colorscheme candle')
+        end,
+    },
+
+    ["chocolate"] = {
+        nvim = function()
+            vim.cmd('colorscheme chocolate')
+        end,
+    },
+
+    ["acme"] = {
+        nvim = function()
+            vim.cmd('colorscheme acme')
+            vim.g.acme_style = "plain"
+            vim.g.lightline = {
+                colorscheme = 'parchment',
+                component = {
+                    filename = '%F'
+                }
+            }
+
+            -- Set all LSP Diagnostic colors to black
+            local black = "#000000"
+
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultError", { fg = black })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultWarning", { fg = black })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultInformation", { fg = black })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultHint", { fg = black })
+
+            vim.api.nvim_set_hl(0, "LspDiagnosticsUnderlineError", { fg = black, undercurl = true })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsUnderlineWarning", { fg = black, undercurl = true })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsUnderlineInformation", { fg = black, undercurl = true })
+            vim.api.nvim_set_hl(0, "LspDiagnosticsUnderlineHint", { fg = black, undercurl = true })
+
+            -- (Optional) Override other related highlights
+            vim.api.nvim_set_hl(0, "DiagnosticError", { fg = black })
+            vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = black })
+            vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = black })
+            vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = black })
+
+
+            vim.api.nvim_set_hl(0, "@variable", { fg = "#000000" })
+            vim.api.nvim_set_hl(0, "IncSearch", { bg = "#cceeff" })
+        end,
+        kitty = "acme2",
+        tmux = "parchment",
     },
 }
 
@@ -308,4 +435,4 @@ end
 --      - k9s
 --      - *obsidian
 --      - *system
-Switch_theme('zenbones-light')
+Switch_theme('acme')
