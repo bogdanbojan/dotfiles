@@ -122,14 +122,16 @@ return {
             }
         })
 
-
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
+        -- Force single border because it was rounding it.
+        local single_border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+        require("luasnip.loaders.from_vscode").lazy_load()
         cmp.setup({
-            -- window = {
-            --     completion = cmp.config.window.bordered("single"),
-            --     documentation = cmp.config.window.bordered("single"),
-            -- },
+            window = {
+                completion = { border = single_border },
+                documentation = { border = single_border },
+            },
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
