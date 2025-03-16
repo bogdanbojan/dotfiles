@@ -25,7 +25,16 @@ return {
     {
         "folke/flash.nvim",
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            highlight = {
+                backdrop = false, -- Prevents graying out non-matching text
+            },
+            modes = {
+                char = {
+                    enabled = false, -- Disables Flash for f, t, F, T motions
+                },
+            },
+        },
         keys = {
             { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
             { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
