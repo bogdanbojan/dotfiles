@@ -8,7 +8,12 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+            defaults = {
+                border = true,
+                borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+            },
+        })
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
