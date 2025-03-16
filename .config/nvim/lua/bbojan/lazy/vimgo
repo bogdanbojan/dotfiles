@@ -1,0 +1,13 @@
+-- Disable it for the moment. Going to use the lsp support, for now.
+-- return {
+--     "fatih/vim-go",
+--     ft = { "go" },              -- lazy-load only for Go files
+--     build = ":GoInstallBinaries", -- automatically install/update Go binaries
+--     config = function()
+--         vim.keymap.set('n', '<leader>gt', vim.cmd.GoTest)
+--         vim.keymap.set('n', '<leader>gtf', vim.cmd.GoTestFunc)
+--         vim.keymap.set('n', '<leader>gie', vim.cmd.GoIfErr)
+--         vim.keymap.set('n', '<leader>gfs', vim.cmd.GoFillStruct)
+--         vim.keymap.set('n', '<leader>gat', vim.cmd.GoAddTags)
+--     end,
+-- }

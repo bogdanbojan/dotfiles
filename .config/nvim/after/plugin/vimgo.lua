@@ -1,5 +1,0 @@
-vim.keymap.set('n', '<leader>gt', vim.cmd.GoTest)
-vim.keymap.set('n', '<leader>gtf', vim.cmd.GoTestFunc)
-vim.keymap.set('n', '<leader>gie', vim.cmd.GoIfErr)
-vim.keymap.set('n', '<leader>gfs', vim.cmd.GoFillStruct)
-vim.keymap.set('n', '<leader>gat', vim.cmd.GoAddTags)

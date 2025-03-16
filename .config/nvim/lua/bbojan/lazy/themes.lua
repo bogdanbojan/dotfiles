@@ -6,15 +6,6 @@ local themes = {
             vim.g.gruvbox_material_foreground = "material"
             vim.o.background = "dark"
 
-            -- Use an autocmd to apply the color override after the colorscheme loads
-            -- Have orange highlights.
-            vim.api.nvim_create_autocmd("ColorScheme", {
-                pattern = "gruvbox-material",
-                callback = function()
-                    vim.api.nvim_set_hl(0, "Visual", { bg = "#e78a4e", fg = "#504945" })
-                end
-            })
-
             vim.cmd('colorscheme gruvbox-material')
             vim.g.lightline = {
                 colorscheme = 'gruvbox_material_dark_hard',
@@ -22,6 +13,7 @@ local themes = {
                     filename = '%F'
                 }
             }
+            vim.api.nvim_set_hl(0, "Visual", { bg = "#e78a4e", fg = "#504945" })
         end,
         kitty = "gruvbox-material-dark-hard",
         tmux = "gruvbox-material-dark-hard"
@@ -338,95 +330,77 @@ local themes = {
     },
 }
 
--- Function to switch TMux theme
-local function switch_tmux_theme(theme_name)
-    local tmux_config_path = os.getenv("HOME") .. "/.tmux.conf"
-
-    -- Read the current tmux.conf
-    local file = io.open(tmux_config_path, "r")
+-- Helper functions for file I/O
+local function read_file(path)
+    local file, err = io.open(path, "r")
     if not file then
-        print("Could not open TMux config file")
-        return
+        print("Error opening file:", path, err)
+        return nil
     end
     local content = file:read("*all")
     file:close()
+    return content
+end
 
-    -- Create the new theme line
+local function write_file(path, content)
+    local file, err = io.open(path, "w")
+    if not file then
+        print("Error writing to file:", path, err)
+        return false
+    end
+    file:write(content)
+    file:close()
+    return true
+end
+
+-- Function to switch TMux theme
+local function switch_tmux_theme(theme_name)
+    local tmux_config_path = os.getenv("HOME") .. "/.tmux.conf"
+    local content = read_file(tmux_config_path)
+    if not content then return end
+
     local new_theme_line = string.format('source-file ~/.tmux/%s.conf', theme_name)
-
-    -- Replace the existing theme line
     local new_content = content:gsub('source%-file %~/%.[%w/-]+%.conf', new_theme_line)
 
-    -- Write the updated content back to tmux.conf
-    file = io.open(tmux_config_path, "w")
-    if not file then
-        print("Could not write to TMux config file")
-        return
+    if write_file(tmux_config_path, new_content) then
+        os.execute("tmux source-file ~/.tmux.conf")
     end
-    file:write(new_content)
-    file:close()
-
-    -- Reload TMux configuration
-    os.execute("tmux source-file ~/.tmux.conf")
 end
 
 -- Function to switch Kitty theme
 local function switch_kitty_theme(theme_name)
     local kitty_config_path = os.getenv("HOME") .. "/.config/kitty/kitty.conf"
     local kitty_theme_line = "include themes/" .. theme_name .. ".conf"
+    local content = read_file(kitty_config_path)
+    if not content then return end
 
-    -- Read the current kitty.conf
-    local file = io.open(kitty_config_path, "r")
-    if not file then
-        print("Could not open Kitty config file")
-        return
-    end
-    local content = file:read("*all")
-    file:close()
-
-    -- Replace the theme line or add it if it doesn't exist
     local new_content, count = content:gsub("include themes/.-%.conf", kitty_theme_line)
     if count == 0 then
         new_content = content .. "\n" .. kitty_theme_line
     end
 
-    -- Write the updated content back to kitty.conf
-    file = io.open(kitty_config_path, "w")
-    if not file then
-        print("Could not write to Kitty config file")
-        return
+    if write_file(kitty_config_path, new_content) then
+        os.execute("kill -SIGUSR1 $(pgrep kitty)")
     end
-    file:write(new_content)
-    file:close()
-
-    -- Reload Kitty configuration
-    -- TODO: Fix this..at the moment it adds a new line to the end of the file,
-    -- but it does not reload the configuration.
-    os.execute("kill -SIGUSR1 $(pgrep kitty)")
 end
 
+-- Main theme switcher
 function Switch_theme(theme_name)
     local theme = themes[theme_name]
-    if theme then
-        theme.nvim()
-        -- Lightline was not being updated.
-        vim.cmd('call lightline#enable()')
+    if not theme then return end
 
-        -- Background of the hovers was the same with the highlight in visual mode.
-        -- Link NormalFloat to Normal, so it inherits the default background and foreground colors
-        vim.cmd('highlight! link NormalFloat Normal')
-        -- Link Pmenu to Normal to inherit the main background color
-        vim.cmd('highlight! link Pmenu Normal')
-        -- Link PmenuSel to Visual for selected items to inherit selection highlight color
-        vim.cmd('highlight! link PmenuSel Visual')
-        -- Weird issue where autocomplete suggestions had their parameters highlighted.
-        vim.cmd('highlight! link SnippetTabstop Normal')
+    theme.nvim()
+    vim.cmd('call lightline#enable()')
+    -- This adds the normal bg to the float as well.
+    vim.cmd('highlight! link FloatBorder Normal')
+    vim.cmd('highlight! link NormalFloat Normal')
+    vim.cmd('highlight! link Pmenu Normal')
+    vim.cmd('highlight! link PmenuSel Visual')
+    vim.cmd('highlight! link SnippetTabstop Normal')
 
-        switch_kitty_theme(theme.kitty)
-        if theme.tmux then
-            switch_tmux_theme(theme.tmux)
-        end
-    else
+    switch_kitty_theme(theme.kitty)
+    if theme.tmux then
+        switch_tmux_theme(theme.tmux)
     end
 end
 
@@ -435,4 +409,135 @@ end
 --      - k9s
 --      - *obsidian
 --      - *system
-Switch_theme('acme')
+
+-- Create an initialization function
+local function setup()
+    vim.api.nvim_create_user_command("ThemeSwitch", function(opts)
+        local theme_name = opts.args
+        if themes[theme_name] then
+            Switch_theme(theme_name)
+        else
+            print("Theme not found: " .. theme_name)
+        end
+    end, {
+        nargs = 1,
+        complete = function()
+            return vim.tbl_keys(themes)
+        end
+    })
+
+    -- Wait until plugins are loaded before setting the initial theme
+    vim.api.nvim_create_autocmd("User", {
+        pattern = "LazyVimStarted",
+        callback = function()
+            Switch_theme('acme')
+        end
+    })
+end
+
+return {
+    {
+        'sainnhe/gruvbox-material',
+        name = 'gruvbox-material',
+        lazy = false,
+    },
+    {
+        'https://gitlab.com/__tpb/acme.nvim',
+        name = 'acme',
+        lazy = false,
+    },
+    --    {
+    --        'morhetz/gruvbox',
+    --        name = 'gruvbox',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'savq/melange-nvim',
+    --        name = 'melange',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'vague2k/vague.nvim',
+    --        name = 'vague',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'rose-pine/neovim',
+    --        name = 'rose-pine',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'cocopon/iceberg.vim',
+    --        name = 'iceberg',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'ishan9299/nvim-solarized-lua',
+    --        name = 'solarized',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'sainnhe/everforest',
+    --        name = 'everforest',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'zenbones-theme/zenbones.nvim',
+    --        name = 'zenbones',
+    --        dependencies = { 'rktjmp/lush.nvim' },
+    --        lazy = false,
+    --    },
+    --    {
+    --        'rebelot/kanagawa.nvim',
+    --        name = 'kanagawa',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'sho-87/kanagawa-paper.nvim',
+    --        name = 'kanagawa-paper',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'shmerl/neogotham',
+    --        name = 'neogotham',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'raphael-proust/vacme',
+    --        name = 'vacme',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'AlexvZyl/nordic.nvim',
+    --        name = 'nordic',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'p00f/alabaster.nvim',
+    --        name = 'alabaster',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'aditya-azad/candle-grey',
+    --        name = 'candle',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'https://gitlab.com/snakedye/chocolate.git',
+    --        name = 'chocolate',
+    --        lazy = false,
+    --    },
+    --    {
+    --        'axgfn/parchment',
+    --        name = 'parchment',
+    --        lazy = false,
+    --    },
+
+    {
+        "itchyny/lightline.vim",
+        lazy = false,
+        config = function()
+            setup()
+        end
+    },
+}
