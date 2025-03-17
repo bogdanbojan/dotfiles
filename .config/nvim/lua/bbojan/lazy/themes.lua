@@ -162,6 +162,7 @@ local themes = {
                     filename = '%F'
                 }
             }
+            vim.api.nvim_set_hl(0, "Visual", { bg = "#C8C093", fg = "#16161D" })
         end,
         kitty = "kanagawa",
         tmux = "kanagawa-wave",
@@ -176,6 +177,7 @@ local themes = {
                     filename = '%F'
                 }
             }
+            vim.cmd('highlight! link @variable Normal')
         end,
         kitty = "kanagawa-paper",
         tmux = "kanagawa-paper",
@@ -262,7 +264,20 @@ local themes = {
                 }
             }
         end,
-        -- kitty = "zenbones",
+    },
+
+    ["menguless"] = {
+        nvim = function()
+            vim.cmd('colorscheme menguless')
+            vim.g.lightline = {
+                colorscheme = 'menguless',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "menguless",
+        tmux = "menguless",
     },
 
     ["alabaster"] = {
@@ -430,12 +445,17 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('acme')
+            Switch_theme('menguless')
         end
     })
 end
 
 return {
+    {
+        'zekzekus/menguless',
+        name = 'menguless',
+        lazy = false,
+    },
     {
         'sainnhe/gruvbox-material',
         name = 'gruvbox-material',
@@ -446,92 +466,92 @@ return {
         name = 'acme',
         lazy = false,
     },
-    --    {
-    --        'morhetz/gruvbox',
-    --        name = 'gruvbox',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'savq/melange-nvim',
-    --        name = 'melange',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'vague2k/vague.nvim',
-    --        name = 'vague',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'rose-pine/neovim',
-    --        name = 'rose-pine',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'cocopon/iceberg.vim',
-    --        name = 'iceberg',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'ishan9299/nvim-solarized-lua',
-    --        name = 'solarized',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'sainnhe/everforest',
-    --        name = 'everforest',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'zenbones-theme/zenbones.nvim',
-    --        name = 'zenbones',
-    --        dependencies = { 'rktjmp/lush.nvim' },
-    --        lazy = false,
-    --    },
-    --    {
-    --        'rebelot/kanagawa.nvim',
-    --        name = 'kanagawa',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'sho-87/kanagawa-paper.nvim',
-    --        name = 'kanagawa-paper',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'shmerl/neogotham',
-    --        name = 'neogotham',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'raphael-proust/vacme',
-    --        name = 'vacme',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'AlexvZyl/nordic.nvim',
-    --        name = 'nordic',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'p00f/alabaster.nvim',
-    --        name = 'alabaster',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'aditya-azad/candle-grey',
-    --        name = 'candle',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'https://gitlab.com/snakedye/chocolate.git',
-    --        name = 'chocolate',
-    --        lazy = false,
-    --    },
-    --    {
-    --        'axgfn/parchment',
-    --        name = 'parchment',
-    --        lazy = false,
-    --    },
+    -- {
+    --     'morhetz/gruvbox',
+    --     name = 'gruvbox',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'savq/melange-nvim',
+    --     name = 'melange',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'vague2k/vague.nvim',
+    --     name = 'vague',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'rose-pine/neovim',
+    --     name = 'rose-pine',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'cocopon/iceberg.vim',
+    --     name = 'iceberg',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'ishan9299/nvim-solarized-lua',
+    --     name = 'solarized',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'sainnhe/everforest',
+    --     name = 'everforest',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'zenbones-theme/zenbones.nvim',
+    --     name = 'zenbones',
+    --     dependencies = { 'rktjmp/lush.nvim' },
+    --     lazy = false,
+    -- },
+    {
+        'rebelot/kanagawa.nvim',
+        name = 'kanagawa',
+        lazy = false,
+    },
+    {
+        'sho-87/kanagawa-paper.nvim',
+        name = 'kanagawa-paper',
+        lazy = false,
+    },
+    -- {
+    --     'shmerl/neogotham',
+    --     name = 'neogotham',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'raphael-proust/vacme',
+    --     name = 'vacme',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'AlexvZyl/nordic.nvim',
+    --     name = 'nordic',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'p00f/alabaster.nvim',
+    --     name = 'alabaster',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'aditya-azad/candle-grey',
+    --     name = 'candle',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'https://gitlab.com/snakedye/chocolate.git',
+    --     name = 'chocolate',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'axgfn/parchment',
+    --     name = 'parchment',
+    --     lazy = false,
+    -- },
 
     {
         "itchyny/lightline.vim",
