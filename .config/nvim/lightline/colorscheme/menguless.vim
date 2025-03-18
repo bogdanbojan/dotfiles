@@ -18,11 +18,16 @@ let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': 
 
 let s:p.normal.left = [[s:black, s:blue], [s:blue, s:gray]]
 let s:p.normal.right = [[s:black, s:blue], [s:blue, s:gray]]
-let s:p.normal.middle = [[s:white, s:gray]]
+let s:p.normal.middle = [[s:yellow, s:gray]]
+" let s:p.normal.middle = [[s:white, s:gray]]
 
-let s:p.inactive.left = [[s:black, s:purple], [s:purple, s:gray]]
-let s:p.inactive.right = [[s:black, s:purple], [s:purple, s:gray]]
-let s:p.inactive.middle = [[s:white, s:gray]]
+" let s:p.inactive.left = [[s:black, s:purple], [s:purple, s:gray]]
+" let s:p.inactive.right = [[s:black, s:purple], [s:purple, s:gray]]
+" let s:p.inactive.middle = [[s:white, s:gray]]
+
+let s:p.inactive.left = [[s:gray, s:purple]]
+let s:p.inactive.right = [[s:gray, s:purple]]
+let s:p.inactive.middle = [[s:gray, s:purple]]
 
 let s:p.insert.left = [[s:black, s:green], [s:green, s:gray]]
 let s:p.insert.right = [[s:black, s:green], [s:green, s:gray]]
