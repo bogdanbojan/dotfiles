@@ -19,12 +19,23 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = bbojanGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
+
+autocmd("BufWritePre", {
+    group = bbojanGroup,
+    pattern = "*.go",
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+        vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    end,
+})
+
+-- TODO Check these again. Have some defined in ./lazy/lsp.lua.
 autocmd('LspAttach', {
     group = bbojanGroup,
     callback = function(e)
