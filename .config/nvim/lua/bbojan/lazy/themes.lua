@@ -276,6 +276,7 @@ local themes = {
                 }
             }
             vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#063a38' })
+            vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#969c46' })
         end,
         kitty = "menguless",
         tmux = "menguless",
