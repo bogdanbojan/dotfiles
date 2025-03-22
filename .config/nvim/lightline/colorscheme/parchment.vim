@@ -23,7 +23,7 @@ let s:cream = ['#ffffea', 15]
 
 " Normal mode
 let s:p.normal.left = [[s:cream, s:dark_blue, 'bold'], [s:black, s:light_blue]]
-let s:p.normal.middle = [[s:black, s:cream]]
+let s:p.normal.middle = [[s:black, s:light_gray]]
 let s:p.normal.right = [[s:cream, s:dark_blue], [s:black, s:light_blue]]
 let s:p.normal.error = [[s:cream, s:dark_red]]
 let s:p.normal.warning = [[s:cream, s:dark_yellow]]
