@@ -338,9 +338,22 @@ local themes = {
             vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = black })
             vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = black })
 
-
             vim.api.nvim_set_hl(0, "@variable", { fg = "#000000" })
             vim.api.nvim_set_hl(0, "IncSearch", { bg = "#cceeff" })
+
+            -- These changes are for the PR diff.
+            vim.api.nvim_set_hl(0, 'DiffChange', {
+                fg = '#000000', -- Black text
+                bg = '#eeeecc'  -- Your vscYellow/vscPopupHighlightGray color
+            })
+
+            vim.api.nvim_set_hl(0, 'DiffText', {
+                fg = '#000000', -- Black text
+                bg = '#cccc44', -- Your vscLightYellow color
+            })
+
+            vim.api.nvim_set_hl(0, 'Folded', { fg = '#000000', bg = '#eaffff' })
+            vim.api.nvim_set_hl(0, 'QuickFixLine', { fg = '#000000', bg = '#cceeff' })
         end,
         kitty = "acme2",
         tmux = "parchment",
@@ -447,7 +460,7 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('menguless')
+            Switch_theme('acme')
         end
     })
 end
