@@ -5,7 +5,7 @@ local on_attach = function(client, bufnr)
     -- if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
     --     vim.diagnostic.enable(false)
     -- end
-    local opts = { buffer = bufnr, noremap = true, silent = true }
+    local opts = { buffer = bufnr, noremap = false, silent = true }
 
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)

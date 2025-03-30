@@ -20,6 +20,7 @@ let s:light_blue = ['#cceeff', 12]
 let s:light_magenta = ['#ffeaff', 13]
 let s:light_cyan = ['#eaffff', 14]
 let s:cream = ['#ffffea', 15]
+let s:mid_yellow = ['#eeee9e', 16]
 
 " Normal mode
 let s:p.normal.left = [[s:cream, s:dark_blue, 'bold'], [s:black, s:light_blue]]
@@ -39,6 +40,10 @@ let s:p.replace.right = [[s:cream, s:dark_red], [s:black, s:light_red]]
 " Visual mode
 let s:p.visual.left = [[s:cream, s:dark_magenta, 'bold'], [s:black, s:light_magenta]]
 let s:p.visual.right = [[s:cream, s:dark_magenta], [s:black, s:light_magenta]]
+
+" Yellow Visual mode
+" let s:p.visual.left = [[s:cream, s:light_yellow, 'bold'], [s:black, s:mid_yellow]]
+" let s:p.visual.right = [[s:cream, s:light_yellow], [s:black, s:mid_yellow]]
 
 " Inactive windows
 let s:p.inactive.left = [[s:black, s:light_gray], [s:black, s:light_gray]]

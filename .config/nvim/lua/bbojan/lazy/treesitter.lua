@@ -19,7 +19,6 @@ return {
                 indent = {
                     enable = true
                 },
-
                 highlight = {
                     -- `false` will disable the whole extension.
                     enable = false,

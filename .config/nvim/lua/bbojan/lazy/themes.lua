@@ -14,6 +14,18 @@ local themes = {
                 }
             }
             vim.api.nvim_set_hl(0, "Visual", { bg = "#e78a4e", fg = "#504945" })
+
+            -- Disable syntax highlighting for most groups.
+            -- vim.api.nvim_set_hl(0, "Statement", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "Conditional", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "Keyword", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "Type", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "Special", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "gotype", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "goVar", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "goDeclType", { fg = "#ddc7a1" })
+            -- vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { fg = "#ddc7a1" })
+            -- -- vim.api.nvim_set_hl(0, "goString", { fg = "#928374" })
         end,
         kitty = "gruvbox-material-dark-hard",
         tmux = "gruvbox-material-dark-hard"
@@ -150,7 +162,7 @@ local themes = {
             }
         end,
         kitty = "iceberg",
-        tmux = "iceberg_minimal"
+        tmux = "iceberg_minimal2"
     },
 
     ["kanagawa"] = {
@@ -217,6 +229,18 @@ local themes = {
                     filename = '%F'
                 }
             }
+            vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#2E2927' })
+
+            -- Disable syntax highlighting for most groups.
+            vim.api.nvim_set_hl(0, "Statement", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Conditional", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Keyword", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "gotype", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "goVar", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "goDeclType", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { link = "Normal" })
         end,
         kitty = "zenbones-dark",
         tmux = "zenbones-dark",
@@ -266,6 +290,20 @@ local themes = {
         end,
     },
 
+    ["yorumi"] = {
+        nvim = function()
+            vim.cmd('colorscheme yorumi')
+            vim.g.lightline = {
+                colorscheme = 'yorumi',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "yorumi",
+        tmux = "yorumi",
+    },
+
     ["menguless"] = {
         nvim = function()
             vim.cmd('colorscheme menguless')
@@ -277,6 +315,8 @@ local themes = {
             }
             vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#063a38' })
             vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#969c46' })
+            -- Remove underline in lightline when searching something with telescope.
+            vim.api.nvim_set_hl(0, 'StatusLineNC', {})
         end,
         kitty = "menguless",
         tmux = "menguless",
@@ -460,7 +500,7 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('acme')
+            Switch_theme('zenbones')
         end
     })
 end
@@ -469,6 +509,11 @@ return {
     {
         'zekzekus/menguless',
         name = 'menguless',
+        lazy = false,
+    },
+    {
+        'yorumicolors/yorumi.nvim',
+        name = 'yorumi',
         lazy = false,
     },
     {
@@ -501,11 +546,11 @@ return {
     --     name = 'rose-pine',
     --     lazy = false,
     -- },
-    -- {
-    --     'cocopon/iceberg.vim',
-    --     name = 'iceberg',
-    --     lazy = false,
-    -- },
+    {
+        'cocopon/iceberg.vim',
+        name = 'iceberg',
+        lazy = false,
+    },
     -- {
     --     'ishan9299/nvim-solarized-lua',
     --     name = 'solarized',
@@ -516,12 +561,12 @@ return {
     --     name = 'everforest',
     --     lazy = false,
     -- },
-    -- {
-    --     'zenbones-theme/zenbones.nvim',
-    --     name = 'zenbones',
-    --     dependencies = { 'rktjmp/lush.nvim' },
-    --     lazy = false,
-    -- },
+    {
+        'zenbones-theme/zenbones.nvim',
+        name = 'zenbones',
+        dependencies = { 'rktjmp/lush.nvim' },
+        lazy = false,
+    },
     {
         'rebelot/kanagawa.nvim',
         name = 'kanagawa',
@@ -532,11 +577,11 @@ return {
         name = 'kanagawa-paper',
         lazy = false,
     },
-    -- {
-    --     'shmerl/neogotham',
-    --     name = 'neogotham',
-    --     lazy = false,
-    -- },
+    {
+        'shmerl/neogotham',
+        name = 'neogotham',
+        lazy = false,
+    },
     -- {
     --     'raphael-proust/vacme',
     --     name = 'vacme',
@@ -547,11 +592,11 @@ return {
     --     name = 'nordic',
     --     lazy = false,
     -- },
-    -- {
-    --     'p00f/alabaster.nvim',
-    --     name = 'alabaster',
-    --     lazy = false,
-    -- },
+    {
+        'p00f/alabaster.nvim',
+        name = 'alabaster',
+        lazy = false,
+    },
     -- {
     --     'aditya-azad/candle-grey',
     --     name = 'candle',
