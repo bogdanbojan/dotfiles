@@ -3,7 +3,7 @@ return {
     config = function()
         vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
         vim.keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<CR>", { silent = true })
-        vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
+        vim.keymap.set("n", "<leader>gu", "<cmd>diffget //2<CR>")
         -- This was conflicting with my definitions.
         -- vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
 

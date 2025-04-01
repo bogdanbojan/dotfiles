@@ -246,6 +246,33 @@ local themes = {
         tmux = "zenbones-dark",
     },
 
+    ["rosebones"] = {
+        nvim = function()
+            vim.cmd('colorscheme rosebones')
+            vim.o.background = "dark"
+            vim.g.lightline = {
+                colorscheme = 'rosebones',
+                component = {
+                    filename = '%F'
+                }
+            }
+            vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#2A283A' })
+
+            -- Disable syntax highlighting for most groups.
+            vim.api.nvim_set_hl(0, "Statement", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Conditional", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Keyword", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "gotype", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "goVar", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "goDeclType", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { link = "Normal" })
+        end,
+        kitty = "rosebones-dark",
+        tmux = "rosebones-dark",
+    },
+
     ["zenburned"] = {
         nvim = function()
             vim.cmd('colorscheme zenburned')
@@ -288,6 +315,33 @@ local themes = {
                 }
             }
         end,
+    },
+
+
+    ["desert-night"] = {
+        nvim = function()
+            vim.cmd('colorscheme desert-night')
+            vim.g.lightline = {
+                colorscheme = 'desert_night',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "desert-night",
+    },
+
+    ["quiet"] = {
+        nvim = function()
+            vim.cmd('colorscheme quiet')
+            vim.g.lightline = {
+                colorscheme = 'quiet_dark',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "quiet-dark",
     },
 
     ["yorumi"] = {
@@ -500,12 +554,17 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('zenbones')
+            Switch_theme('rosebones')
         end
     })
 end
 
 return {
+    {
+        'kooparse/vim-color-desert-night',
+        name = 'desert-night',
+        lazy = false,
+    },
     {
         'zekzekus/menguless',
         name = 'menguless',
