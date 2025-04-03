@@ -1,3 +1,17 @@
+-- Helper function to turn most of the syntax groups off. Keeps comments and strings.
+local function disable_syntax_highlighting()
+    vim.api.nvim_set_hl(0, "Statement", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "Conditional", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "Keyword", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "gotype", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "goVar", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "goLabel", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "goDeclType", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { link = "Normal" })
+end
+
 local themes = {
     ["gruvbox-material-dark"] = {
         nvim = function()
@@ -14,18 +28,7 @@ local themes = {
                 }
             }
             vim.api.nvim_set_hl(0, "Visual", { bg = "#e78a4e", fg = "#504945" })
-
-            -- Disable syntax highlighting for most groups.
-            -- vim.api.nvim_set_hl(0, "Statement", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "Conditional", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "Keyword", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "Type", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "Special", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "gotype", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "goVar", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "goDeclType", { fg = "#ddc7a1" })
-            -- vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { fg = "#ddc7a1" })
-            -- -- vim.api.nvim_set_hl(0, "goString", { fg = "#928374" })
+            disable_syntax_highlighting()
         end,
         kitty = "gruvbox-material-dark-hard",
         tmux = "gruvbox-material-dark-hard"
@@ -44,6 +47,7 @@ local themes = {
                     filename = '%F'
                 }
             }
+            disable_syntax_highlighting()
         end,
         kitty = "gruvbox-material-light-medium",
         tmux = "gruvbox-material-light-medium"
@@ -230,17 +234,7 @@ local themes = {
                 }
             }
             vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#2E2927' })
-
-            -- Disable syntax highlighting for most groups.
-            vim.api.nvim_set_hl(0, "Statement", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Conditional", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Keyword", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "gotype", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "goVar", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "goDeclType", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { link = "Normal" })
+            disable_syntax_highlighting()
         end,
         kitty = "zenbones-dark",
         tmux = "zenbones-dark",
@@ -257,17 +251,7 @@ local themes = {
                 }
             }
             vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#2A283A' })
-
-            -- Disable syntax highlighting for most groups.
-            vim.api.nvim_set_hl(0, "Statement", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Conditional", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Keyword", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "gotype", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "goVar", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "goDeclType", { link = "Normal" })
-            vim.api.nvim_set_hl(0, "goPredefinedIdentifiers", { link = "Normal" })
+            disable_syntax_highlighting()
         end,
         kitty = "rosebones-dark",
         tmux = "rosebones-dark",
@@ -385,6 +369,7 @@ local themes = {
                     filename = '%F'
                 }
             }
+            disable_syntax_highlighting()
         end,
         kitty = "alabaster",
         tmux = "alabaster",
@@ -554,7 +539,7 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('rosebones')
+            Switch_theme('gruvbox-material-light')
         end
     })
 end
