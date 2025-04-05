@@ -169,6 +169,22 @@ local themes = {
         tmux = "iceberg_minimal2"
     },
 
+
+    ["ayu"] = {
+        nvim = function()
+            vim.cmd('colorscheme ayu-dark')
+            vim.g.lightline = {
+                colorscheme = 'ayu',
+                component = {
+                    filename = '%F'
+                }
+            }
+            disable_syntax_highlighting()
+        end,
+        kitty = "ayu",
+        -- tmux = "iceberg_minimal2"
+    },
+
     ["kanagawa"] = {
         nvim = function()
             vim.cmd('colorscheme kanagawa-wave')
@@ -341,6 +357,56 @@ local themes = {
         kitty = "yorumi",
         tmux = "yorumi",
     },
+
+    ["apprentice"] = {
+        nvim = function()
+            vim.cmd('colorscheme apprentice')
+            vim.g.lightline = {
+                colorscheme = 'apprentice',
+                component = {
+                    filename = '%F'
+                }
+            }
+            disable_syntax_highlighting()
+        end,
+    },
+
+    ["solarized-osaka"] = {
+        nvim = function()
+            vim.cmd('colorscheme solarized-osaka')
+            vim.g.lightline = {
+                colorscheme = 'solarized_osaka',
+                component = {
+                    filename = '%F'
+                }
+            }
+            -- disable_syntax_highlighting()
+            vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#002B36' })
+            vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#859900' })
+
+            vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
+
+            vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#073642' })
+            vim.api.nvim_set_hl(0, 'LineNr', { fg = '#073642' })
+            vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#073642' })
+        end,
+        kitty = "solarized-osaka_dark",
+        tmux = "solarized-osaka_dark",
+    },
+
+    ["selenized"] = {
+        nvim = function()
+            vim.cmd('colorscheme selenized')
+            vim.g.lightline = {
+                colorscheme = 'selenized',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+    },
+
 
     ["menguless"] = {
         nvim = function()
@@ -539,15 +605,25 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('gruvbox-material-light')
+            Switch_theme('solarized-osaka')
         end
     })
 end
 
 return {
     {
-        'kooparse/vim-color-desert-night',
-        name = 'desert-night',
+        'romainl/Apprentice',
+        name = 'apprentice',
+        lazy = false,
+    },
+    {
+        'craftzdog/solarized-osaka.nvim',
+        name = 'solarized-osaka',
+        lazy = false,
+    },
+    {
+        'Shatur/neovim-ayu',
+        name = 'ayu',
         lazy = false,
     },
     {
