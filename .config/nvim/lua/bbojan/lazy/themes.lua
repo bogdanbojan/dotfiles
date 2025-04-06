@@ -381,6 +381,9 @@ local themes = {
                 }
             }
             -- disable_syntax_highlighting()
+            -- I don't want my windows to be dimmed:
+            vim.api.nvim_set_hl(0, "NormalNC", { link = "Normal" })
+
             vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#002B36' })
             vim.api.nvim_set_hl(0, 'MatchParen', { fg = '#859900' })
 
@@ -406,7 +409,6 @@ local themes = {
             }
         end,
     },
-
 
     ["menguless"] = {
         nvim = function()
