@@ -1,4 +1,4 @@
--- Helper function to turn most of the syntax groups off. Keeps comments and strings.
+--#C4B28A Helper function to turn most of the syntax groups off. Keeps comments and strings.
 local function disable_syntax_highlighting()
     vim.api.nvim_set_hl(0, "Statement", { link = "Normal" })
     vim.api.nvim_set_hl(0, "Conditional", { link = "Normal" })
@@ -28,7 +28,9 @@ local themes = {
                 }
             }
             vim.api.nvim_set_hl(0, "Visual", { bg = "#e78a4e", fg = "#504945" })
-            disable_syntax_highlighting()
+            -- disable_syntax_highlighting()
+            vim.api.nvim_set_hl(0, "Type", { link = "Normal" })
+            vim.api.nvim_set_hl(0, "Special", { link = "Normal" })
         end,
         kitty = "gruvbox-material-dark-hard",
         tmux = "gruvbox-material-dark-hard"
@@ -80,7 +82,6 @@ local themes = {
         end,
         kitty = "gruvbox-dark"
     },
-
 
     ["everforest"] = {
         nvim = function()
@@ -202,6 +203,11 @@ local themes = {
 
     ["kanagawa-paper"] = {
         nvim = function()
+            require("kanagawa-paper").setup({
+                plugins = {
+                    telescope = false,
+                },
+            })
             vim.cmd('colorscheme kanagawa-paper')
             vim.g.lightline = {
                 colorscheme = 'kanagawa_paper',
@@ -210,6 +216,9 @@ local themes = {
                 }
             }
             vim.cmd('highlight! link @variable Normal')
+            vim.api.nvim_set_hl(0, "Visual", { bg = "#C4B28A", fg = "#1F1F28" })
+            vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#54546d" })
+            vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#54546d" })
         end,
         kitty = "kanagawa-paper",
         tmux = "kanagawa-paper",
@@ -607,7 +616,7 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('solarized-osaka')
+            Switch_theme('kanagawa-paper')
         end
     })
 end
