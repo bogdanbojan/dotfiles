@@ -2,8 +2,8 @@ let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': 
 
 " Define colors using the more muted paper variant with correct background
 let s:bg = [ '#1F1F28', 0 ]       " terminal background
-let s:dragonWhite = [ '#c5c9c5', 15 ]    " main foreground
-let s:dragonGray = [ '#a6a69c', 8 ]      " muted foreground
+let s:dragonWhite = [ '#8ea49e', 15 ]    " main foreground
+let s:dragonGray = [ '#54546d', 8 ]      " muted foreground
 let s:dragonViolet = [ '#8992a7', 13 ]   " muted violet
 let s:dragonGreen = [ '#87a987', 10 ]    " muted green
 let s:dragonBlue2 = [ '#8ba4b0', 12 ]    " muted blue
