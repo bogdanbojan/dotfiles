@@ -25,8 +25,8 @@ let s:p.command.left = [ [ s:bg, s:dragonOrange ], [ s:dragonWhite, s:bg ] ]
 let s:p.command.right = [ [ s:bg, s:dragonOrange ], [ s:dragonWhite, s:bg ] ]
 
 " Visual mode
-let s:p.visual.left = [ [ s:bg, s:dragonViolet ], [ s:dragonWhite, s:bg ] ]
-let s:p.visual.right = [ [ s:bg, s:dragonViolet ], [ s:dragonWhite, s:bg ] ]
+let s:p.visual.left = [ [ s:bg, s:dragonPink ], [ s:dragonWhite, s:bg ] ]
+let s:p.visual.right = [ [ s:bg, s:dragonPink ], [ s:dragonWhite, s:bg ] ]
 
 " Replace mode
 let s:p.replace.left = [ [ s:bg, s:dragonRed ], [ s:dragonWhite, s:bg ] ]
