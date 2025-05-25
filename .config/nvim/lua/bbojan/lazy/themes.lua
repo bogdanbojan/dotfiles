@@ -367,19 +367,6 @@ local themes = {
         tmux = "yorumi",
     },
 
-    ["apprentice"] = {
-        nvim = function()
-            vim.cmd('colorscheme apprentice')
-            vim.g.lightline = {
-                colorscheme = 'apprentice',
-                component = {
-                    filename = '%F'
-                }
-            }
-            disable_syntax_highlighting()
-        end,
-    },
-
     ["solarized-osaka"] = {
         nvim = function()
             vim.cmd('colorscheme solarized-osaka')
@@ -462,6 +449,21 @@ local themes = {
         nvim = function()
             vim.cmd('colorscheme chocolate')
         end,
+    },
+
+    ["coffee"] = {
+        nvim = function()
+            vim.cmd('colorscheme coffee')
+            vim.g.lightline = {
+                colorscheme = 'coffee',
+                component = {
+                    filename = '%F'
+                }
+            }
+            vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#585858' })
+        end,
+        kitty = "coffee",
+        tmux = "coffee",
     },
 
     ["acme"] = {
@@ -616,15 +618,15 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('kanagawa-paper')
+            Switch_theme('rosebones')
         end
     })
 end
 
 return {
     {
-        'romainl/Apprentice',
-        name = 'apprentice',
+        'coffee-theme/coffee.vim',
+        name = 'coffee',
         lazy = false,
     },
     {
@@ -657,11 +659,6 @@ return {
         name = 'acme',
         lazy = false,
     },
-    -- {
-    --     'morhetz/gruvbox',
-    --     name = 'gruvbox',
-    --     lazy = false,
-    -- },
     -- {
     --     'savq/melange-nvim',
     --     name = 'melange',
