@@ -36,7 +36,8 @@ if s:is_dark
 	let s:c_mono5 = 245
 
 	let s:red      = '#fb4934'
-	let s:green    = '#b8bb26'
+	" let s:green    = '#b8bb26' " This is the green in NORMAL.
+	let s:green    = '#d79921' " This is the green in NORMAL.
 	let s:blue     = '#83a598'
 	let s:orange   = '#fe8019'
 	let s:c_red    = 167
@@ -106,7 +107,7 @@ let s:p.normal.right = [
 			\ [s:mono0, s:mono4, s:c_mono0, s:c_mono4],
 			\ [s:mono0, s:mono4, s:c_mono0, s:c_mono4]]
 
- 
+
 let s:p.tabline.middle = [
 			\ [s:mono4, s:mono1, s:c_mono4, s:c_mono1]]
 let s:p.tabline.right = [
