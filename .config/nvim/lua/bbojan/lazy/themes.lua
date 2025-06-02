@@ -79,8 +79,10 @@ local themes = {
                     filename = '%F'
                 }
             }
+            vim.o.signcolumn = "no"
         end,
-        kitty = "gruvbox-dark"
+        kitty = "gruvbox-dark",
+        tmux = "gruvbox-dark",
     },
 
     ["everforest"] = {
@@ -171,18 +173,18 @@ local themes = {
     },
 
 
-    ["ayu"] = {
+    ["miasma"] = {
         nvim = function()
-            vim.cmd('colorscheme ayu-dark')
+            vim.cmd('colorscheme miasma')
             vim.g.lightline = {
-                colorscheme = 'ayu',
+                colorscheme = 'miasma',
                 component = {
                     filename = '%F'
                 }
             }
-            disable_syntax_highlighting()
+            -- disable_syntax_highlighting()
         end,
-        kitty = "ayu",
+        -- kitty = "miasma",
         -- tmux = "iceberg_minimal2"
     },
 
@@ -314,11 +316,42 @@ local themes = {
         tmux = "zenbones-light",
     },
 
-    ["yui"] = {
+    ["darkearth"] = {
         nvim = function()
-            vim.cmd('colorscheme yui')
+            vim.cmd('colorscheme darkearth')
             vim.g.lightline = {
-                colorscheme = 'yui',
+                colorscheme = 'darkearth',
+                component = {
+                    filename = '%F'
+                }
+            }
+            vim.api.nvim_set_hl(0, "Visual", { bg = "#C9A654", fg = "#24211E" })
+            vim.api.nvim_set_hl(0, 'ColorColumn', { bg = "#484441" })
+            vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#484441" })
+            vim.api.nvim_set_hl(0, 'LineNr', { fg = '#5F865F' })
+        end,
+        kitty = "darkearth",
+        tmux = "darkearth",
+    },
+
+    ["vim-gruvbit"] = {
+        nvim = function()
+            vim.cmd('colorscheme vim-gruvbit')
+            vim.g.lightline = {
+                colorscheme = 'vim-gruvbit',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+    },
+
+    -- TODO Fix this
+    ["moonshine"] = {
+        nvim = function()
+            vim.cmd('colorscheme moonshine_lowcontrast')
+            vim.g.lightline = {
+                colorscheme = 'moonshine',
                 component = {
                     filename = '%F'
                 }
@@ -618,12 +651,27 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('rosebones')
+            Switch_theme('gruvbox-dark')
         end
     })
 end
 
 return {
+    -- {
+    --     'habamax/vim-gruvbit',
+    --     name = 'vim-gruvbit',
+    --     lazy = false,
+    -- },
+    -- {
+    --     'karoliskoncevicius/moonshine-vim',
+    --     name = 'moonshine',
+    --     lazy = false,
+    -- },
+    {
+        'ptdewey/darkearth-nvim',
+        name = 'darkearth',
+        lazy = false,
+    },
     {
         'coffee-theme/coffee.vim',
         name = 'coffee',
@@ -635,8 +683,8 @@ return {
         lazy = false,
     },
     {
-        'Shatur/neovim-ayu',
-        name = 'ayu',
+        'xero/miasma.nvim',
+        name = 'miasma',
         lazy = false,
     },
     {
@@ -660,15 +708,15 @@ return {
         lazy = false,
     },
     -- {
-    --     'savq/melange-nvim',
-    --     name = 'melange',
+    --     'savq/miasma-nvim',
+    --     name = 'miasma',
     --     lazy = false,
     -- },
-    -- {
-    --     'vague2k/vague.nvim',
-    --     name = 'vague',
-    --     lazy = false,
-    -- },
+    {
+        'ellisonleao/gruvbox.nvim',
+        name = 'gruvbox',
+        lazy = false,
+    },
     -- {
     --     'rose-pine/neovim',
     --     name = 'rose-pine',
