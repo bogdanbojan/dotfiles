@@ -1,26 +1,28 @@
 # -----------------------------------------------------------------------------
-# K9s Gruvbox Dark Skin
-# Author: [@indiebrain](https://github.com/indiebrain)
+# Solarized Dark Skin
+# Based on: K9s Solarized Dark Skin
+# Author:   [@danmikita](danmikita@gmail.com)
 # -----------------------------------------------------------------------------
 
 # Styles...
-foreground: &foreground "#ebdbb2"
-background: &background "#272727"
-current_line: &current_line "#ebdbb2"
-selection: &selection "#3c3735"
-comment: &comment "#bdad93"
-cyan: &cyan "#689d69"
-green: &green "#989719"
-orange: &orange "#d79921"
-magenta: &magenta "#b16185"
-blue: &blue "#448488"
-red: &red "#cc231c"
+foreground: &foreground "#839495"
+background: &background "#001419"
+current_line: &current_line "#003440"
+selection: &selection "#003440"
+comment: &comment "#6272a4"
+cyan: &cyan "#2aa197"
+green: &green "#859901"
+orange: &orange "#cb4a16"
+magenta: &magenta "#d33582"
+blue: &blue "#2aa198"
+red: &red "#dc312e"
 
+# Skin...
 k9s:
   body:
     fgColor: *foreground
     bgColor: *background
-    logoColor: *orange
+    logoColor: *blue
   prompt:
     fgColor: *foreground
     bgColor: *background
@@ -28,35 +30,29 @@ k9s:
   info:
     fgColor: *magenta
     sectionColor: *foreground
-  help:
-    fgColor: *foreground
-    bgColor: *background
-    keyColor: *magenta
-    numKeyColor: *blue
-    sectionColor: *green
   dialog:
     fgColor: *foreground
     bgColor: *background
     buttonFgColor: *foreground
     buttonBgColor: *magenta
     buttonFocusFgColor: white
-    buttonFocusBgColor: *orange
+    buttonFocusBgColor: *cyan
     labelFgColor: *orange
     fieldFgColor: *foreground
   frame:
     border:
       fgColor: *selection
-      focusColor: *orange
+      focusColor: *current_line
     menu:
       fgColor: *foreground
       keyColor: *magenta
       numKeyColor: *magenta
     crumbs:
       fgColor: *foreground
-      bgColor: *comment
-      activeColor: *blue
+      bgColor: *current_line
+      activeColor: *current_line
     status:
-      newColor: *orange
+      newColor: *cyan
       modifyColor: *blue
       addColor: *green
       errorColor: *red
@@ -65,13 +61,13 @@ k9s:
       completedColor: *comment
     title:
       fgColor: *foreground
-      bgColor: *background
+      bgColor: *current_line
       highlightColor: *orange
       counterColor: *blue
       filterColor: *magenta
   views:
     charts:
-      bgColor: background
+      bgColor: default
       defaultDialColors:
         - *blue
         - *red
@@ -81,12 +77,12 @@ k9s:
     table:
       fgColor: *foreground
       bgColor: *background
-      cursorFgColor: "#fff"
+      cursorFgColor: *selection
       cursorBgColor: *current_line
       header:
         fgColor: *foreground
         bgColor: *background
-        sorterColor: *selection
+        sorterColor: *cyan
     xray:
       fgColor: *foreground
       bgColor: *background
@@ -102,4 +98,6 @@ k9s:
       bgColor: *background
       indicator:
         fgColor: *foreground
-        bgColor: *background
+        bgColor: *selection
+        toggleOnColor: *magenta
+        toggleOffColor: *blue

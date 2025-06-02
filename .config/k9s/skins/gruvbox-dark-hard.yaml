@@ -1,17 +1,16 @@
 # -----------------------------------------------------------------------------
 # K9s Gruvbox Dark Skin
-# Author: [@indiebrain](https://github.com/indiebrain)
 # -----------------------------------------------------------------------------
 
 # Styles...
 foreground: &foreground "#ebdbb2"
-background: &background "#272727"
+background: &background "#1d2021"
 current_line: &current_line "#ebdbb2"
 selection: &selection "#3c3735"
 comment: &comment "#bdad93"
 cyan: &cyan "#689d69"
 green: &green "#989719"
-orange: &orange "#d79921"
+orange: &orange "#d79920"
 magenta: &magenta "#b16185"
 blue: &blue "#448488"
 red: &red "#cc231c"
@@ -20,7 +19,7 @@ k9s:
   body:
     fgColor: *foreground
     bgColor: *background
-    logoColor: *orange
+    logoColor: *blue
   prompt:
     fgColor: *foreground
     bgColor: *background
@@ -40,13 +39,13 @@ k9s:
     buttonFgColor: *foreground
     buttonBgColor: *magenta
     buttonFocusFgColor: white
-    buttonFocusBgColor: *orange
+    buttonFocusBgColor: *cyan
     labelFgColor: *orange
     fieldFgColor: *foreground
   frame:
     border:
       fgColor: *selection
-      focusColor: *orange
+      focusColor: *current_line
     menu:
       fgColor: *foreground
       keyColor: *magenta
@@ -56,7 +55,7 @@ k9s:
       bgColor: *comment
       activeColor: *blue
     status:
-      newColor: *orange
+      newColor: *cyan
       modifyColor: *blue
       addColor: *green
       errorColor: *red
