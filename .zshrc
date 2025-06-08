@@ -124,6 +124,12 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/bbogdan/go/bin
-export PATH=$PATH:/usr/local/protobuf/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+--color='bg+:-1,bg:-1,spinner:-1,hl:-1' \
+--color='fg:-1,fg+:-1,header:-1,info:-1,pointer:-1' \
+--color='marker:-1,prompt:-1,hl+:-1'"
+. "/home/bbojan/.deno/env"
