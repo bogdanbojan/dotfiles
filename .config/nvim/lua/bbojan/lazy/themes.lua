@@ -66,7 +66,8 @@ local themes = {
                 }
             }
         end,
-        kitty = "gruvbox-light"
+        kitty = "gruvbox-light",
+        tmux = "gruvbox-light",
     },
 
     ["gruvbox-dark"] = {
@@ -79,7 +80,7 @@ local themes = {
                     filename = '%F'
                 }
             }
-            vim.o.signcolumn = "no"
+            -- vim.o.signcolumn = "no"
         end,
         kitty = "gruvbox-dark",
         tmux = "gruvbox-dark",
@@ -373,6 +374,20 @@ local themes = {
         kitty = "desert-night",
     },
 
+    ["flexoki"] = {
+        nvim = function()
+            vim.cmd('colorscheme flexoki-light')
+            vim.g.lightline = {
+                colorscheme = 'flexoki_light',
+                component = {
+                    filename = '%F'
+                }
+            }
+        end,
+        kitty = "flexoki_light",
+        tmux = "flexoki_light",
+    },
+
     ["quiet"] = {
         nvim = function()
             vim.cmd('colorscheme quiet')
@@ -651,7 +666,7 @@ local function setup()
     vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-            Switch_theme('gruvbox-dark')
+            Switch_theme('gruvbox-light')
         end
     })
 end
@@ -667,6 +682,11 @@ return {
     --     name = 'moonshine',
     --     lazy = false,
     -- },
+    {
+        'kepano/flexoki-neovim',
+        name = 'flexoki',
+        lazy = false,
+    },
     {
         'ptdewey/darkearth-nvim',
         name = 'darkearth',
