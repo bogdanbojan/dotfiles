@@ -15,6 +15,8 @@ vim.keymap.set("i", "<C-l>", "copilot#AcceptLine()", { expr = true, silent = tru
 require('CopilotChat').setup({
     debug = false,
     show_help = "yes", -- At least for now.
+    model = "gpt-4.1",
+    build = "make tiktoken",
     mappings = {
         reset = {
             normal = "<C-x>",
