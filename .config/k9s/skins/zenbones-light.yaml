@@ -1,0 +1,87 @@
+k9s:
+  body:
+    fgColor: "#2C363C"
+    bgColor: "#F0EDEC"
+    logoColor: "#88507D"
+  prompt:
+    fgColor: "#2C363C" 
+    bgColor: "#CFC1BA"
+    suggestColor: "#286486"
+  info:
+    fgColor: "#2C363C"
+    sectionColor: "#286486"
+  dialog:
+    fgColor: "#2C363C"
+    bgColor: "#F0EDEC"
+    buttonFgColor: "#2C363C"
+    buttonBgColor: "#A8334C"
+    buttonFocusFgColor: "#F0EDEC" 
+    buttonFocusBgColor: "#3B8992"
+    labelFgColor: "#A8334C"
+    fieldFgColor: "#2C363C"
+  frame:
+    border:
+      fgColor: "#CFC1BA"
+      focusColor: "#3B8992"
+    menu:
+      fgColor: "#2C363C"
+      keyColor: "#A8334C"
+      numKeyColor: "#A8334C"
+    crumbs:
+      fgColor: "#F0EDEC"
+      bgColor: "#CFC1BA"
+      activeColor: "#88507D"
+    status:
+      newColor: "#2C363C"
+      modifyColor: "#944927"
+      addColor: "#2C363C"
+      errorColor: "#A8334C"
+      highlightcolor: "#88507D"
+      killColor: "#A8334C"
+      completedColor: "#3B8992"
+    title:
+      fgColor: "#2C363C"
+      bgColor: "#F0EDEC"
+      highlightColor: "#A8334C"
+      counterColor: "#2C363C"
+      filterColor: "#88507D"
+  views:
+    charts:
+      bgColor: "#F0EDEC"
+      defaultDialColors:
+        - "#A8334C"
+        - "#2C363C"
+        - "#944927"
+        - "#286486"
+        - "#88507D" 
+      defaultChartColors:
+        - "#A8334C"
+        - "#2C363C"
+        - "#944927"
+        - "#286486"
+        - "#88507D"
+    table:
+      fgColor: "#2C363C"
+      bgColor: "#F0EDEC"
+      cursorFgColor: "#F0EDEC"
+      cursorBgColor: "#A8334C"
+      header:
+        fgColor: "#88507D"
+        bgColor: "#CFC1BA" 
+        sorterColor: "#286486"
+    xray:
+      fgColor: "#2C363C"
+      bgColor: "#F0EDEC"
+      cursorColor: "#A8334C"
+      graphicColor: "#A8334C"
+      showIcons: false
+    yaml:
+      keyColor: "#88507D"
+      colonColor: "#A8334C"
+      valueColor: "#2C363C"
+    logs:
+      fgColor: "#2C363C"
+      bgColor: "#F0EDEC"
+      indicator:
+        fgColor: "#2C363C"
+        bgColor: "#F0EDEC"

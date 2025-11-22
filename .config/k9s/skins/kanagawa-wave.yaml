@@ -1,0 +1,87 @@
+k9s:
+  body:
+    fgColor: &fg "#dcd7ba"      # ui.fg
+    bgColor: &bg "#1f1f28"      # ui.bg
+    logoColor: "#7e9cd8"        # syn.fun
+  prompt:
+    fgColor: "#dcd7ba"          # ui.fg
+    bgColor: "#1f1f28"          # ui.bg
+    suggestColor: "#76946a"     # diag.ok
+  info:
+    fgColor: "#7aa89f"          # syn.identifier
+    sectionColor: "#957fb8"     # syn.keyword
+  dialog:
+    fgColor: "#dcd7ba"          # ui.fg
+    bgColor: "#1f1f28"          # ui.bg
+    buttonFgColor: "#dcd7ba"    # ui.fg
+    buttonBgColor: "#363646"    # ui.bg_p2
+    buttonFocusFgColor: "#1f1f28"  # ui.bg
+    buttonFocusBgColor: "#76946a"  # diag.ok
+    labelFgColor: "#d27e99"     # syn.constant
+    fieldFgColor: "#dcd7ba"     # ui.fg
+  frame:
+    border:
+      fgColor: "#7aa89f"        # syn.identifier
+      focusColor: "#76946a"     # diag.ok
+    menu:
+      fgColor: "#dcd7ba"        # ui.fg
+      keyColor: "#d27e99"       # syn.constant
+      numKeyColor: "#d27e99"    # syn.constant
+    crumbs:
+      fgColor: "#1f1f28"        # ui.bg
+      bgColor: "#363646"        # ui.bg_p2
+      activeColor: "#7e9cd8"    # syn.fun
+    status:
+      newColor: "#76946a"       # diag.ok
+      modifyColor: "#c0a36e"    # syn.operator
+      addColor: "#7aa89f"       # syn.identifier
+      errorColor: "#d27e99"     # syn.constant
+      highlightcolor: "#7e9cd8" # syn.fun
+      killColor: "#d27e99"      # syn.constant
+      completedColor: "#98bb6c" # syn.string
+    title:
+      fgColor: "#dcd7ba"        # ui.fg
+      bgColor: "#1f1f28"        # ui.bg
+      highlightColor: "#d27e99" # syn.constant
+      counterColor: "#7aa89f"   # syn.identifier
+      filterColor: "#7e9cd8"    # syn.fun
+  views:
+    charts:
+      bgColor: "#1f1f28"        # ui.bg
+      defaultDialColors:
+        - "#d27e99"            # syn.constant
+        - "#76946a"            # diag.ok
+        - "#c0a36e"            # syn.operator
+        - "#7aa89f"            # syn.identifier
+        - "#957fb8"            # syn.keyword
+      defaultChartColors:
+        - "#d27e99"            # syn.constant
+        - "#76946a"            # diag.ok
+        - "#c0a36e"            # syn.operator
+        - "#7aa89f"            # syn.identifier
+        - "#957fb8"            # syn.keyword
+    table:
+      fgColor: "#dcd7ba"        # ui.fg
+      bgColor: "#1f1f28"        # ui.bg
+      cursorFgColor: "#1f1f28"  # ui.bg
+      cursorBgColor: "#363646"  # ui.bg_p2
+      header:
+        fgColor: "#7e9cd8"      # syn.fun
+        bgColor: "#1f1f28"      # ui.bg
+        sorterColor: "#98bb6c"  # syn.string
+    xray:
+      fgColor: "#dcd7ba"        # ui.fg
+      bgColor: "#1f1f28"        # ui.bg
+      cursorColor: "#363646"    # ui.bg_p2
+      graphicColor: "#d27e99"   # syn.constant
+      showIcons: false
+    yaml:
+      keyColor: "#7e9cd8"       # syn.fun
+      colonColor: "#363646"     # ui.bg_p2
+      valueColor: "#dcd7ba"     # ui.fg
+    logs:
+      fgColor: "#dcd7ba"        # ui.fg
+      bgColor: "#1f1f28"        # ui.bg
+      indicator:
+        fgColor: "#76946a"      # diag.ok
+        bgColor: "#1f1f28"      # ui.bg

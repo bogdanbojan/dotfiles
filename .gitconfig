@@ -1,0 +1,32 @@
+[user]
+	name = Bogdan Bojan
+	email = hello@bogdanbojan.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[includeIf "gitdir:~/go/src/github.com/VUSTruck/"]
+    path = ~/.gitconfig-vustruck
+[core]
+	hooksPath = /home/bbojan/.git-hooks
+	autocrlf = input
+	safecrlf = true
+[merge]
+    tool = nvim -d
+[alias]
+    c = commit
+    s = status
+    l = log --oneline
+    f = push --force-with-lease
+    # https://stackoverflow.com/q/11269256
+    ss = "!f() { git stash show stash^{/$*} -p; }; f"
+	sa = "!f() { git stash apply stash^{/$*}; }; f"
+    sd = "!f() { git stash drop stash^{/$*}; }; f"
+	sl = stash list
+[color]
+    ui = true
+[help]
+    autocorrect = prompt
+[diff]
+    algorithm = histogram
+    indentHeuristic = true
+[protocol]
+    version = 2

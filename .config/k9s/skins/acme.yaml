@@ -1,0 +1,108 @@
+# -----------------------------------------------------------------------------
+# K9s Acme Skin
+# Based on the Acme kitty theme provided
+# -----------------------------------------------------------------------------
+
+# Styles...
+foreground: &foreground "#000000"
+background: &background "#ffffea"
+current_line: &current_line "#eaeaea"   # using color7 (light gray)
+selection: &selection "#000000"         # from the kitty selection_background
+comment: &comment "#999999"             # using dark gray for muted text
+cyan: &cyan "#00aaff"                   # base cyan (color6)
+green: &green "#448844"                  # base green (color2)
+orange: &orange "#dd9344"                # using light yellow (#dd9344) as a warm accent
+magenta: &magenta "#8f3f71"              # light magenta (color13)
+blue: &blue "#0088cc"                   # using light blue (color12) for vibrancy
+red: &red "#bb5d5d"                     # base red (color1)
+
+k9s:
+  body:
+    fgColor: *foreground
+    bgColor: *background
+    logoColor: *blue
+  prompt:
+    fgColor: *foreground
+    bgColor: *background
+    suggestColor: *orange
+  info:
+    fgColor: *magenta
+    sectionColor: *foreground
+  help:
+    fgColor: *foreground
+    bgColor: *background
+    keyColor: *magenta
+    numKeyColor: *blue
+    sectionColor: *green
+  dialog:
+    fgColor: *foreground
+    bgColor: *background
+    buttonFgColor: *foreground
+    buttonBgColor: *magenta
+    buttonFocusFgColor: "#ffffff"
+    buttonFocusBgColor: *cyan
+    labelFgColor: *orange
+    fieldFgColor: *foreground
+  frame:
+    border:
+      fgColor: *selection
+      focusColor: *current_line
+    menu:
+      fgColor: *foreground
+      keyColor: *magenta
+      numKeyColor: *magenta
+    crumbs:
+      fgColor: *foreground
+      bgColor: *comment
+      activeColor: *blue
+    status:
+      newColor: *cyan
+      modifyColor: *blue
+      addColor: *green
+      errorColor: *red
+      highlightColor: *orange
+      killColor: *comment
+      completedColor: *comment
+    title:
+      fgColor: *foreground
+      bgColor: *background
+      highlightColor: *orange
+      counterColor: *blue
+      filterColor: *magenta
+  views:
+    charts:
+      bgColor: background
+      defaultDialColors:
+        - *blue
+        - *red
+      defaultChartColors:
+        - *blue
+        - *red
+    table:
+      fgColor: *foreground
+      bgColor: *background
+      cursorFgColor: *foreground
+      cursorBgColor: *current_line
+      header:
+        fgColor: *foreground
+        bgColor: *background
+        sorterColor: *selection
+    xray:
+      fgColor: *foreground
+      bgColor: *background
+      cursorColor: *current_line
+      graphicColor: *blue
+      showIcons: false
+    yaml:
+      keyColor: *magenta
+      colonColor: *blue
+      valueColor: *foreground
+    logs:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *foreground
+        bgColor: *background
+        toggleOnColor: *magenta
+        toggleOffColor: *blue
+

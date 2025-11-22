@@ -1,0 +1,87 @@
+k9s:
+  body:
+    fgColor: "#B4BDC3"
+    bgColor: "#1C1917"
+    logoColor: "#B77E64"
+  prompt:
+    fgColor: "#B4BDC3"
+    bgColor: "#352F2D"
+    suggestColor: "#B77E64"
+  info:
+    fgColor: "#7DAEA3"
+    sectionColor: "#B77E64"
+  dialog:
+    fgColor: "#B4BDC3"
+    bgColor: "#1C1917"
+    buttonFgColor: "#B4BDC3"
+    buttonBgColor: "#B77E64"
+    buttonFocusFgColor: "#1C1917"
+    buttonFocusBgColor: "#B77E64"
+    labelFgColor: "#B77E64"
+    fieldFgColor: "#B4BDC3"
+  frame:
+    border:
+      fgColor: "#B77E64"
+      focusColor: "#B77E64"
+    menu:
+      fgColor: "#B4BDC3"
+      keyColor: "#B77E64"
+      numKeyColor: "#B77E64"
+    crumbs:
+      fgColor: "#1C1917"
+      bgColor: "#B77E64"
+      activeColor: "#B77E64"
+    status:
+      newColor: "#B77E64"
+      modifyColor: "#B77E64"
+      addColor: "#B77E64"
+      errorColor: "#B77E64"
+      highlightcolor: "#B77E64"
+      killColor: "#B77E64"
+      completedColor: "#B77E64"
+    title:
+      fgColor: "#B77E64"
+      bgColor: "#1C1917"
+      highlightColor: "#B77E64"
+      counterColor: "#7DAEA3"
+      filterColor: "#B77E64"
+  views:
+    charts:
+      bgColor: "#1C1917"
+      defaultDialColors:
+        - "#B77E64"
+        - "#B77E64"
+        - "#B77E64"
+        - "#7DAEA3"
+        - "#B77E64"
+      defaultChartColors:
+        - "#B77E64"
+        - "#B77E64"
+        - "#B77E64"
+        - "#7DAEA3"
+        - "#B77E64"
+    table:
+      fgColor: "#B4BDC3"
+      bgColor: "#1C1917"
+      cursorFgColor: "#1C1917"
+      cursorBgColor: "#B77E64"
+      header:
+        fgColor: "#B77E64"
+        bgColor: "#352F2D"
+        sorterColor: "#B77E64"
+    xray:
+      fgColor: "#B4BDC3"
+      bgColor: "#1C1917"
+      cursorColor: "#B77E64"
+      graphicColor: "#B77E64"
+      showIcons: false
+    yaml:
+      keyColor: "#B77E64"
+      colonColor: "#B77E64"
+      valueColor: "#B4BDC3"
+    logs:
+      fgColor: "#B4BDC3"
+      bgColor: "#1C1917"
+      indicator:
+        fgColor: "#B77E64"
+        bgColor: "#1C1917"
