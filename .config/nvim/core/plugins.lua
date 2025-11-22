@@ -14,9 +14,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
     { src = "https://github.com/chomosuke/typst-preview.nvim" },
 
-    {
-        src = "https://github.com/neovim/nvim-lspconfig",
-    },
+    { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/williamboman/mason.nvim" },
     { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
     { src = "https://github.com/hrsh7th/nvim-cmp" },
@@ -37,7 +35,13 @@ vim.pack.add({
 
     { src = "https://github.com/github/copilot.vim" },
     { src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
-    -- { src = "https://github.com/zbirenbaum/copilot-cmp" },
+
+    { src = "https://github.com/mfussenegger/nvim-dap" },
+    -- { src = "https://github.com/rcarriga/nvim-dap-ui" },
+    { src = "https://github.com/nvim-neotest/nvim-nio" },
+    { src = "https://github.com/jay-babu/mason-nvim-dap.nvim" },
+    { src = "https://github.com/theHamsta/nvim-dap-virtual-text" },
+    { src = "https://github.com/igorlfs/nvim-dap-view" },
 
     { src = "https://github.com/kylechui/nvim-surround" },
 })
