@@ -1,0 +1,5 @@
+[user]
+	name = Bogdan Bojan
+	email = mhp.bojan@external.daimlertruck.com
+[url "git@git.t3.daimlertruck.com:"]
+	insteadOf = https://git.t3.daimlertruck.com/

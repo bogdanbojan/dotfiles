@@ -1,0 +1,87 @@
+k9s:
+  body:
+    fgColor: &fg "#d4be98"
+    bgColor: &bg "#282828"
+    logoColor: "#e78a4e"
+  prompt:
+    fgColor: "#d4be98"
+    bgColor: "#282828"
+    suggestColor: "#a9b665"
+  info:
+    fgColor: "#7daea3"
+    sectionColor: "#d3869b"
+  dialog:
+    fgColor: "#d4be98"
+    bgColor: "#282828"
+    buttonFgColor: "#d4be98"
+    buttonBgColor: "#665c54"
+    buttonFocusFgColor: "#282828"
+    buttonFocusBgColor: "#a9b665"
+    labelFgColor: "#ea6962"
+    fieldFgColor: "#d4be98"
+  frame:
+    border:
+      fgColor: "#7daea3"
+      focusColor: "#a9b665"
+    menu:
+      fgColor: "#d4be98"
+      keyColor: "#ea6962"
+      numKeyColor: "#ea6962"
+    crumbs:
+      fgColor: "#282828" 
+      bgColor: "#665c54"
+      activeColor: "#e78a4e"
+    status:
+      newColor: "#a9b665"
+      modifyColor: "#d8a657"
+      addColor: "#7daea3"
+      errorColor: "#ea6962"
+      highlightcolor: "#e78a4e"
+      killColor: "#ea6962"
+      completedColor: "#89b482"
+    title:
+      fgColor: "#d4be98"
+      bgColor: "#282828"
+      highlightColor: "#ea6962"
+      counterColor: "#7daea3"
+      filterColor: "#e78a4e"
+  views:
+    charts:
+      bgColor: "#282828"
+      defaultDialColors:
+        - "#ea6962"
+        - "#a9b665"
+        - "#d8a657"
+        - "#7daea3"
+        - "#d3869b"
+      defaultChartColors:
+        - "#ea6962"
+        - "#a9b665"
+        - "#d8a657"
+        - "#7daea3"
+        - "#d3869b"
+    table:
+      fgColor: "#d4be98"
+      bgColor: "#282828"
+      cursorFgColor: "#282828"
+      cursorBgColor: "#a89984"
+      header:
+        fgColor: "#e78a4e"
+        bgColor: "#282828"
+        sorterColor: "#89b482"
+    xray:
+      fgColor: "#d4be98"
+      bgColor: "#282828"
+      cursorColor: "#a89984"
+      graphicColor: "#ea6962"
+      showIcons: false
+    yaml:
+      keyColor: "#e78a4e"
+      colonColor: "#a89984"
+      valueColor: "#d4be98"
+    logs:
+      fgColor: "#d4be98"
+      bgColor: "#282828"
+      indicator:
+        fgColor: "#a9b665"
+        bgColor: "#282828"

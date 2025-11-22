@@ -1,0 +1,108 @@
+# -----------------------------------------------------------------------------
+# K9s Menguless Theme
+# Author: Bogdan Bojan
+# License: MIT License
+# Last Change: 2025/03/17
+# -----------------------------------------------------------------------------
+
+# Styles...
+foreground: &foreground "#f8efd8"
+background: &background "#053230"
+current_line: &current_line "#3b80a1"
+selection: &selection "#2d555a"
+comment: &comment "#76929b"
+cyan: &cyan "#51a163"
+green: &green "#969c46"
+orange: &orange "#d33934"
+magenta: &magenta "#76929b"
+blue: &blue "#3b80a1"
+red: &red "#d33934"
+
+theme:
+  body:
+    fgColor: *foreground
+    bgColor: *background
+    logoColor: *blue
+  prompt:
+    fgColor: *foreground
+    bgColor: *background
+    suggestColor: *orange
+  info:
+    fgColor: *magenta
+    sectionColor: *foreground
+  help:
+    fgColor: *foreground
+    bgColor: *background
+    keyColor: *magenta
+    numKeyColor: *blue
+    sectionColor: *green
+  dialog:
+    fgColor: *foreground
+    bgColor: *background
+    buttonFgColor: *foreground
+    buttonBgColor: *magenta
+    buttonFocusFgColor: white
+    buttonFocusBgColor: *cyan
+    labelFgColor: *orange
+    fieldFgColor: *foreground
+  frame:
+    border:
+      fgColor: *selection
+      focusColor: *current_line
+    menu:
+      fgColor: *foreground
+      keyColor: *magenta
+      numKeyColor: *magenta
+    crumbs:
+      fgColor: *foreground
+      bgColor: *comment
+      activeColor: *blue
+    status:
+      newColor: *cyan
+      modifyColor: *blue
+      addColor: *green
+      errorColor: *red
+      highlightColor: *orange
+      killColor: *comment
+      completedColor: *comment
+    title:
+      fgColor: *foreground
+      bgColor: *background
+      highlightColor: *orange
+      counterColor: *blue
+      filterColor: *magenta
+  views:
+    charts:
+      bgColor: *background
+      defaultDialColors:
+        - *blue
+        - *red
+      defaultChartColors:
+        - *blue
+        - *red
+    table:
+      fgColor: *foreground
+      bgColor: *background
+      cursorFgColor: "#fff"
+      cursorBgColor: *current_line
+      header:
+        fgColor: *foreground
+        bgColor: *background
+        sorterColor: *selection
+    xray:
+      fgColor: *foreground
+      bgColor: *background
+      cursorColor: *current_line
+      graphicColor: *blue
+      showIcons: false
+    yaml:
+      keyColor: *magenta
+      colonColor: *blue
+      valueColor: *foreground
+    logs:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *foreground
+        bgColor: *background
+
