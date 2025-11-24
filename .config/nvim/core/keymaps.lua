@@ -66,3 +66,6 @@ end) -- Turn off syntax highlighting
 vim.keymap.set("n", "<leader>son", function()
 	vim.cmd("syntax on")
 end) -- Turn on syntax highlighting
+-- })
+
+vim.keymap.set('n', '<leader>h', '<cmd>set hlsearch!<cr>', { desc = 'Toggle search highlight' })
