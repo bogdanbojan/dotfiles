@@ -1,12 +1,13 @@
 -- Packages
 vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
+    { src = "https://github.com/rktjmp/lush.nvim" },
 
-    -- Theme
-    -- { src = "https://github.com/vague2k/vague.nvim" },
+    -- Themes
+    { src = "https://github.com/zenbones-theme/zenbones.nvim" },
+    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
     { src = "https://github.com/catppuccin/nvim" },
     { src = "https://gitlab.com/__tpb/acme.nvim" },
-    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
 
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
 
@@ -37,7 +38,6 @@ vim.pack.add({
     { src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
 
     { src = "https://github.com/mfussenegger/nvim-dap" },
-    -- { src = "https://github.com/rcarriga/nvim-dap-ui" },
     { src = "https://github.com/nvim-neotest/nvim-nio" },
     { src = "https://github.com/jay-babu/mason-nvim-dap.nvim" },
     { src = "https://github.com/theHamsta/nvim-dap-virtual-text" },
