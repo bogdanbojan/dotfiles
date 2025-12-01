@@ -8,7 +8,6 @@ require("mason-lspconfig").setup({
         'docker_compose_language_service',
         'dockerls',
         'helm_ls',
-        'lua_ls',
         'sqls',
         'vimls',
         -- 'terraformls',
@@ -20,7 +19,6 @@ require("mason-lspconfig").setup({
         'rust_analyzer',
         'bashls',
         'jsonls',
-        'ltex',
     },
     check_outdated_packages_on_open = false,
     handlers = {

@@ -28,7 +28,6 @@ vim.lsp.enable({
 	'docker_compose_language_service',
 	'dockerls',
 	'helm_ls',
-	'lua_ls',
 	'sqls',
 	'vimls',
 	'terraformls',
@@ -39,5 +38,4 @@ vim.lsp.enable({
 	'rust_analyzer',
 	'bashls',
 	'jsonls',
-	'ltex',
 })
