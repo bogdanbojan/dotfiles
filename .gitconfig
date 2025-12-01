@@ -1,6 +1,7 @@
 [user]
 	name = Bogdan Bojan
 	email = hello@bogdanbojan.com
+	signingkey = hello@bogdanbojan.com
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [includeIf "gitdir:~/go/src/github.com/VUSTruck/"]
@@ -30,3 +31,9 @@
     indentHeuristic = true
 [protocol]
     version = 2
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	program = gpg
