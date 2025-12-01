@@ -17,8 +17,7 @@ vim.keymap.set("i", "<C-l>", "copilot#AcceptLine()", { expr = true, silent = tru
 require('CopilotChat').setup({
     debug = false,
     show_help = "yes", -- At least for now.
-    -- TODO Maybe think of setting temperature.
-    model = "gpt-5",
+    model = "gpt-5.1",
     build = "make tiktoken",
     mappings = {
         reset = {
@@ -33,7 +32,7 @@ require('CopilotChat').setup({
 
     headers = {
         user = 'Funes',
-        assistant = 'HAL-9000',
+        assistant = 'Borges',
     }
 })
 
