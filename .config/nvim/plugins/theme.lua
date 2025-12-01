@@ -65,7 +65,7 @@ local themes = {
             config_file = "acme.conf"
         },
         kitty = {
-            config_file = "acme2.conf"
+            config_file = "acme.conf"
         }
     },
 }
