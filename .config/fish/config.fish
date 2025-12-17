@@ -5,6 +5,9 @@ if status is-interactive
     exec tmux
 end
 
+# This enables compatibility with vim-fugitive.
+alias yadmn='yadm enter nvim .'
+
 function cls
     clear
     commandline -f repaint
