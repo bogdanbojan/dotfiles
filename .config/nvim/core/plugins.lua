@@ -8,6 +8,11 @@ vim.pack.add({
     { src = "https://github.com/ellisonleao/gruvbox.nvim" },
     { src = "https://github.com/catppuccin/nvim" },
     { src = "https://gitlab.com/__tpb/acme.nvim" },
+    { src = "https://github.com/zekzekus/menguless" },
+    { src = "https://github.com/kepano/flexoki" },
+    { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
+    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
+    { src = "https://github.com/sainnhe/gruvbox-material" },
 
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
 
