@@ -5,6 +5,98 @@ local M = {}
 -- ============================================================================
 
 local themes = {
+    ["gruvbox-material-dark"] = {
+        nvim = {
+            setup = function()
+                vim.g.gruvbox_material_enable_italic = 1
+                vim.g.gruvbox_material_background = "hard" -- Default: medium.
+                vim.g.gruvbox_material_foreground = "material"
+                vim.o.background = "dark"
+            end,
+            colorscheme = "gruvbox-material",
+            highlights = {
+                Visual = { bg = "#e78a4e", fg = "#1d2021" },
+                Type = { link = "Normal" },
+                Special = { link = "Normal" },
+            }
+        },
+        hyprland = {
+            active_border = "rgba(d4be98d6) rgba(d4be98d6) 45deg"
+        },
+        tmux = {
+            config_file = "gruvbox-material-dark-hard.conf",
+        },
+        kitty = {
+            config_file = "gruvbox-material-dark-hard.conf",
+        },
+    },
+
+    vimbones = {
+        nvim = {
+            setup = function()
+                vim.o.background = "dark"
+                vim.g.vimbones = {
+                    italic_strings = false,
+                }
+            end,
+            colorscheme = "vimbones",
+        },
+        hyprland = {
+            active_border = "rgba(ffdeb9d6) rgba(ffdeb9d6) 45deg"
+        },
+        tmux = {
+            config_file = "vimbones.conf",
+        },
+        kitty = {
+            config_file = "vimbones.conf",
+        },
+    },
+
+    neobones = {
+        nvim = {
+            setup = function()
+                vim.o.background = "dark"
+                vim.g.neobones = {
+                    italic_strings = false,
+                    -- italic_comments = false,
+                    -- darkness = "warm",
+                }
+            end,
+            colorscheme = "neobones",
+            highlights = {
+                ColorColumn = { bg = '#20303A' }
+            }
+        },
+        hyprland = {
+            active_border = "rgba(98a39eff) rgba(98a39eff) 45deg"
+        },
+        tmux = {
+            config_file = "neobones-dark.conf",
+        },
+        kitty = {
+            config_file = "neobones-dark.conf",
+        },
+    },
+
+    zenwritten = {
+        nvim = {
+            setup = function()
+                vim.o.background = "dark"
+                vim.g.zenwritten = { italic_strings = false }
+            end,
+            colorscheme = "zenwritten",
+        },
+        hyprland = {
+            active_border = "rgba(bb9bf7ff) rgba(bb9bf7ff) 45deg"
+        },
+        tmux = {
+            config_file = "tokyobones-dark.conf",
+        },
+        kitty = {
+            config_file = "tokyobones-dark.conf",
+        },
+    },
+
     zenburned = {
         nvim = {
             setup = function()
@@ -16,13 +108,102 @@ local themes = {
             }
         },
         hyprland = {
-            active_border = "rgba(d18ec2ee) rgba(d18ec2ee) 45deg"
+            active_border = "rgba(c0ab86ff) rgba(c0ab86ff) 45deg"
         },
         tmux = {
             config_file = "zenburned.conf"
         },
         kitty = {
             config_file = "zenburned.conf"
+        }
+    },
+
+    zenbones_dark = {
+        nvim = {
+            setup = function()
+                vim.g.zenbones = { italic_strings = false }
+            end,
+            colorscheme = "zenbones",
+            highlights = {
+                ColorColumn = { bg = '#2E2927' }
+            }
+        },
+        hyprland = {
+            active_border = "rgba(819b69ff) rgba(819b69ff) 45deg"
+        },
+        tmux = {
+            config_file = "zenbones-dark.conf"
+        },
+        kitty = {
+            config_file = "zenbones-dark.conf"
+        }
+    },
+
+    tokyobones_dark = {
+        nvim = {
+            setup = function()
+                vim.g.tokyobones = { italic_strings = false }
+            end,
+            colorscheme = "tokyobones",
+            highlights = {
+                ColorColumn = { bg = '#303142' }
+            }
+        },
+        hyprland = {
+            active_border = "rgba(bb9bf7ff) rgba(bb9bf7ff) 45deg"
+        },
+        tmux = {
+            config_file = "tokyobones-dark.conf"
+        },
+        kitty = {
+            config_file = "tokyobones-dark.conf"
+        }
+    },
+
+
+    zenbones_light = {
+        nvim = {
+            setup = function()
+                vim.g.zenbones = { italic_strings = false }
+            end,
+            colorscheme = "zenbones",
+            highlights = {
+                ColorColumn = { bg = '#2E2927' }
+            }
+        },
+        hyprland = {
+            active_border = "rgba(969c46ff) rgba(969c46ff) 45deg"
+        },
+        tmux = {
+            config_file = "zenbones-light.conf"
+        },
+        kitty = {
+            config_file = "zenbones-light.conf"
+        }
+    },
+
+
+    menguless = {
+        nvim = {
+            setup = function()
+                vim.g.menguless = { italic_strings = false }
+            end,
+            colorscheme = "menguless",
+            highlights = {
+                ColorColumn = { bg = '#063a38' },
+                MatchParen = { bg = '#969c46' },
+                StatusLineNC = {},
+                IncSearch = { bg = "#969c46" },
+            }
+        },
+        hyprland = {
+            active_border = "rgba(969c46ff) rgba(969c46ff) 45deg"
+        },
+        tmux = {
+            config_file = "menguless.conf"
+        },
+        kitty = {
+            config_file = "menguless.conf"
         }
     },
 
