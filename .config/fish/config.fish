@@ -5,6 +5,7 @@ if status is-interactive
     exec tmux
 end
 
+alias n='nvim'
 # This enables compatibility with vim-fugitive.
 alias yadmn='yadm enter nvim .'
 
