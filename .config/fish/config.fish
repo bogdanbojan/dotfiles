@@ -90,6 +90,14 @@ function todo
     touch "$(date +%Y-%m-%d).txt"
 end
 
+function todo_week
+    set today (date +%Y-%m-%d)
+    set wday (date +%u)
+    set monday (date -d "$today - (math $wday - 1) days" +%Y-%m-%d)
+    set sunday (date -d "$monday + 6 days" +%d)
+    touch "$monday-$sunday.txt"
+end
+
 # Fish git prompt
 set __fish_git_prompt_showuntrackedfiles 'yes'
 set __fish_git_prompt_showdirtystate 'yes'
