@@ -25,6 +25,9 @@ set -x GOPATH $HOME/go
 set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $GOPATH/bin
 
+set -x XCURSOR_THEME capitaine-cursors
+set -x XCURSOR_SIZE 24
+
 # Defaults to dev. Can be changed to int/prod.
 # This is for the integration tests.
 if not set -q ENV
