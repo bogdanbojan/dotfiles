@@ -2,17 +2,22 @@
 vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/rktjmp/lush.nvim" },
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 
     -- Themes
     { src = "https://github.com/zenbones-theme/zenbones.nvim" },
     { src = "https://github.com/ellisonleao/gruvbox.nvim" },
     { src = "https://github.com/catppuccin/nvim" },
+    { src = "https://github.com/neanias/everforest-nvim" },
     { src = "https://gitlab.com/__tpb/acme.nvim" },
     { src = "https://github.com/zekzekus/menguless" },
     { src = "https://github.com/kepano/flexoki" },
     { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
     { src = "https://github.com/ellisonleao/gruvbox.nvim" },
     { src = "https://github.com/sainnhe/gruvbox-material" },
+    { src = "https://github.com/kepano/flexoki-neovim" },
+    { src = "https://github.com/projekt0n/github-nvim-theme" },
+    { src = "https://github.com/metalelf0/black-metal-theme-neovim" },
 
     { src = "https://github.com/christoomey/vim-tmux-navigator" },
 
@@ -39,8 +44,10 @@ vim.pack.add({
         version = "harpoon2",
     },
 
-    { src = "https://github.com/github/copilot.vim" },
-    { src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
+    -- { src = "https://github.com/github/copilot.vim" },
+    -- { src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
+    { src = "https://github.com/folke/sidekick.nvim" },
+    { src = "https://github.com/olimorris/codecompanion.nvim" },
 
     { src = "https://github.com/mfussenegger/nvim-dap" },
     { src = "https://github.com/nvim-neotest/nvim-nio" },
@@ -49,4 +56,6 @@ vim.pack.add({
     { src = "https://github.com/igorlfs/nvim-dap-view" },
 
     { src = "https://github.com/kylechui/nvim-surround" },
+
+    { src = "https://github.com/lervag/vimtex" },
 })

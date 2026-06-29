@@ -1,0 +1,6 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "model": "github-copilot/claude-sonnet-4.8",
+    "shell": "/opt/homebrew/bin/fish",
+    "default_agent": "plan"
+}

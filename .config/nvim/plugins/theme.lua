@@ -5,6 +5,40 @@ local M = {}
 -- ============================================================================
 
 local themes = {
+    -- ["everforest-light"] = {
+    --     nvim = {
+    --         setup = function()
+    --             vim.o.background = "light"
+    --         end,
+    --         colorscheme = "everforest",
+    --         on_highlights = function(hl, palette)
+    --         hl.TSDanger = {}
+    --         end,
+    --     }
+    --     },
+    --     tmux = {
+    --         config_file = "everforest-light.conf",
+    --     },
+    --     kitty = {
+    --         config_file = "everforest-light.conf",
+    --     },
+    -- },
+
+    ["gruvbox-light"] = {
+        nvim = {
+            setup = function()
+                vim.o.background = "light"
+            end,
+            colorscheme = "gruvbox",
+        },
+        tmux = {
+            config_file = "gruvbox-light.conf",
+        },
+        kitty = {
+            config_file = "gruvbox-light.conf",
+        },
+    },
+
     ["gruvbox-material-dark"] = {
         nvim = {
             setup = function()
@@ -20,14 +54,34 @@ local themes = {
                 Special = { link = "Normal" },
             }
         },
-        hyprland = {
-            active_border = "rgba(d4be98d6) rgba(d4be98d6) 45deg"
-        },
         tmux = {
             config_file = "gruvbox-material-dark-hard.conf",
         },
         kitty = {
             config_file = "gruvbox-material-dark-hard.conf",
+        },
+    },
+
+    ["gruvbox-material-light"] = {
+        nvim = {
+            setup = function()
+                vim.g.gruvbox_material_enable_italic = 1
+                vim.g.gruvbox_material_background = "hard" -- Default: medium.
+                vim.g.gruvbox_material_foreground = "material"
+                vim.o.background = "light"
+            end,
+            colorscheme = "gruvbox-material",
+            highlights = {
+                -- Visual = { bg = "#e78a4e", fg = "#1d2021" },
+                Type = { link = "Normal" },
+                Special = { link = "Normal" },
+            }
+        },
+        tmux = {
+            config_file = "gruvbox-material-light-hard.conf",
+        },
+        kitty = {
+            config_file = "gruvbox-material-light-hard.conf",
         },
     },
 
@@ -41,9 +95,6 @@ local themes = {
             end,
             colorscheme = "vimbones",
         },
-        hyprland = {
-            active_border = "rgba(ffdeb9d6) rgba(ffdeb9d6) 45deg"
-        },
         tmux = {
             config_file = "vimbones.conf",
         },
@@ -51,6 +102,47 @@ local themes = {
             config_file = "vimbones.conf",
         },
     },
+
+    ["github-light"] = {
+        nvim = {
+            setup = function()
+                vim.o.background = "light"
+            end,
+            colorscheme = "github_light_colorblind",
+            highlights = {
+                WinBar     = { bg = "#ddddde", fg = "#24292f" },
+                WinBarNC   = { bg = "#ddddde", fg = "#6e7781" },
+                StatusLine = { bg = "#ddddde", fg = "#24292f" },
+            },
+        },
+        tmux = {
+            config_file = "github-light-colorblind.conf",
+        },
+        kitty = {
+            config_file = "github-light-colorblind.conf",
+        },
+    },
+
+    ["github-dark"] = {
+        nvim = {
+            setup = function()
+                vim.o.background = "dark"
+            end,
+            colorscheme = "github_dark_colorblind",
+            highlights = {
+                -- WinBar     = { bg = "#ddddde", fg = "#24292f" },
+                -- WinBarNC   = { bg = "#ddddde", fg = "#6e7781" },
+                -- StatusLine = { bg = "#ddddde", fg = "#24292f" },
+            },
+        },
+        tmux = {
+            config_file = "github-dark-colorblind.conf",
+        },
+        kitty = {
+            config_file = "github-dark-colorblind.conf",
+        },
+    },
+
 
     neobones = {
         nvim = {
@@ -66,9 +158,6 @@ local themes = {
             highlights = {
                 ColorColumn = { bg = '#20303A' }
             }
-        },
-        hyprland = {
-            active_border = "rgba(98a39eff) rgba(98a39eff) 45deg"
         },
         tmux = {
             config_file = "neobones-dark.conf",
@@ -86,14 +175,140 @@ local themes = {
             end,
             colorscheme = "zenwritten",
         },
-        hyprland = {
-            active_border = "rgba(bb9bf7ff) rgba(bb9bf7ff) 45deg"
-        },
         tmux = {
             config_file = "tokyobones-dark.conf",
         },
         kitty = {
             config_file = "tokyobones-dark.conf",
+        },
+    },
+
+    -- TODO: Make the commands from treesitter (gh) have the comments greyed out.
+    ["flexoki-light"] = {
+        nvim = {
+            setup = function()
+                vim.o.background = "light"
+                vim.g.flexoki = {
+                    italic_strings = false,
+                }
+            end,
+            colorscheme = "flexoki-light",
+            highlights = {
+                -- TODO: Make this a function which will link hl groups.
+                -- In that way, we can use it for multiple themes.
+                WinSeparator   = { fg = "#CECDC3" },
+
+                -- Core UI/groups – all same fg, no style
+                Normal         = { fg = "#100F0F" },
+                -- Visual       = { fg = "#100F0F" },
+                Comment        = { fg = "#919187" },
+                Constant       = { fg = "#100F0F" },
+                String         = { fg = "#100F0F" },
+                Character      = { fg = "#100F0F" },
+                Number         = { fg = "#100F0F" },
+                Boolean        = { fg = "#100F0F" },
+                Float          = { fg = "#100F0F" },
+                Identifier     = { fg = "#100F0F" },
+                Function       = { fg = "#100F0F" },
+                Statement      = { fg = "#100F0F" },
+                Conditional    = { fg = "#100F0F" },
+                Repeat         = { fg = "#100F0F" },
+                Label          = { fg = "#100F0F" },
+                Operator       = { fg = "#100F0F" },
+                Keyword        = { fg = "#100F0F" },
+                Exception      = { fg = "#100F0F" },
+                PreProc        = { fg = "#100F0F" },
+                Include        = { fg = "#100F0F" },
+                Define         = { fg = "#100F0F" },
+                Macro          = { fg = "#100F0F" },
+                Type           = { fg = "#100F0F" },
+                StorageClass   = { fg = "#100F0F" },
+                Structure      = { fg = "#100F0F" },
+                Typedef        = { fg = "#100F0F" },
+                Special        = { fg = "#100F0F" },
+                SpecialComment = { fg = "#100F0F" },
+                Underlined     = { fg = "#100F0F" },
+                Todo           = { fg = "#100F0F" },
+                Error          = { fg = "#100F0F" },
+
+                Pmenu          = { fg = "#100F0F" },
+                PmenuSel       = { fg = "#100F0F" },
+                -- CursorLine     = {},
+
+                -- Git diff stays colored
+                -- DiffAdd    = { fg = "#100F0F", bg = "#143D20" },
+                -- DiffChange = { fg = "#100F0F", bg = "#363114" },
+                -- DiffDelete = { fg = "#100F0F", bg = "#4B1818" },
+                -- DiffText   = { fg = "#100F0F", bg = "#6B4E16" },
+            }
+        },
+        tmux = {
+            config_file = "flexoki-light.conf",
+        },
+        kitty = {
+            config_file = "flexoki-light.conf",
+        },
+    },
+
+    ["flexoki-dark"] = {
+        nvim = {
+            setup = function()
+                vim.o.background = "dark"
+                vim.g.flexoki = {
+                    italic_strings = false,
+                }
+            end,
+            colorscheme = "flexoki-dark",
+            highlights = {
+                WinSeparator   = { fg = "#403E3C" },
+
+                -- Teal selection (matches tmux bar), dark text for contrast
+                -- Visual         = { fg = "#100F0F", bg = "#3AA99F" },
+
+                -- Cream/white text for all syntax (flexoki dark `tx` = #CECDC3)
+                Normal         = { fg = "#CECDC3" },
+                Constant       = { fg = "#CECDC3" },
+                String         = { fg = "#CECDC3" },
+                Character      = { fg = "#CECDC3" },
+                Number         = { fg = "#CECDC3" },
+                Boolean        = { fg = "#CECDC3" },
+                Float          = { fg = "#CECDC3" },
+                Identifier     = { fg = "#CECDC3" }, -- @variable follows this
+                Function       = { fg = "#CECDC3" },
+                Statement      = { fg = "#CECDC3" },
+                Conditional    = { fg = "#CECDC3" },
+                Repeat         = { fg = "#CECDC3" },
+                Label          = { fg = "#CECDC3" },
+                Operator       = { fg = "#CECDC3" },
+                Keyword        = { fg = "#CECDC3" },
+                Exception      = { fg = "#CECDC3" },
+                PreProc        = { fg = "#CECDC3" },
+                Include        = { fg = "#CECDC3" },
+                Define         = { fg = "#CECDC3" },
+                Macro          = { fg = "#CECDC3" },
+                Type           = { fg = "#CECDC3" },
+                StorageClass   = { fg = "#CECDC3" },
+                Structure      = { fg = "#CECDC3" },
+                Typedef        = { fg = "#CECDC3" },
+                Special        = { fg = "#CECDC3" }, -- Delimiter/punctuation link here
+                SpecialChar    = { fg = "#CECDC3" }, -- string escapes
+                SpecialComment = { fg = "#CECDC3" },
+                Tag            = { fg = "#CECDC3" }, -- jsx/html tags
+                Underlined     = { fg = "#CECDC3" },
+                Todo           = { fg = "#CECDC3" },
+                Error          = { fg = "#CECDC3" },
+
+                -- Comments stay greyed (flexoki dark default)
+                Comment        = { fg = "#575653" },
+
+                -- Git diffs left untouched -> stay colored
+            }
+        },
+        tmux = {
+            config_file = "flexoki-dark.conf",
+        },
+        kitty = {
+            config_file = "flexoki-dark.conf",
         },
     },
 
@@ -106,9 +321,6 @@ local themes = {
             highlights = {
                 ColorColumn = { bg = '#746956' }
             }
-        },
-        hyprland = {
-            active_border = "rgba(c0ab86ff) rgba(c0ab86ff) 45deg"
         },
         tmux = {
             config_file = "zenburned.conf"
@@ -128,9 +340,6 @@ local themes = {
                 ColorColumn = { bg = '#2E2927' }
             }
         },
-        hyprland = {
-            active_border = "rgba(819b69ff) rgba(819b69ff) 45deg"
-        },
         tmux = {
             config_file = "zenbones-dark.conf"
         },
@@ -148,9 +357,6 @@ local themes = {
             highlights = {
                 ColorColumn = { bg = '#303142' }
             }
-        },
-        hyprland = {
-            active_border = "rgba(bb9bf7ff) rgba(bb9bf7ff) 45deg"
         },
         tmux = {
             config_file = "tokyobones-dark.conf"
@@ -171,9 +377,6 @@ local themes = {
                 ColorColumn = { bg = '#2E2927' }
             }
         },
-        hyprland = {
-            active_border = "rgba(969c46ff) rgba(969c46ff) 45deg"
-        },
         tmux = {
             config_file = "zenbones-light.conf"
         },
@@ -181,6 +384,30 @@ local themes = {
             config_file = "zenbones-light.conf"
         }
     },
+
+    -- TODO: Fix the colors and add kitty/tmux themes.
+    -- black_metal = {
+    --     nvim = {
+    --         setup = function()
+    --             vim.o.background = "dark",
+    --             require("black-metal").setup({
+    --                 theme = "immortal",
+    --                 variant = "dark",
+    --             })
+    --             require("black-metal").load()
+    --         end,
+    --         colorscheme = "black-metal",
+    --         highlights = {
+    --             ColorColumn = { bg = '#2E2927' }
+    --         }
+    --     },
+    --     tmux = {
+    --         config_file = "zenbones-light.conf"
+    --     },
+    --     kitty = {
+    --         config_file = "zenbones-light.conf"
+    --     }
+    -- },
 
 
     menguless = {
@@ -195,9 +422,6 @@ local themes = {
                 StatusLineNC = {},
                 IncSearch = { bg = "#969c46" },
             }
-        },
-        hyprland = {
-            active_border = "rgba(969c46ff) rgba(969c46ff) 45deg"
         },
         tmux = {
             config_file = "menguless.conf"
@@ -239,9 +463,6 @@ local themes = {
                 QuickFixLine = { fg = "#000000", bg = "#cceeff" },
             }
         },
-        hyprland = {
-            active_border = "rgba(cceeFFff) rgba(cceeFFff) 45deg"
-        },
         tmux = {
             config_file = "acme.conf"
         },
@@ -265,12 +486,6 @@ local function build_file_configs(theme)
             -- This mitigates some artifacts that I've seen appear. A bit bloated.
             reload =
             "tmux source-file ~/.tmux.conf && tmux refresh-client && tmux display-message 'Theme reloaded' 2>/dev/null || true"
-        },
-        {
-            name = "hyprland",
-            path = "~/.config/hypr/hyprland.conf",
-            pattern = "(col%.active_border%s*=%s*)([^\n]+)",
-            replacement = "%1" .. theme.hyprland.active_border,
         },
         {
             name = "kitty",
@@ -441,7 +656,7 @@ function M.setup()
         complete = function()
             return M.list()
         end,
-        desc = "Apply theme across nvim, tmux, hyprland, and kitty"
+        desc = "Apply theme across nvim, tmux, and kitty"
     })
 
     vim.api.nvim_create_autocmd('VimEnter', {

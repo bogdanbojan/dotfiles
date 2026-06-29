@@ -7,7 +7,7 @@
 [includeIf "gitdir:~/go/src/github.com/VUSTruck/"]
     path = ~/.gitconfig-vustruck
 [core]
-	hooksPath = /home/bbojan/.git-hooks
+	hooksPath = /Users/bbojan/.git-hooks
 	autocrlf = input
 	safecrlf = true
 [merge]

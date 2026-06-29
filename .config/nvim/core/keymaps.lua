@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>sx", ":close<CR>")                                 
 vim.keymap.set("n", "<leader>swd", ":tcd %:p:h<CR>")                                                       -- Set working dir to current file's directory
 
 vim.api.nvim_set_keymap('n', '<leader>rn', ':set relativenumber<CR>', { noremap = true, silent = true })   -- Set relative number
-vim.api.nvim_set_keymap('n', '<leader>an', ':set norelativenumber<CR>', { noremap = true, silent = true }) -- Set absolute number
+vim.api.nvim_set_keymap('n', '<leader>sn', ':set norelativenumber<CR>', { noremap = true, silent = true }) -- Set absolute number
 
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")                                                           -- Open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")                                                         -- Close current tab
@@ -68,4 +68,4 @@ vim.keymap.set("n", "<leader>son", function()
 end) -- Turn on syntax highlighting
 -- })
 
-vim.keymap.set('n', '<leader>h', '<cmd>set hlsearch!<cr>', { desc = 'Toggle search highlight' })
+vim.keymap.set('n', '<leader>hl', '<cmd>set hlsearch!<cr>', { desc = 'Toggle search highlight' })

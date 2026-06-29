@@ -1,4 +1,6 @@
 cd ~
+eval (/opt/homebrew/bin/brew shellenv)
+set -gx PATH $PATH $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin
 
 if status is-interactive
     and not set -q TMUX
@@ -18,15 +20,6 @@ bind \e\cl cls
 bind \co cls
 
 set fish_greeting
-
-# Created by `pipx` on 2025-08-14 15:23:56
-set PATH $PATH /home/bbojan/.local/bin
-set -x GOPATH $HOME/go
-set -x PATH $PATH $HOME/.cargo/bin
-set -x PATH $PATH $GOPATH/bin
-
-set -x XCURSOR_THEME capitaine-cursors
-set -x XCURSOR_SIZE 24
 
 # Defaults to dev. Can be changed to int/prod.
 # This is for the integration tests.

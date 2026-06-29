@@ -1,0 +1,59 @@
+tap "anomalyco/tap"
+tap "asmvik/formulae"
+tap "docker/tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# Cross-platform make
+brew "cmake"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Distributed revision control system
+brew "git"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Powerful, lightweight programming language
+brew "lua"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim", args: ["HEAD"]
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node@24"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Modernized, complete, self-contained TeX/LaTeX engine
+brew "tectonic"
+# Terminal multiplexer
+brew "tmux"
+# Yet Another Dotfiles Manager
+brew "yadm"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# Voice and text chat software
+cask "discord"
+cask "font-go"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Keyboard customiser
+cask "karabiner-elements"
+# Open-source software for live streaming and screen recording
+cask "obs"
+# Team communication and collaboration software
+cask "slack"
+# Music streaming service
+cask "spotify"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+cargo "rustlings"
+cargo "tree-sitter-cli"

@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+# Enable scripting additions (required for proper window moving)
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Layout: closest to Hyprland dwindle
+yabai -m config layout bsp
+yabai -m config auto_balance off
+yabai -m config split_ratio 0.50
+
+# Focus follows mouse (like Hyprland follow_mouse = 1)
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse autoraise
+
+yabai -m config window_opacity on
+# yabai -m rule --add app="^Firefox$" manage=off
+# yabai -m config active_window_opacity 0.97
+# yabai -m config normal_window_opacity 0.9
+
+# Gaps (roughly matches your Hyprland feel)
+yabai -m config top_padding    10
+yabai -m config bottom_padding 10
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     10
+
+# Don’t auto-fullscreen apps
+yabai -m config window_placement second_child
+
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --focus next; sleep 0.01; yabai -m space --focus prev'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --focus next; sleep 0.01; yabai -m space --focus prev'
+yabai -m signal --add app='^Finder$' event=window_created action='yabai -m space --focus next; sleep 0.01; yabai -m space --focus prev'
+yabai -m signal --add app='^Finder$' event=window_destroyed action='yabai -m space --focus next; sleep 0.01; yabai -m space --focus prev'
