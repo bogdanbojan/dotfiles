@@ -1,0 +1,28 @@
+
+[cursor.style]
+blinking = "Never"
+shape = "Block"
+
+[env]
+TERM = "alacritty"
+
+[font]
+builtin_box_drawing = true
+size = 13.0
+
+[font.normal]
+family = "Go Mono"
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "none"
+
+[general]
+import = ['C:\Users\bbojan\AppData\Roaming\alacritty\./themes/acme.toml']
+working_directory = "C:\\Users\\bbojan"
+

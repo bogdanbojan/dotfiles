@@ -1,0 +1,10 @@
+alacritty-smooth-cursor-git
+alacritty-smooth-cursor-git-debug
+aws-session-manager-plugin
+luajit-tiktoken-bin
+luajit-tiktoken-bin-debug
+neovim-nightly-bin
+neovim-nightly-bin-debug
+python-botocore-stubs
+yay
+yay-debug

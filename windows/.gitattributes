@@ -1,0 +1,3 @@
+# Windows config files - keep line endings exactly as-is, never convert.
+* -text
+*.sh text eol=lf

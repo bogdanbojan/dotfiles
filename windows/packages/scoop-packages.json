@@ -1,0 +1,322 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": {
+                "value": "\/Date(1782696398000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Monday, June 29, 2026 4:26:38 AM"
+            },
+            "Manifests": 1593
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1782706248000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Monday, June 29, 2026 7:10:48 AM"
+            },
+            "Manifests": 2322
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": {
+                "value": "\/Date(1782709455000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Monday, June 29, 2026 8:04:15 AM"
+            },
+            "Manifests": 591
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": {
+                "value": "\/Date(1782583750000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, June 27, 2026 9:09:10 PM"
+            },
+            "Manifests": 367
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable",
+            "Updated": {
+                "value": "\/Date(1782581643000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Saturday, June 27, 2026 8:34:03 PM"
+            },
+            "Manifests": 132
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "25.01",
+            "Updated": "\/Date(1758180740172)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "autohotkey",
+            "Version": "2.0.19",
+            "Updated": "\/Date(1762450960424)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aws",
+            "Version": "2.30.4",
+            "Updated": "\/Date(1758180784554)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aws-sam-cli",
+            "Version": "1.144.0",
+            "Updated": "\/Date(1758180857850)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "bruno",
+            "Version": "2.11.0",
+            "Updated": "\/Date(1758180876317)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "busybox",
+            "Version": "5579-g5749feb35",
+            "Updated": "\/Date(1758180879628)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "dark",
+            "Version": "3.14.1",
+            "Updated": "\/Date(1758180880975)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "firefox",
+            "Version": "149.0.2",
+            "Updated": "\/Date(1776766482180)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fzf",
+            "Version": "0.65.2",
+            "Updated": "\/Date(1758180883413)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "gcc",
+            "Version": "13.2.0",
+            "Updated": "\/Date(1758180910147)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "go",
+            "Version": "1.25.1",
+            "Updated": "\/Date(1758180974070)\/"
+        },
+        {
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Name": "Go-Mono-NF",
+            "Version": "3.4.0",
+            "Updated": "\/Date(1758180976515)\/"
+        },
+        {
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Name": "Go-Mono-NF-Mono",
+            "Version": "3.4.0",
+            "Updated": "\/Date(1758180978146)\/"
+        },
+        {
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Name": "Go-Mono-NF-Propo",
+            "Version": "3.4.0",
+            "Updated": "\/Date(1758180979713)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "2.65.2",
+            "Updated": "\/Date(1758180982077)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "komorebi",
+            "Version": "0.1.38",
+            "Updated": "\/Date(1762450904958)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "lessmsi",
+            "Version": "2.8.1",
+            "Updated": "\/Date(1758180786438)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "lua",
+            "Version": "5.4.8-1",
+            "Updated": "\/Date(1758180991533)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "lua-language-server",
+            "Version": "3.15.0",
+            "Updated": "\/Date(1758180986121)\/"
+        },
+        {
+            "Info": "",
+            "Source": "versions",
+            "Name": "lua51",
+            "Version": "5.1.5",
+            "Updated": "\/Date(1758180989792)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "luarocks",
+            "Version": "3.12.2",
+            "Updated": "\/Date(1758180993654)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "make",
+            "Version": "4.4.1",
+            "Updated": "\/Date(1758180995667)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "mousejiggler",
+            "Version": "1.8.42",
+            "Updated": "\/Date(1758180996863)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "nodejs",
+            "Version": "24.8.0",
+            "Updated": "\/Date(1758181014699)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "obsidian",
+            "Version": "1.9.12",
+            "Updated": "\/Date(1758181031193)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "okular",
+            "Version": "25.12-6939",
+            "Updated": "\/Date(1763994459905)\/"
+        },
+        {
+            "Info": "",
+            "Source": "C:\\Users\\bbojan\\scoop\\buckets\\main\\bucket\\opencode.json",
+            "Name": "opencode",
+            "Version": "1.17.11",
+            "Updated": "\/Date(1782466367497)\/"
+        },
+        {
+            "Info": "",
+            "Source": "nonportable",
+            "Name": "pgadmin4-np",
+            "Version": "9.8",
+            "Updated": "\/Date(1758181105623)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "python",
+            "Version": "3.13.7",
+            "Updated": "\/Date(1758181152078)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ripgrep",
+            "Version": "14.1.1",
+            "Updated": "\/Date(1758181153402)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "rust",
+            "Version": "1.89.0",
+            "Updated": "\/Date(1758181414034)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "sharpkeys",
+            "Version": "3.9.4",
+            "Updated": "\/Date(1763141604593)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "slack",
+            "Version": "4.46.104",
+            "Updated": "\/Date(1761839743569)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "spotify",
+            "Version": "1.2.88.483.g8aa8628e",
+            "Updated": "\/Date(1777958715925)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "tableplus",
+            "Version": "6.6.2.322",
+            "Updated": "\/Date(1758181447293)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "terraform-ls",
+            "Version": "0.37.0",
+            "Updated": "\/Date(1758181834836)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "vim",
+            "Version": "9.1.0",
+            "Updated": "\/Date(1758181848840)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "whkd",
+            "Version": "0.2.10",
+            "Updated": "\/Date(1762450947091)\/"
+        }
+    ]
+}
