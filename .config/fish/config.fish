@@ -28,41 +28,47 @@ set -x PATH $PATH $GOPATH/bin
 set -x XCURSOR_THEME capitaine-cursors
 set -x XCURSOR_SIZE 24
 
-# Defaults to dev. Can be changed to int/prod.
-# This is for the integration tests.
-if not set -q ENV
-    set -g ENV dev
-end
-if test "$ENV" = "dev"
-    set -gx BASE_URL "<REPLACE_ME>"
-    set -gx AWS_PROFILE "<REPLACE_ME>"
-else if test "$ENV" = "staging"
-    set -gx BASE_URL "<REPLACE_ME>"
-    set -gx AWS_PROFILE "<REPLACE_ME>"
-end
-set -gx TOKEN_URL "<REPLACE_ME>"
-set -gx CLIENT_ID "<REPLACE_ME>"
-set -gx CLIENT_SECRET "<REPLACE_ME>"
-set -gx SCOPE "<REPLACE_ME>"
+# function fish_prompt
+#     printf '%s%s%s@Funes ' (set_color $fish_color_user) $USER (set_color normal)
+#     printf '%s%s%s' (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
+#     if type -q __fish_git_prompt
+#         __fish_git_prompt
+#     end
+#     printf ' > '
+# end
 
-function set_access_token
-    set -l response (curl --request GET \
-                                --url "$TOKEN_URL/b2c_1a_signin_oidc_row/oauth2/v2.0/token" \
-                                --header 'content-type: application/x-www-form-urlencoded' \
-                                --data 'grant_type=client_credentials' \
-                                --data "client_id=$CLIENT_ID" \
-                                --data "client_secret=$CLIENT_SECRET" \
-                                --data "scope=$SCOPE")
-    set -gx ACCESS_TOKEN (echo $response | jq -r '.access_token')
-end
+# Acme
+# function fish_prompt
+# 	set_color brblack
+# 	echo -n "["(date "+%H:%M")"] "
+# 	set_color blue
+# 	echo -n Funes
+# 	if [ $PWD != $HOME ]
+# 		set_color brblack
+# 		echo -n ':'
+# 		set_color yellow
+# 		echo -n (basename $PWD)
+# 	end
 
+# 	set_color green
+# 	printf '%s ' (__fish_git_prompt)
+#     # set_color red
+#     set_color green
+# 	echo -n '| '
+# 	set_color normal
+# end
+
+# Solarized-osaka
 function fish_prompt
-	set_color brblack
+    # set -U fish_color_completions blue
+    # set -U fish_color_match --bold green
+    set -U fish_color_autosuggestion normal
+	set_color green
 	echo -n "["(date "+%H:%M")"] "
 	set_color blue
 	echo -n Funes
 	if [ $PWD != $HOME ]
-		set_color brblack
+		set_color green
 		echo -n ':'
 		set_color yellow
 		echo -n (basename $PWD)
@@ -122,3 +128,7 @@ setenv LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
 setenv FZF_DEFAULT_COMMAND 'fd --type file --follow'
 setenv FZF_CTRL_T_COMMAND 'fd --type file --follow'
 setenv FZF_DEFAULT_OPTS '--height 20%'
+
+# For WSL: we need a prompt.
+set -gx GPG_TTY (tty)
+
