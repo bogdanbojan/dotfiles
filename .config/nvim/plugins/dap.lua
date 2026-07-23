@@ -61,7 +61,8 @@ vim.keymap.set("n", "<leader>dc", function() require("dap").continue() end, { de
 vim.keymap.set("n", "<leader>di", function() require("dap").step_into() end, { desc = "DAP: Step Into" })
 vim.keymap.set("n", "<leader>dn", function() require("dap").step_over() end, { desc = "DAP: Step Over" })
 vim.keymap.set("n", "<leader>do", function() require("dap").step_out() end, { desc = "DAP: Step Out" })
-vim.keymap.set("n", "<leader>dr", function() require("dap").repl.open() end, { desc = "DAP: Open REPL" })
+-- vim.keymap.set("n", "<leader>dr", function() require("dap").repl.open() end, { desc = "DAP: Open REPL" })
+vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end, { desc = "DAP: Toggle REPL" })
 vim.keymap.set("n", "<leader>dl", function() require("dap").run_last() end, { desc = "DAP: Run Last" })
 vim.keymap.set("n", "<leader>ds", function() require("dap").run_last() end, { desc = "DAP: Run Last" })
 vim.keymap.set("n", "<leader>dq", function()
@@ -74,3 +75,21 @@ vim.keymap.set("n", "<leader>de", function() require("dap").set_exception_breakp
 vim.keymap.set("n", "<leader>dcb", function()
     dap.clear_breakpoints()
 end)
+
+vim.keymap.set("n", "<leader>dR", function() require("dap").restart() end, { desc = "DAP: Restart" })
+vim.keymap.set("n", "<leader>dP", function() require("dap").pause() end, { desc = "DAP: Pause" })
+vim.keymap.set("n", "<leader>dL", function() require("dap").list_breakpoints() end,
+    { desc = "DAP: List Breakpoints" })
+
+vim.keymap.set("n", "<leader>dp", function()
+    require("dap").set_breakpoint(nil, nil, vim.fn.input("Log message: "))
+end, { desc = "DAP: Logpoint" })
+vim.keymap.set("n", "<leader>dk", function() require("dap").up() end, { desc = "DAP: Up Frame" })
+vim.keymap.set("n", "<leader>dj", function() require("dap").down() end, { desc = "DAP: Down Frame" })
+
+vim.keymap.set("n", "<leader>dS", function()
+    local expr = vim.fn.input("Set variable (name = value): ")
+    if expr ~= "" then
+        require("dap").repl.execute(expr)
+    end
+end, { desc = "DAP: Set Variable" })
