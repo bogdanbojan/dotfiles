@@ -8,9 +8,8 @@ vim.o.laststatus = 3
 
 vim.g.mapleader = " "
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.colorcolumn = "80"
 vim.opt.scrolloff = 8

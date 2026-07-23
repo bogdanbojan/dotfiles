@@ -1,6 +1,3 @@
--- Open file explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 vim.keymap.set("i", "kj", "<Esc>", options)
 vim.keymap.set("i", "jk", "<Esc>", options)
 

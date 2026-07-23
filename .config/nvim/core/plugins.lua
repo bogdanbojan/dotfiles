@@ -58,4 +58,6 @@ vim.pack.add({
     { src = "https://github.com/kylechui/nvim-surround" },
 
     { src = "https://github.com/lervag/vimtex" },
+
+    { src = "https://github.com/stevearc/oil.nvim" },
 })
