@@ -116,4 +116,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Added by Unsloth installer
+export PATH="/Users/bbojan/.local/bin:$PATH"
