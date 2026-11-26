@@ -60,4 +60,5 @@ vim.pack.add({
     { src = "https://github.com/lervag/vimtex" },
 
     { src = "https://github.com/stevearc/oil.nvim" },
+    { src = "https://codeberg.org/evergarden/nvim.git", name = "evergarden" },
 })

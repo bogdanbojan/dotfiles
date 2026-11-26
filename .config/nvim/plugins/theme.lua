@@ -5,22 +5,38 @@ local M = {}
 -- ============================================================================
 
 local themes = {
-    -- ["everforest-light"] = {
+
+    ["everforest-dark"] = {
+        nvim = {
+            setup = function()
+                vim.o.background = "dark"
+            end,
+            colorscheme = "everforest",
+            -- on_highlights = function(hl, palette)
+            -- hl.TSDanger = {}
+        },
+        tmux = {
+            config_file = "everforest-dark.conf",
+        },
+        kitty = {
+            config_file = "everforest-dark.conf",
+        },
+    },
+
+    -- ["evergarden-dark"] = {
     --     nvim = {
     --         setup = function()
-    --             vim.o.background = "light"
+    --             vim.o.background = "dark"
     --         end,
-    --         colorscheme = "everforest",
-    --         on_highlights = function(hl, palette)
-    --         hl.TSDanger = {}
-    --         end,
-    --     }
+    --         colorscheme = "evergarden",
+    --         -- on_highlights = function(hl, palette)
+    --         -- hl.TSDanger = {}
     --     },
     --     tmux = {
-    --         config_file = "everforest-light.conf",
+    --         config_file = "everforest-dark.conf",
     --     },
     --     kitty = {
-    --         config_file = "everforest-light.conf",
+    --         config_file = "everforest-dark.conf",
     --     },
     -- },
 
@@ -88,12 +104,15 @@ local themes = {
     vimbones = {
         nvim = {
             setup = function()
-                vim.o.background = "dark"
+                vim.o.background = "light"
                 vim.g.vimbones = {
                     italic_strings = false,
                 }
             end,
             colorscheme = "vimbones",
+            highlights = {
+                Operator = { link = "Normal" },
+            }
         },
         tmux = {
             config_file = "vimbones.conf",
