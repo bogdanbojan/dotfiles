@@ -2,6 +2,10 @@ cd ~
 eval (/opt/homebrew/bin/brew shellenv)
 set -gx PATH $PATH $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin
 
+# Required by gpg-agent so pinentry can fall back to the terminal
+# when no GUI is available (SSH sessions, agent forwarding).
+set -gx GPG_TTY (tty)
+
 if status is-interactive
     and not set -q TMUX
     exec tmux
@@ -20,34 +24,6 @@ bind \e\cl cls
 bind \co cls
 
 set fish_greeting
-
-# Defaults to dev. Can be changed to int/prod.
-# This is for the integration tests.
-if not set -q ENV
-    set -g ENV dev
-end
-if test "$ENV" = "dev"
-    set -gx BASE_URL "<REPLACE_ME>"
-    set -gx AWS_PROFILE "<REPLACE_ME>"
-else if test "$ENV" = "staging"
-    set -gx BASE_URL "<REPLACE_ME>"
-    set -gx AWS_PROFILE "<REPLACE_ME>"
-end
-set -gx TOKEN_URL "<REPLACE_ME>"
-set -gx CLIENT_ID "<REPLACE_ME>"
-set -gx CLIENT_SECRET "<REPLACE_ME>"
-set -gx SCOPE "<REPLACE_ME>"
-
-function set_access_token
-    set -l response (curl --request GET \
-                                --url "$TOKEN_URL/b2c_1a_signin_oidc_row/oauth2/v2.0/token" \
-                                --header 'content-type: application/x-www-form-urlencoded' \
-                                --data 'grant_type=client_credentials' \
-                                --data "client_id=$CLIENT_ID" \
-                                --data "client_secret=$CLIENT_SECRET" \
-                                --data "scope=$SCOPE")
-    set -gx ACCESS_TOKEN (echo $response | jq -r '.access_token')
-end
 
 function fish_prompt
 	set_color brblack
@@ -69,9 +45,10 @@ function fish_prompt
 	set_color normal
 end
 
-function set_chat_permissions
-    sudo mkdir /run/user/1000
-    sudo chown bbojan:bbojan /run/user/1000
+function fix_audio
+    sudo rm /Library/Preferences/Audio/com.apple.audio.DeviceSettings.plist
+    sudo rm /Library/Preferences/Audio/com.apple.audio.SystemSettings.plist
+    sudo killall coreaudiod
 end
 
 function env_source
@@ -83,15 +60,21 @@ function env_source
 end
 
 function todo
-    touch "$(date +%Y-%m-%d).txt"
+    set -l dir ~/todo
+    mkdir -p $dir
+    set -l file $dir/(date +%F).txt
+    touch $file
+    echo $file
 end
 
+# List this week's (Mon-Sun) daily todo files, e.g. `nvim (todo_week)`.
 function todo_week
-    set today (date +%Y-%m-%d)
-    set wday (date +%u)
-    set monday (date -d "$today - (math $wday - 1) days" +%Y-%m-%d)
-    set sunday (date -d "$monday + 6 days" +%d)
-    touch "$monday-$sunday.txt"
+    set -l back (math (date +%u) - 1)
+    set -l monday (date -v-{$back}d +%F)
+    for i in (seq 0 6)
+        set -l file ~/todo/(date -j -v+{$i}d -f %F $monday +%F).txt
+        test -f $file; and echo $file
+    end
 end
 
 # Fish git prompt
